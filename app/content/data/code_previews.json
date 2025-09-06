@@ -1,0 +1,18 @@
+[
+  {
+    "name": "config/initializers/perron.rb",
+    "content": "Perron.configure do |config|\n  config.site_name = \"Perron\"\n\n  config.default_url_options = {host: \"perron.railsdesigner.com\", protocol: \"https\", trailing_slash: true}\n\n  config.metadata.description = \"Rails-based Static Site Generator\"\n  config.metadata.author = \"Rails Designer\"\n  config.metadata.title_suffix = \"Perron\"\n  config.metadata.title_separator = \" | \"\n  config.metadata.image = asset_url(\"ogimage.jpg\")\n\n  config.sitemap.enabled = true\nend"
+  },
+  {
+    "name": "app/views/layouts/application.html.erb",
+    "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <%%= meta_tags %>\n    <%%= feeds only: %w[posts] %>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n    <%%= csrf_meta_tags %>\n    <%%= csp_meta_tag %>\n\n    <%%= yield :head %>\n\n    <%%= render \"shared/favicons\" %>\n\n    <%%= stylesheet_link_tag :app %>\n  </head>\n\n  <body class=\"antialiased\">\n    <%%= render \"shared/nav\" %>\n\n    <%%= yield %>\n\n    <%%= render \"shared/footer\" %>\n  </body>\n</html>"
+  },
+  {
+    "name": "app/models/content/post.rb",
+    "content": "class Content::Post < Perron::Resource\n  configure do |config|\n    config.metadata.type = \"article\"\n  end\nend"
+  },
+  {
+    "name": "app/views/content/posts/show.html.erb",
+    "content": "<div class=\"container mx-auto\">\n  <article class=\"prose prose-lg mt-12 px-2 pb-12\">\n    < h1 class=\"text-4xl font-bold\">\n      <%%= @resource.metadata.title %>\n    </h1>\n\n    <%%= markdownify @resource.content %>\n  </article>\n</div>"
+  }
+]
