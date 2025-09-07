@@ -20,23 +20,15 @@ description: Perron is a Rails-based static site generator that allows you to bu
 
 
 <article class="relative w-full max-w-3xl mt-12 mx-auto px-2 md:px-8 lg:px-16 py-16 lg:py-28 bg-white border border-slate-100 shadow-xl rounded-md lg:-rotate-1 text-lg text-slate-600 [&_p+p]:mt-8 before:content-[''] before:hidden md:before:block before:absolute before:inset-0 before:rotate-3 before:-z-10 before:bg-white before:border before:border-slate-100 before:rounded-md before:shadow-md">
-  <p>
+  <%= markdownify do %>
     Hey! 👋
-  </p>
 
-  <p>
     Another Static Site Generator (SSG)? In 2025? Yes! For years I've built static sites using mostly Ruby-based SSGs, and occasionally tried JavaScript-based ones. But every time, there was a frustrating disconnect when I moved from building an app in Rails to creating the static site. Setting up Stimulus worked differently, Tailwind CSS had different configurations, and it wasn't limited to just these tools! Other configurations from my Rails app simply weren't reusable in static site generators, even Ruby-based ones.
-  </p>
 
-  <p>
-    <b>Perron</b> (Dutch/French; <em>a platform at a railway station from where passengers can board or disembark trains</em>) is built to close this gap. It's not a standalone SSG, but packaged as a gem to run in your Rails app. It offers a variety of tools and helpers, like meta tags, sitemap.xml and feeds, along with the Rails features you know and love, like layouts, views and partials. Ready to help you build your next marketing site, blog or whatever else you need.
-  </p>
+    **Perron** (Dutch/French; *a platform at a railway station from where passengers can board or disembark trains*) is built to close this gap. It's not a standalone SSG, but packaged as a gem to run in your Rails app. It offers a variety of tools and helpers, like meta tags, sitemap.xml and feeds, along with the Rails features you know and love, like layouts, views and partials. Ready to help you build your next marketing site, blog or whatever else you need.
 
-  <p>
-    Perron is already powering my latest SaaS marketing site and I would love to see you give Perron a try for your next site as well. 😊
-  </p>
+    Perron is already powering my [latest SaaS marketing site](https://helptail.com/) and I would love to see you give Perron a try for your next site as well. 😊
 
-  <p class="italic">
-    <em>-Rails Designer</em>
-  </p>
+    *-Rails Designer*
+  <% end %>
 </article>
