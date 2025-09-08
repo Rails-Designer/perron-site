@@ -13,6 +13,6 @@
   },
   {
     "name": "app/views/content/posts/show.html.erb",
-    "content": "<div class=\"container mx-auto\">\n  <article class=\"prose prose-lg mt-12 px-2 pb-12\">\n    < h1 class=\"text-4xl font-bold\">\n      <%%= @resource.metadata.title %>\n    </h1>\n\n    <%%= markdownify @resource.content %>\n  </article>\n</div>"
+    "content": "<div class=\"container mx-auto\">\n  <article class=\"prose prose-lg mt-12 px-2 pb-12\">\n    <h1 class=\"text-4xl font-bold\">\n      <%%= @resource.metadata.title %>\n    </h1>\n\n    <%%= markdownify @resource.content %>\n  </article>\n</div>"
   }
 ]

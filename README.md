@@ -1,12 +1,14 @@
 # Perron Site/documentation
 
-https://perron.railsdesigner.com/
+Documentation site for [Perron](https://github.com/Rails-Designer/perron)—a Rails-based static site generator.
+
 
 ## Development
 
 ```bash
 bin/dev
 ```
+
 
 ## Deploy/publish
 
