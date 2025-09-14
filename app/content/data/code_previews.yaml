@@ -1,0 +1,74 @@
+- name: config/initializers/perron.rb
+  content: |
+    ```ruby
+    Perron.configure do |config|
+      config.site_name = "Perron Docs"
+
+      config.default_url_options = {host: "perron.railsdesigner.com", protocol: "https", trailing_slash: true}
+
+      config.metadata.description = "Rails-based Static Site Generator"
+      config.metadata.author = "Rails Designer"
+
+      config.metadata.title_suffix = "Perron"
+      config.metadata.title_separator = " | "
+      config.metadata.image = asset_url("ogimage.jpg")
+
+      config.feeds.rss.enabled = true
+
+      config.sitemap.enabled = true
+    end
+    ```
+
+- name: app/views/layouts/application.html.erb
+  content: |
+    ```erb
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <%%= meta_tags %>
+        <%%= feeds only: %w[posts] %>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <%%= csrf_meta_tags %>
+        <%%= csp_meta_tag %>
+
+        <%%= yield :head %>
+
+        <%%= render "shared/favicons" %>
+
+        <%%= stylesheet_link_tag :app %>
+      </head>
+
+      <body class="antialiased">
+        <%%= render "shared/nav" %>
+
+        <%%= yield %>
+
+        <%%= render "shared/footer" %>
+      </body>
+    </html>
+    ```
+
+- name: app/models/content/post.rb
+  content: |
+    ```ruby
+    class Content::Post < Perron::Resource
+      configure do |config|
+        config.metadata.type = "article"
+      end
+    end
+    ```
+
+- name: ~/site/perron/docs/
+  content: |
+    ```bash
+    ~/sites/perron/docs ➜ rails perron:build
+    🧹 Cleaning previous build…
+    📦 Precompiling and copying assets…
+       Copied assets to `output/assets`
+       Pruning excluded assets…
+    📂 Copying public files…
+    ............
+    📝 Generating collections…
+    ........................................................................
+    ✅ Build complete
+    ```

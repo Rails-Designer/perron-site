@@ -20,4 +20,13 @@ Perron.configure do |config|
   config.metadata.title_suffix = "Perron"
   config.metadata.title_separator = " | "
   config.metadata.author = "Rails Designer"
+
+  config.markdown_options = {
+    plugins: {
+      syntax_highlighter: {
+        theme: "tailwind-slate-dark",
+        path: Rails.root.join("app", "content", "themes").to_s
+      }
+    }
+  }
 end
