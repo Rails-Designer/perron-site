@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails-designer/perron.git
-  revision: 492b3d2457b3e09aff0ceb1fbb4dc9778020d64b
+  revision: 60eff4517635909be754b3c2b9cc7d3c3985a517
   specs:
     perron (0.11.0)
       csv
@@ -114,7 +114,7 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.13.2)
+    json (2.14.1)
     logger (1.7.0)
     loofah (2.24.1)
       crass (~> 1.0.2)
@@ -124,7 +124,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.4)
+    marcel (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.5)
     net-imap (0.5.10)
@@ -137,21 +137,21 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.9-aarch64-linux-gnu)
+    nokogiri (1.18.10-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.9-aarch64-linux-musl)
+    nokogiri (1.18.10-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.18.9-arm-linux-gnu)
+    nokogiri (1.18.10-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.9-arm-linux-musl)
+    nokogiri (1.18.10-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.18.9-arm64-darwin)
+    nokogiri (1.18.10-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.9-x86_64-darwin)
+    nokogiri (1.18.10-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.9-x86_64-linux-gnu)
+    nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.9-x86_64-linux-musl)
+    nokogiri (1.18.10-x86_64-linux-musl)
       racc (~> 1.4)
     pp (0.6.2)
       prettyprint
