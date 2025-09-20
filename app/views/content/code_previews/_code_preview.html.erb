@@ -4,7 +4,7 @@
       <%= safe_join(%w[bg-red-500 bg-yellow-500 bg-green-500].map { tag.span class: it }) %>
     </div>
 
-    <%= tag.span code_preview.name, class: "line-clamp-1 text-xs font-semibold text-slate-400" %>
+    <%= link_to code_preview.path, code_preview.previewable? ? view_on_github_url(code_preview.path) : "#", class: "line-clamp-1 text-xs font-semibold text-slate-400 transition hover:text-slate-200" %>
   </div>
 
   <%= tag.div markdownify(code_preview.content), class: "p-2 text-sm border-t border-slate-700/70" %>
