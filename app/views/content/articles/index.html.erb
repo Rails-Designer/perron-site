@@ -1,11 +1,13 @@
-<h1>
-  Articles
-</h1>
+<article class="mt-4 mt:mt-6 lg:mt-5">
+  <h1 class="inline-block text-2xl font-bold text-gray-800 tracking-tight sm:text-3xl">
+    Documentation
+  </h1>
 
-<ul>
-  <% @resources.each do |resource| %>
-    <li>
-      <%= link_to resource.filename, resource %>
-    </li>
-  <% end %>
-</ul>
+  <div class="mt-2 max-w-prose text-lg text-slate-800">
+    Perron is a Rails-based Static Site Generator. It lets you create Static sites with the framework you love.
+  </p>
+
+  <ul class="grid grid-cols-6 gap-8 mt-8">
+    <%= render Perron::Site.data.articles.quickstart %>
+  </ul>
+</article>

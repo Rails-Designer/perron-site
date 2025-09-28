@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= meta_tags %>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= yield :head %>
-
-    <%= render "shared/favicons" %>
-
-    <%= stylesheet_link_tag :app %>
-  </head>
+  <%= render "shared/head" %>
 
   <body class="antialiased">
     <%= yield %>

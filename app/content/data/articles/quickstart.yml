@@ -1,0 +1,6 @@
+- title: Get started
+  description: Learn how to get started with Perron with your Rails app.
+  href: <%= article_path("quickstart") %>
+- title: Deploy to production
+  description: Put your new site for the world to see.
+  href: <%= article_path("deploy") %>

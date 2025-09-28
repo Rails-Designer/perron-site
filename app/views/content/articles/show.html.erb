@@ -1,7 +1,23 @@
-<article>
-  <h1>
-    <%= @resource.filename %>
-  </h1>
+<article class="mt-4 sm:mt-5 lg:mt-7">
+  <hgroup>
+    <p>
+      <%= link_to @resource.section.name, @resource.section.resources.first, class: "text-xs text-slate-600 hover:text-slate-800 sm:text-sm" %>
+    </p>
 
-  <%= markdownify @resource.content %>
+    <h1 class="mt-1 text-2xl font-bold text-gray-800 tracking-tight sm:text-3xl">
+      <%= @resource.title %>
+    </h1>
+  </hgroup>
+
+  <div class="mt-4 pb-12 content max-w-prose">
+    <%= markdownify @resource.content %>
+  </div>
+
+  <section class="pb-12">
+    <%= link_to edit_on_github_url(@resource), rel: :nofollow, target: :blank, class: "flex items-center gap-x-1 text-sm font-medium text-slate-600 transition hover:text-slate-800" do %>
+      <%= icon "pencil", class: "size-3 text-slate-500" %>
+
+      <%= tag.span "Edit this page" %>
+    <% end %>
+  </section>
 </article>

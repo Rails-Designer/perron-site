@@ -1,0 +1,14 @@
+<%# locals: (resource: nil, tail_css: "font-semibold text-slate-800") %>
+<button class="flex items-center gap-x-2.5 w-full py-3 text-sm text-slate-700 border-b border-slate-100 lg:hidden">
+  <%= icon "bars-3", class: "size-4 text-slate-800" %>
+
+  <%= tag.ul class: "flex items-center gap-x-1" do %>
+    <%= tag.li @resource.section.name, class: "text-slate-600" %>
+
+    <%= icon "chevron-right", class: "size-4 text-slate-500" %>
+
+    <%= tag.li @resource.title, class: tail_css %>
+  <% end if @resource.present? %>
+
+  <%= tag.p "Documentation", class: tail_css if @resource.blank? %>
+</button>

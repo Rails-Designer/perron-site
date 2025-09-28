@@ -9,3 +9,20 @@
     }
   }
 }
+
+@layer component {
+  .content {
+    @apply [&_p]:text-lg [&_p]:text-slate-800;
+    @apply [&_*+h2]:mt-8 [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:text-slate-800;
+    @apply [&_*+h3]:mt-8 [&_h3]:font-semibold [&_h3]:text-xl [&_h3]:text-slate-800;
+    @apply [&_p+p]:mt-5;
+    [&_ul]:mt-2; @apply [&_ul]:list-disc [&_ul]:list-outside [&_ul]:ml-4.5;
+    [&_ol]:mt-2; @apply [&_ol]:list-decimal [&_ol]:list-outside [&_ol]:ml-4.5;
+    @apply [&_*+p]:mt-5;
+    @apply [&_code]:p-0.5 [&_code]:text-[0.8em] [&_code]:font-medium [&_code]:text-slate-700 [&_code]:bg-slate-100 [&_code]:rounded-sm;
+    @apply [&_pre>code]:text-base [&_pre>code]:font-normal [&_pre>code]:bg-transparent;
+    @apply [&_*+pre]:mt-5 [&_pre]:px-3 [&_pre]:py-4 [&_pre]:rounded-md [&_pre]:overflow-auto;
+    @apply [&_*+table]:mt-5;
+    @apply marker:text-red-500;
+  }
+}

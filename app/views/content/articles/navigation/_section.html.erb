@@ -1,0 +1,12 @@
+<%# locals: (section:, resources: section.resources) %>
+<li>
+  <%= tag.p section.name, class: "px-(--nav-vertical-spacing) font-semibold text-slate-800" %>
+
+  <ul class="grid gap-y-1 mt-2">
+    <% resources.each do |article| %>
+      <li>
+        <%= link_to article.title, article, class: class_names("block px-(--nav-vertical-spacing) py-1.5 font-normal text-slate-700 rounded-lg transition hover:bg-slate-50", {"bg-slate-100": current_page?(article)}) %>
+      </li>
+    <% end %>
+  </ul>
+</li>

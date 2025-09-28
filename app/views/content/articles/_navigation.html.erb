@@ -1,0 +1,12 @@
+<%# locals: (top_level_items:) %>
+<nav class="hidden fixed top-0 bottom-0 pb-12 right-auto w-(--nav-width) bg-white z-10 overflow-y-auto lg:block">
+  <ul class="mt-4 px-2 grid gap-y-6 text-base overflow-y-auto mt:mt-6 lg:mt-8 md:px-4 lg:px-8 md:text-sm [--nav-vertical-spacing:1.25rem]">
+    <% top_level_items.each do |item| %>
+      <li>
+        <%= link_to item[:label], item[:href], class: "px-(--nav-vertical-spacing) font-bold text-slate-800" %>
+      </li>
+    <% end %>
+
+    <%= render partial: "content/articles/navigation/section", collection: Content::Article.sections, as: :section %>
+  </ul>
+</nav>
