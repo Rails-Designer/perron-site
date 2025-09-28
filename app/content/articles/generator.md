@@ -8,6 +8,8 @@ description: Use Perron's geenrator to easily create new collections.
 Create a new collection using the built-in generator.
 ```bash
 bin/rails generate content Post
+# or only include the needed action
+bin/rails generate content Post show
 ```
 This will create the following files:
 
