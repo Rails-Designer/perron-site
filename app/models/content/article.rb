@@ -13,8 +13,7 @@ class Content::Article < Perron::Resource
 
   SECTIONS = {
     getting_started: "Getting started",
-    content: "Content",
-    resources: "Resources"
+    content: "Content"
   }.with_indifferent_access
 
   Section = Data.define(:key, :name, :resources)

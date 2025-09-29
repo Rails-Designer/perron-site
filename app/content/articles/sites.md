@@ -1,6 +1,6 @@
 ---
-section: resources
-order: 4
+section: getting_started
+order: 5
 title: Sites built with Perron
 description: An overview of sites that are built with Perron.
 ---

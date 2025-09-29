@@ -1,0 +1,45 @@
+gsub_file "Gemfile", /gem "sqlite3".*$/, ""
+gsub_file "Gemfile", /gem "activerecord".*$/, ""
+
+remove_file "config/database.yml"
+remove_file "config/credentials.yml.enc"
+remove_file "config/master.key"
+
+run "rm -r app/views/pwa"
+
+
+# Remove PWA-related lines from application layout
+gsub_file "app/views/layouts/application.html.erb", /^\s*<meta name="apple-mobile-web-app-capable" content="yes">\n/, ""
+gsub_file "app/views/layouts/application.html.erb", /^\s*<meta name="mobile-web-app-capable" content="yes">\n/, ""
+gsub_file "app/views/layouts/application.html.erb", /^\s*<%# Enable PWA manifest for installable apps \(make sure to enable in config\/routes\.rb too!\) %>\n/, ""
+gsub_file "app/views/layouts/application.html.erb", /^\s*<%#= tag\.link rel: "manifest", href: pwa_manifest_path\(format: :json\) %>\n/, ""
+
+
+append_to_file ".gitignore", "/output/\n"
+
+gem "perron"
+
+after_bundle do
+  rails_command("generate perron:install")
+end
+
+remove_file "README.md"
+
+create_file "README.md", <<~MARKDOWN
+  # My New Site
+
+  TBD
+
+  ## Development
+
+  ```
+  bin/dev
+  ```
+
+  ## Deploy/publish
+
+  ```
+  RAILS_ENV=production rails perron:build
+  ```
+MARKDOWN
+```

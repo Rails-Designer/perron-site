@@ -1,0 +1,19 @@
+<article class="mt-4 max-w-prose mt:mt-6 lg:mt-5">
+  <h1 class="text-2xl font-bold text-gray-800 tracking-tight sm:text-3xl">
+    <%= @resource.name %>
+  </h1>
+
+  <div class="mt-6">
+    <code class="block p-2 bg-slate-900 text-sm text-slate-50 truncate overflow-x-auto rounded-md select-all"><%= @resource.command || "rails app:template LOCATION='#{resource_template_url(@resource)}'" %></code>
+  </div>
+
+  <div class="mt-6 max-w-prose text-lg text-slate-800">
+    <%= markdownify @resource.content %>
+  </div>
+
+  <div class="mt-6">
+    <h3 class="text-lg font-bold text-gray-800 tracking-tight sm:text-xl">Template source</h3>
+
+    <pre class="mt-2 p-2 max-h-[12lh] overflow-y-auto text-sm text-slate-50 bg-slate-900 rounded-md"><%= resource.template %></pre>
+  </div>
+</article>
