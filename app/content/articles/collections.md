@@ -30,20 +30,16 @@ class Content::Post < Perron::Resource
     metadata.section.upcase
   end
 end
-
-# first_post = Content::Post.first
-# first_post.title
-# first_post.loud_section
 ```
 
 
 ## `@resource` instance
 
-In a `show` action, the resource (e.g. `Content::Article`) is expected to be set at `@resource`. For example:
+In a `show` action, the resource (e.g. `Content::Post`) is expected to be set at `@resource`. For example:
 ```ruby
-class Content::ArticlesController < ApplicationController
+class Content::PostsController < ApplicationController
   def show
-    @resource = Content::Article.find(params[:id])
+    @resource = Content::Post.find(params[:id])
   end
 end
 ```

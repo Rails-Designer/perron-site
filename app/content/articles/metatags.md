@@ -92,3 +92,28 @@ Perron.configure do |config|
   config.metadata.author = "Helptail team"
 end
 ```
+
+
+## Generated HTML Tags
+
+Below is a complete list of the HTML tags that the `meta_tags` helper can generate. The helper will only render a tag if its corresponding data (e.g., content or href) is present.
+
+```html
+<title>…</title>
+<link rel="canonical" href="…">
+<meta name="description" content="…">
+<meta property="article:published_time" content="…">
+<meta property="og:title" content="…">
+<meta property="og:type" content="…">
+<meta property="og:url" content="…">
+<meta property="og:image" content="…">
+<meta property="og:description" content="…">
+<meta property="og:site_name" content="…">
+<meta property="og:logo" content="…">
+<meta property="og:author" content="…">
+<meta property="og:locale" content="…">
+<meta name="twitter:card" content="…">
+<meta name="twitter:title" content="…">
+<meta name="twitter:description" content="…">
+<meta name="twitter:image" content="…">
+```

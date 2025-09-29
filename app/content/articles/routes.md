@@ -10,8 +10,8 @@ Perron uses standard Rails routing, allowing the use of familiar route helpers.
 The `config/routes.rb` could look like this:
 ```ruby
 Rails.application.routes.draw do
-  resources :articles, module: :content, only: %w[index show]
-  resources :pages, path: "/", module: :content, only: %w[show]
+  resources :posts, module: :content, only: %w[index show]
+  resources :pages, module: :content, only: %w[show]
 
   root to: "content/pages#root"
 end
@@ -30,8 +30,8 @@ end
 
 For a typical “clean slug”, the filename without extensions serves as the `id` parameter.
 ```ruby
-<%# For app/content/pages/about.md %>
-<%= link_to "About Us", page_path("about") %> # => <a href="/about/">About Us</a>
+<%# For app/content/posts/announcement.md %>
+<%= link_to "Announcment", post_path("announcement") %> # => <a href="/posts/announcement/">Announcment</a>
 ```
 
 

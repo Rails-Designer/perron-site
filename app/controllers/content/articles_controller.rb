@@ -2,7 +2,7 @@ class Content::ArticlesController < ApplicationController
   def index
     @metadata = {
       title: "Documentation",
-      description: "TBD"
+      description: "Get started and learn about all the features of Perron."
     }
 
     @resources = Content::Article.all
