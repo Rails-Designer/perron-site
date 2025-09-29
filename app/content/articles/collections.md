@@ -12,7 +12,7 @@ Content is stored in `app/content/*/*.{erb,md,*}` and backed by a class, located
 The controllers are located in `app/controllers/content/`. To make them available, create a route: `resources :posts, module: :content, only: %w[index show]`.
 
 
-## Perron Resource class
+## Resource class
 
 Every collection's class inherits from `Perron::Resource`, e.g.:
 ```ruby

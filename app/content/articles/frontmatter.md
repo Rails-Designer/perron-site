@@ -1,0 +1,24 @@
+---
+section: content
+order: 3.5
+title: Frontmatter
+description: Frontmatter is supported for markdown files.
+---
+
+Perron supports frontmatter to be used with your markdown files. Frontmatter is a way to set metadata for that content. It is using yaml—a key-value system.
+
+It is added at the beginning of the markdown file, and set between three dashes (`---`). Something like this:
+
+```yaml
+---
+title: Frontmatter
+description: Frontmatter is supported for markdown files.
+---
+```
+
+It is typically used for data that is not directly visible, like for [metatags](/docs/metatags/).
+
+
+## Usage
+
+All defined frontmatter on a resource is available under `metadata`. Given above example, `@resource.metadata.title` and `@resource.metadata.description` would work.
