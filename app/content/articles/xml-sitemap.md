@@ -1,5 +1,5 @@
 ---
-section: publishing
+section: metadata
 order: 11
 title: XML sitemap
 description: For bigger sites, a XML sitemap can help to get quicker indexed.

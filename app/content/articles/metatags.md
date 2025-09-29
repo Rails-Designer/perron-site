@@ -1,5 +1,5 @@
 ---
-section: publishing
+section: metadata
 order: 8
 title: Metatags
 description: Use Perron's metatags helper to insert meta tags, like title, description and og-tags.
