@@ -1,5 +1,5 @@
 ---
-section: content
+section: publishing
 order: 9
 title: Feeds (RSS and JSON)
 description: Perron can create RSS and JSON feeds from your collections.
