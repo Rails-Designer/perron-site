@@ -12,11 +12,13 @@
 
 @layer component {
   .content {
-    @apply [&_*+p,&_*+table,&_*+pre]:mt-5;
+    @apply [&_*:not(h1,h2,h3,h4,h5,h6)+p,&_*+table,&_*+pre]:mt-5;
+    @apply [&_h1+p,&_h2+p,&_h3+p,&_h4+p,&_h5+p,&_h6+p]:mt-1.5;
     @apply [&_p,&_li]:text-lg [&_p]:text-slate-800;
 
-    @apply [&_*+h2]:mt-8 [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:text-slate-800;
-    @apply [&_*+h3]:mt-8 [&_h3]:font-semibold [&_h3]:text-xl [&_h3]:text-slate-800;
+    @apply [&_*+h2,&_*+h3]:mt-8;
+    @apply [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:text-slate-800;
+    @apply [&_h3]:font-semibold [&_h3]:text-xl [&_h3]:text-slate-800;
 
     @apply [&_ul,&_ol]:mt-2 [&_ul]:list-disc [&_ul,&_ol]:list-outside [&_ul,&_ol]:ml-4.5;
     @apply [&_ol]:list-decimal;
