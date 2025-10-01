@@ -11,7 +11,7 @@ Perron can operate in two modes, configured via `config.mode`. This allows a bui
 
 | **Mode** | `:standalone` (default) | `:integrated` |
 | :--- | :--- | :--- |
-| **Use Case** | Full static site for hosts like Netlify/Vercel | Add static pages to a live Rails app |
+| **Use Case** | Full static site for hosts like Netlify, Render, etc. | Add static pages to a live Rails app |
 | **Output** | `output/` directory | `public/` directory |
 | **Asset Handling** | Via Perron | Via Asset Pipeline |
 
