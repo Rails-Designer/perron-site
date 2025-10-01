@@ -10,9 +10,7 @@
   <ul class="grid gap-4 mt-8">
     <% @resources.each do |type, resources| %>
       <li>
-        <h2 class="mx-2 text-lg font-bold text-slate-800">
-          <%= type.humanize %>
-        </h2>
+        <%= tag.h2 type.humanize, id: type.parameterize, class: "mx-2 text-lg font-bold text-slate-800" %>
 
         <ul class="grid gap-2 mt-2">
           <%= render resources %>
