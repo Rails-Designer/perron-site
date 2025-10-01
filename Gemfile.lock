@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails-designer/perron.git
-  revision: 0b44228fb4eb010986636c01394da627ba69e6b2
+  revision: 6117bc81409b2dbe861752ef9adfa182d85a1c7c
   specs:
     perron (0.12.0)
       csv

@@ -3,6 +3,7 @@ section: content
 order: 5
 title: Embed Ruby
 description: Perron has flexible support for rendering Ruby.
+erb: true
 ---
 
 Perron provides flexible options for embedding dynamic Ruby code in your content using ERB.
@@ -15,15 +16,16 @@ Any content file with a `.erb` extension (e.g., `about.erb`) will automatically 
 
 ## Frontmatter
 
-You can enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter.
+You can enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter (like [this markdown file you are looking at](<%= edit_on_github_url(@resource) %>)).
 ```markdown
 ---
-title: Dynamic Page
+title: Embed Ruby
 erb: true
 ---
 
 This entire page will be processed by ERB.
-The current time is: <%= Time.current.to_fs(:long_ordinal) %>.
+The current time is: <%= Time.current.strftime("%d %B %Y") %>
+↳ uses `<%%= Time.current.strftime("%d %B %Y") %>`
 ```
 
 
@@ -44,13 +46,15 @@ features:
 
 Check out our amazing features:
 
-<%= erbify do %>
+<%%= erbify do %>
   <ul>
-    <% @resource.metadata.features.each do |feature| %>
+    <%% @resource.metadata.features.each do |feature| %>
       <li>
-        <%= feature %>
+        <%%= feature %>
       </li>
-    <% end %>
+    <%% end %>
   </ul>
-<% end %>
+<%% end %>
 ```
+
+This would iterate over the `features` array and display its value within the `li`-element.
