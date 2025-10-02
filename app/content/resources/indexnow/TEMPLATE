@@ -1,0 +1,7 @@
+key = SecureRandom.hex
+
+file "public/#{key}.txt", <<-KEY
+#{key}
+KEY
+
+say "------\n    👉 Use this Helptail workflow to automatically ping IndexNow when new content is detected: https://helptail.com/tails/article-to-indexnow/\n  ------"
