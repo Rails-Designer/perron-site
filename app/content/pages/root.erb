@@ -3,25 +3,27 @@ title: Rails-based Static Site Generator
 description: Perron is a Rails-based static site generator that allows you to build your static sites in the same framework you build your apps.
 ---
 
-<div class="px-2 py-12 text-center md:py-20 lg:py-48">
-  <h1 class="text-3xl font-black tracking-tight text-slate-900 md:text-4xl lg:text-6xl">
-    Rails-based Static Site Generator
-  </h1>
+<div class="md:sticky top-0 left-0 w-full">
+  <section class="px-2 py-12 text-center md:py-20 lg:py-48">
+    <h1 class="text-3xl font-black tracking-tight text-slate-900 md:[text-shadow:0_60px_180px_rgba(0,0,0,0.5)] md:text-4xl lg:text-6xl">
+      Rails-based Static Site Generator
+    </h1>
 
-  <p class="mt-1 text-xl font-light text-slate-900 md:text-3xl lg:text-4xl md:mt-4">
-    Static sites with the framework you love ❤️
-  </p>
+    <p class="mt-1 text-xl font-light text-slate-900 md:text-3xl lg:text-4xl md:mt-4">
+      Static sites with the framework you love ❤️
+    </p>
 
-  <div class="flex items-center justify-center gap-x-8 mt-8 [&_a]:flex [&_a]:px-4 [&_a]:py-1.5 [&_a]:text-sm [&_a]:font-normal [&_a]:rounded-lg [&_a]:transition [&_a]:hover:scale-105 md:mt-12 [&_a]:md:text-lg [&_a]:md:px-6 [&_a]:md:py-2">
-    <%= link_to "Documentation", articles_path, class: "text-slate-50 bg-slate-900" %>
+    <div class="flex items-center justify-center gap-x-8 mt-8 [&_a]:flex [&_a]:px-4 [&_a]:py-1.5 [&_a]:text-sm [&_a]:font-normal [&_a]:rounded-lg [&_a]:transition [&_a]:hover:scale-105 md:mt-12 [&_a]:md:text-lg [&_a]:md:px-6 [&_a]:md:py-2">
+      <%= link_to "Documentation", articles_path, class: "text-slate-50 bg-slate-900" %>
 
-    <%= link_to "View on GitHub", "https://github.com/rails-designer/perron", target: :blank, class: "text-slate-700 bg-slate-200" %>
-  </div>
-</div>
+      <%= link_to "View on GitHub", "https://github.com/rails-designer/perron", target: :blank, class: "text-slate-700 bg-slate-200" %>
+    </div>
+  </section>
 
 
-<div class="grid grid-cols-12 gap-8 px-2 md:gap-16 md:overflow-x-clip py-12 md:[mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-  <%= render Perron::Site.data.code_previews %>
+  <section class="grid grid-cols-12 gap-8 px-2 md:gap-16 md:overflow-x-clip pt-12 md:[mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+    <%= render Perron::Site.data.code_previews %>
+  </section>
 </div>
 
 
@@ -56,7 +58,7 @@ description: Perron is a Rails-based static site generator that allows you to bu
 
     Perron is already powering [this site](/) ([repo can be found here](https://github.com/Rails-Designer/perron-site)) and my [latest SaaS marketing site](https://helptail.com/). I'd love to see you give Perron a try for your next marketing site, blog, or documentation project! 😊
 
-    Be sure to [check it out (and star) it on GitHub](https://github.com/Rails-Designer/perron).
+    Be sure to [check it out (and ⭐ it) on GitHub](https://github.com/Rails-Designer/perron).
 
     *-Rails Designer*
   <% end %>
