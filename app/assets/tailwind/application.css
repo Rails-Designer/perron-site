@@ -27,6 +27,8 @@
     @apply [&_code]:p-0.5 [&_code]:text-[0.8em] [&_code]:font-medium [&_code]:text-slate-700 [&_code]:bg-slate-100 [&_code]:rounded-sm;
     @apply [&_pre>code]:text-base [&_pre>code]:font-normal [&_pre>code]:bg-transparent;
 
+    @apply [&_strong]:font-semibold;
+
     @apply [&_table]:w-full [&_table]:text-left [&_table]:text-base;
     @apply [&_thead]:border-b [&_thead]:border-slate-200;
     @apply [&_th]:px-2 [&_th]:py-1.5 [&_th]:font-semibold [&_th]:text-slate-800;
