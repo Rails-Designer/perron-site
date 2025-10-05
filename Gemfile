@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "commonmarker", "~> 2.3.2"
+gem "importmap-rails", "~> 2.2.2"
 gem "perron", github: "rails-designer/perron"
 gem "propshaft"
 gem "puma", ">= 5.0"

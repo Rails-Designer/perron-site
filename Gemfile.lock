@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails-designer/perron.git
-  revision: 6117bc81409b2dbe861752ef9adfa182d85a1c7c
+  revision: bc379216201fa46b93c0673ef57101ad377d4b12
   specs:
     perron (0.12.0)
       csv
@@ -109,6 +109,10 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
+    importmap-rails (2.2.2)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.8.1)
     irb (1.15.2)
       pp (>= 0.6.0)
@@ -127,7 +131,7 @@ GEM
     marcel (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.5)
-    net-imap (0.5.10)
+    net-imap (0.5.11)
       date
       net-protocol
     net-pop (0.1.2)
@@ -211,9 +215,10 @@ GEM
     rake-compiler-dock (1.9.1)
     rb_sys (0.9.117)
       rake-compiler-dock (= 1.9.1)
-    rdoc (6.14.2)
+    rdoc (6.15.0)
       erb
       psych (>= 4.0.0)
+      tsort
     reline (0.6.2)
       io-console (~> 0.5)
     securerandom (0.4.1)
@@ -256,6 +261,7 @@ PLATFORMS
 DEPENDENCIES
   commonmarker (~> 2.3.2)
   debug
+  importmap-rails (~> 2.2.2)
   perron!
   propshaft
   puma (>= 5.0)

@@ -14,22 +14,23 @@ There are no markdown gems bundled by default, so you'll need to add one of thes
 - `redcarpet`
 
 ```bash
+# choose one
 bundle add {commonmarker,kramdown,redcarpet}
 ```
 
 This flexible set up allows you to choose your favorite markdown rendering gem.
 
 
-## Usage
+## Markdownify helper
 
-Once a markdown is installed, you can use the `markdownify` helper in any view, e.g.
+Once a markdown gem is installed, you can use the `markdownify` helper in any view and it will parse the content using the installed markdown parser, e.g.
 ```erb
 <article class="content">
   <h1>
     <%= @resource.title %>
   </h1>
 
-  <%= markdownify(@resource.content) %>
+  <%= markdownify @resource.content %>
 </article>
 ```
 
@@ -41,19 +42,17 @@ You can also pass a block:
   </h1>
 
   <%= markdownify do %>
-    <<~MARKDOWN
-      Perron supports markdown with the `markdownify` helper.
+    Perron supports markdown with the `markdownify` helper.
 
-      There are no markdown gems bundled by default, so you'll need to add one of these to your `Gemfile`:
+    There are no markdown gems bundled by default, so you'll need to add one of these to your `Gemfile`:
 
-      - `commonmarker`
-      - `kramdown`
-      - `redcarpet`
+    - `commonmarker`
+    - `kramdown`
+    - `redcarpet`
 
-      ```bash
-      bundle add {commonmarker,kramdown,redcarpet}
-      ```
-    MARKDOWN
+    ```bash
+    bundle add {commonmarker,kramdown,redcarpet}
+    ```
   <% end %>
 </article>
 ```
@@ -64,23 +63,41 @@ To pass options to the parser, set `markdown_options` in `config/initializers/pe
 
 **Commonmarker**
 ```ruby
-# Options are passed as keyword arguments.
-Perron.configuration.markdown_options = { options: [:HARDBREAKS], extensions: [:table] }
+Perron.configure do |config|
+  # …
+
+  # Options are passed as keyword arguments.
+  config.markdown_options = { options: [:HARDBREAKS], extensions: [:table] }
+
+  # …
+end
 ```
 
 **Kramdown**
 ```ruby
-# Options are passed as a standard hash.
-Perron.configuration.markdown_options = { input: "GFM", smart_quotes: "apos,quot" }
+Perron.configure do |config|
+  # …
+
+  # Options are passed as a standard hash.
+  config.markdown_options = { input: "GFM", smart_quotes: "apos,quot" }
+
+  # …
+end
 ```
 
 **Redcarpet**
 ```ruby
-# Options are nested under :renderer_options and :markdown_options.
-Perron.configuration.markdown_options = {
-  renderer_options: { hard_wrap: true },
-  markdown_options: { tables: true, autolink: true }
-}
+Perron.configure do |config|
+  # …
+
+  # Options are nested under :renderer_options and :markdown_options.
+  config.markdown_options = {
+    renderer_options: { hard_wrap: true },
+    markdown_options: { tables: true, autolink: true }
+  }
+
+  # …
+end
 ```
 
 
@@ -93,7 +110,7 @@ Perron can post-process the HTML generated from your Markdown content.
 
 Apply transformations by passing an array of processor names or classes to the `markdownify` helper via the `process` option.
 ```erb
-<%= markdownify(@resource.content, process: %w[lazy_load_images syntax_highlight target_blank]) %>
+<%= markdownify @resource.content, process: %w[lazy_load_images syntax_highlight target_blank] %>
 ```
 
 
@@ -121,7 +138,7 @@ end
 ```
 
 ```erb
-<%= markdownify(@resource.content, process: ["target_blank", AddNofollowProcessor]) %>
+<%= markdownify @resource.content, process: ["target_blank", AddNofollowProcessor] %>
 ```
 
 
