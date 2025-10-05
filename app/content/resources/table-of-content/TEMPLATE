@@ -1,0 +1,80 @@
+create_file "app/javascript/components/table_of_content.js", <<~JS
+// Usage:
+//
+//  <table-of-content title="On this page" items="<%= @resource.table_of_content.to_json %>">
+//    <template type="title">
+//      <p>On this page</p>
+//    </template>
+//  </table-of-content>
+//
+class TableOfContentElement extends HTMLElement {
+  constructor() {
+    super();
+
+    this.#items = JSON.parse(this.getAttribute("items"));
+  }
+
+  connectedCallback() {
+    if (this.#items.length > 0) this.innerHTML = this.#template;
+  }
+
+  // private
+
+  #items;
+
+  get #template() {
+    return `
+      <nav>
+        ${this.querySelector("template[type=title]")?.innerHTML || `<p>${this.getAttribute("title") || "Table of Content"}</p>`}
+
+        ${this.#list( { for: this.#items })}
+      </nav>
+    `;
+  }
+
+  #list({ for: items }) {
+    if (!items?.length) return "";
+
+    const listItems = items.map(item => `
+      <li>
+        <a href="#${item.id}">
+          ${item.text}
+        </a>
+
+        ${this.#list({ for: item.children })}
+      </li>
+    `).join("");
+
+    return `<ul>${listItems}</ul>`;
+  }
+}
+
+customElements.define("table-of-content", TableOfContentElement);
+JS
+
+create_file "app/javascript/components/index.js", <<~JS, skip: true
+import "./table_of_content"
+JS
+
+application_js_path = "app/javascript/application.js"
+
+if File.exist?(application_js_path)
+  insert_into_file application_js_path, "\nimport \"components\"\n", after: /\A(?:import .+\n)*/
+else
+  create_file application_js_path, <<~JS
+import "components"
+JS
+end
+
+unless File.exist?("config/importmap.rb")
+  say "Warning: importmap.rb not found!", :yellow
+  say "Please set up importmap-rails first by running:"
+  say "  rails importmap:install"
+  say "Or use your preferred JavaScript set up."
+
+  return
+end
+
+insert_into_file "config/importmap.rb", after: /\A.*pin .+\n+/m do
+  "\npin_all_from \"app/javascript/components\", under: \"components\", to: \"components\"\n"
+end
