@@ -3,6 +3,7 @@ section: content
 order: 3.7
 title: Publishing & Scheduling
 description: Control the visibility of your content by marking it as published, scheduled, or draft.
+erb: true
 ---
 
 Perron includes a system for managing the publication status of your resources. This allows you to create drafts, publish content immediately or schedule it to be published in the future.
@@ -22,7 +23,7 @@ You can set a `published_at` key in the resource's frontmatter. This gives you p
 ```yaml
 ---
 title: My Scheduled Post
-published_at: 2026-01-15 09:00:00
+published_at: <%= Time.current.yesterday.beginning_of_day %>
 ---
 ```
 
@@ -33,7 +34,7 @@ If `published_at` is set to a time in the future, the content is considered **sc
 
 If `published_at` is not set in the frontmatter, Perron will attempt to parse a date from the resource's filename. The filename must be prefixed with a date in the format `YYYY-MM-DD-`.
 
-For a file named `2025-09-29-my-first-post.md`, the publication date will be set to the beginning of that day.
+For a file named `<%= Time.current.yesterday.strftime("%Y-%m-%d") %>-my-first-post.md`, the publication date will be set to the beginning of that day.
 
 
 ## Drafts
@@ -73,4 +74,4 @@ The publishing logic adds several helpful methods to your resource objects.
 
 ## Viewing Unpublished Content
 
-For development or preview environments, you can globally override the publishing rules to make all content visible, including drafts and scheduled posts. This is done by setting `Perron.configuration.view_unpublished = true` (defaults to `Rails.env.development?`) in your configuration.
+For development or preview environments, you can globally override the publishing rules to make all content visible, including drafts and scheduled posts. This is done by setting `Perron.configuration.view_unpublished = true` (defaults to `Rails.env.development?`, so you can always preview your content in development) in your configuration.
