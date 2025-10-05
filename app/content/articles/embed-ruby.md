@@ -31,7 +31,7 @@ The current time is: <%= Time.current.strftime("%d %B %Y") %>
 
 ## `erbify` helper
 
-For the most granular control, the `erbify` helper allows to process specific sections of a file as ERB. This is ideal for generating dynamic content like lists or tables from your resource's metadata, without needing to enable ERB for the entire file. The `erbify` helper can be used with a string or, more commonly, a block.
+For the most granular control, the `erbify` helper allows to process specific sections of a file as ERB. This is ideal for generating dynamic content like lists or tables from your resource's metadata, without needing to enable ERB for the entire file.
 
 **Example:** Generating a list from frontmatter data in a standard `.md` file.
 ```markdown
