@@ -5,10 +5,10 @@
     ```
   previewable?: true
 
-- path: app/views/layouts/content/articles.html.erb
+- path: app/views/layouts/content/docs.html.erb
   content: |
     ```ruby
-<%= File.read("app/views/layouts/content/articles.html.erb").indent(4) %>
+<%= File.read("app/views/layouts/content/docs.html.erb").indent(4) %>
     ```
   previewable?: true
 

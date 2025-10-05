@@ -10,7 +10,9 @@ Sites that use Perron. Want to list your site here too? Open a PR.
 ## Standalone (as a SSG)
 
 - [AppRefresher](https://apprefresher.com)
+- [Forge](https://forge.railsdesigner.com)
 - [Helptail](https://helptail.com)
+- [Perron Docs](https://perron.railsdesigner.com)
 
 
 ## Integrated (part of a Rails app)

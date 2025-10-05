@@ -1,5 +1,5 @@
-<%# locals: (top_level_items: [{label: "Home", href: root_path, icon: "home"}, {label: "Resources", href: resources_path, icon: "cube"}, {label: "Docs", href: articles_path, icon: "book-open"}], sections: []) %>
-<nav class="hidden fixed top-0 bottom-0 right-auto w-(--nav-width) bg-white z-10 overflow-y-auto lg:block">
+<%# locals: (top_level_items: [], sections: []) %>
+<nav id="nav" class="hidden fixed top-0 bottom-0 right-auto w-(--nav-width) bg-white z-10 overflow-y-auto lg:block [&[open]]:block">
   <ul class="mt-4 px-2 grid gap-y-6 text-base overflow-y-auto mt:mt-6 lg:mt-8 md:px-4 lg:px-8 md:text-sm [--nav-vertical-spacing:1.25rem]">
     <% top_level_items.each do |item| %>
       <li>
@@ -12,3 +12,10 @@
 
   <%= link_to "By Rails Designer", "https://railsdesigner.com", rel: :nofollow, class: "block mt-12 py-12 text-xs text-center font-medium text-slate-400 transition border-t border-slate-100 hover:text-slate-800" %>
 </nav>
+
+<button
+  data-action="removeAttribute#open"
+  data-target="#nav"
+  class="hidden fixed inset-0 bg-slate-950/30 backdrop-blur-sm z-1 [nav[open]~&]:block lg:hidden"
+>
+</button>

@@ -11,7 +11,7 @@
 
   <div class="grid grid-cols-12 gap-4">
     <div class="col-span-9 mt-4 pb-12 content max-w-prose">
-      <%= markdownify @resource.content %>
+      <%= markdownify @resource.content, process: [NofollowProcessor] %>
     </div>
 
     <table-of-content title="On this page" items="<%= @resource.table_of_content.to_json %>" class="hidden col-span-3 w-full lg:grid">

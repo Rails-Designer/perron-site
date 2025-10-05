@@ -1,4 +1,4 @@
-class Content::ArticlesController < ApplicationController
+class Content::ArticlesController < Content::DocsController
   def index
     @metadata = {
       title: "Documentation",

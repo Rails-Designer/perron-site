@@ -1,4 +1,4 @@
-class Content::ResourcesController < ApplicationController
+class Content::ResourcesController < Content::DocsController
   def index
     @metadata = {
       title: "Resources",
