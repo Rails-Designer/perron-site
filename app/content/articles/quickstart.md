@@ -3,6 +3,7 @@ section: getting_started
 order: 1
 title: Quickstart
 description: Learn how to get started quickly with Perron.
+toc: false
 ---
 
 Get started quickly with Perron by adding it to your existing Rails app or start a new (static) site.

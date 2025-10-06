@@ -3,6 +3,7 @@ section: getting_started
 order: 2
 title: Configuration
 description: Perron's global configuraton is set in an Initializer.
+toc: false
 ---
 
 You can set Perron's global configuration in `config/initializers/perron.rb`.

@@ -3,6 +3,7 @@ section: content
 order: 3.5
 title: Frontmatter
 description: Frontmatter is supported for markdown files.
+toc: false
 ---
 
 Perron supports frontmatter to be used with your markdown files. Frontmatter is a way to set metadata for that content. It is using yaml—a key-value system.
