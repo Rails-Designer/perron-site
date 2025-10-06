@@ -102,7 +102,9 @@ all_published = Content::Post.all.all? { it.published? }
 ```
 
 
-### Group published posts by category, sorted by date within each category
+### Group published posts by category
+
+Sorted by date within each category.
 
 ```ruby
 categorized_posts = Content::Post.all
