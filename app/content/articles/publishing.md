@@ -19,7 +19,6 @@ There are two ways to define when a piece of content should be considered publis
 ### Frontmatter (Recommended)
 
 You can set a `published_at` key in the resource's frontmatter. This gives you precise control over the publication time. The value should be a valid date or datetime string.
-
 ```yaml
 ---
 title: My Scheduled Post
@@ -27,7 +26,8 @@ published_at: <%= Time.current.yesterday.beginning_of_day %>
 ---
 ```
 
-If `published_at` is set to a time in the future, the content is considered **scheduled**.
+> [!note]
+> If `published_at` is set to a time in the future, the content is considered **scheduled**.
 
 
 ### Filename
@@ -57,7 +57,8 @@ published: false
 ---
 ```
 
-A resource will not be published if `draft` is `true`, if `published` is `false` or if its publication date is in the future.
+> [!note]
+> A resource will not be published if `draft` is `true`, if `published` is `false` or if its publication date is in the future.
 
 
 ## Available Methods

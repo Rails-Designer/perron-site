@@ -44,7 +44,8 @@ class Content::PostsController < ApplicationController
 end
 ```
 
-Currently various features from Perron rely on this instance variable being set. This is a known limitation and I hope to change it in a future version.
+> [!note]
+> Currently various features from Perron rely on this instance variable being explicitly set as `@resource`. This is a known limitation and I hope to change it in a future version.
 
 
 ## Setting a root page

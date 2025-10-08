@@ -18,7 +18,7 @@ There are no markdown gems bundled by default, so you'll need to add one of thes
 bundle add {commonmarker,kramdown,redcarpet}
 ```
 
-This flexible set up allows you to choose your favorite markdown rendering gem.
+This flexible set up allows you to choose your favorite markdown rendering gem (and update it separately from Perron).
 
 
 ## Markdownify helper
@@ -122,7 +122,8 @@ The following processors are built-in and can be activated by passing their stri
 - `lazy_load_images`: Adds `loading="lazy"` to all `<img>` tags.
 - `syntax_highlight`: Applies syntax highlighting to fenced code blocks (e.g., \`\`\`ruby).
 
-Processors are included as _first-party_ options only when they require no setup or configuration. Otherwise, they are added as [resources](/resources/).
+> [!note]
+> Processors are included as _first-party_ options only when they require no setup or configuration. Otherwise, they are added as [resources](/resources/).
 
 
 ### Create your own processor
@@ -138,7 +139,8 @@ class AddNofollowProcessor < Perron::HtmlProcessor::Base
 end
 ```
 
-The `@html` instance variable is a `Nokogiri::HTML::DocumentFragment` object, giving you access to methods like `css()`, `xpath()`, and DOM manipulation. See the [Nokogiri docs](https://nokogiri.org/) for more.
+> [!note]
+> The `@html` instance variable is a `Nokogiri::HTML::DocumentFragment` object, giving you access to methods like `css()`, `xpath()`, and DOM manipulation. See the [Nokogiri docs](https://nokogiri.org/) for more.
 
 ```erb
 <%= markdownify @resource.content, process: ["target_blank", AddNofollowProcessor] %>

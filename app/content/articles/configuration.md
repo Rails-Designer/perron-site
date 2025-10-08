@@ -35,6 +35,6 @@ Below are available settings:
 - **view_unpublished**; option to show [unpublished content](/docs/publishing/) content, defaults to `Rails.env.development?`
 - **default_url_options**; set options for route helpers
 - **markdown_options**; pass options for your markdown gem
-- sitemap.enabled**; enable creation of the sitemap.xml, defaults to `false`
+- **sitemap.enabled**; enable creation of the sitemap.xml, defaults to `false`
 - **sitemap.priority**; default priority for sitemap items, defaults to `0.5`
 - **sitemap.change_frequency**; default value for change_frequency, defaults to `:monthly`

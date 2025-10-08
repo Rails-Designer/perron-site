@@ -21,8 +21,7 @@ To use a data file, instantiate `Perron::Site.data` with the basename of the fil
 
 ## File location and formats
 
-By default, Perron looks up `app/content/data/` for files with a `.yml`, `.json`, or `.csv` extension.
-For a `features` call, it would find `features.yml`, `features.json`, or `features.csv`. You can also provide a path to any data file, via `Perron::Data.new("path/to/data.json")`.
+By default, Perron looks up `app/content/data/` for files with a `.yml`, `.json`, or `.csv` extension. For a `features` call, it would find `features.yml`, `features.json`, or `features.csv`. You can also provide a path to any data file, via `Perron::Data.new("path/to/data.json")`.
 
 
 ## Accessing data
