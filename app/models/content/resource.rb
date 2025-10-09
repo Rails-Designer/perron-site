@@ -1,15 +1,17 @@
 class Content::Resource < Perron::Resource
   def self.nested_routes = [:template]
 
-  delegate :name, :command, to: :metadata
+  delegate :name, :description, :command, to: :metadata
   alias_method :title, :name
+
+  validates :type, :name, :description, presence: true
 
   def template = File.read(template_path)
 
   def type
     Type.new(name: TYPES[metadata.type], slug: TYPES[metadata.type].parameterize)
   end
-  alias_method :section, :type # this is to get a consistent API with Article
+  alias_method :section, :type # required for a consistent API with Article
 
   private
 

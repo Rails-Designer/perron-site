@@ -1,10 +1,12 @@
 class Content::Article < Perron::Resource
-  delegate :order, :title, to: :metadata
-  alias_method :name, :title
-
   def self.sections
     SECTIONS.map { |section_data| Section.new(key: section_data.first, name: section_data.second, resources: Content::Article.all.select { it.metadata.section == section_data.first }.sort_by(&:order)) }
   end
+
+  delegate :order, :title, :description, to: :metadata
+
+  validates :section, :title, :description, presence: true
+  validates :order, numericality: { greater_than_or_equal_to: 1 }
 
   def section
     Section.new(key: metadata.section, name: SECTIONS[metadata.section], resources: Content::Article.all.select { it.metadata.section == metadata.section }.sort_by(&:order))
