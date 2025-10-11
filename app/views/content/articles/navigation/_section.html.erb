@@ -4,9 +4,9 @@
 
   <ul class="grid gap-y-1 mt-2">
     <% resources.each do |article| %>
-      <li>
+      <%= tag.li id: current_page?(article) ? "current-item" : nil do %>
         <%= link_to article.title, article, class: class_names("block px-(--nav-vertical-spacing) py-1.5 font-normal text-slate-800/80 rounded-lg transition hover:bg-red-50", {"bg-red-100 cursor-default hover:bg-red-100": current_page?(article)}) %>
-      </li>
+      <% end %>
     <% end %>
   </ul>
 </li>

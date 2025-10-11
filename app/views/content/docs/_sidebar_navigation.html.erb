@@ -1,5 +1,5 @@
 <%# locals: (top_level_items: [], sections: []) %>
-<nav id="nav" class="hidden fixed top-0 bottom-0 right-auto w-(--nav-width) bg-white z-10 overflow-y-auto lg:block [&[open]]:block">
+<nav id="nav" data-action="scrollTo#instant" data-target="#current-item" class="hidden fixed top-0 bottom-0 right-auto w-(--nav-width) bg-white z-10 overflow-y-auto lg:block [&[open]]:block">
   <ul class="mt-4 px-2 grid gap-y-6 text-base overflow-y-auto mt:mt-6 lg:mt-8 md:px-4 lg:px-8 md:text-sm [--nav-vertical-spacing:1.25rem]">
     <% top_level_items.each do |item| %>
       <li>
