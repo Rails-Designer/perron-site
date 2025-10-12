@@ -8,7 +8,7 @@
   </div>
 
   <div class="content mt-6 max-w-prose text-lg text-slate-800">
-    <%= markdownify @resource.content, process: [NofollowProcessor] %>
+    <%= markdownify @resource.content, process: [NofollowProcessor, StyledBlockquoteProcessor] %>
   </div>
 
   <div class="mt-6">
