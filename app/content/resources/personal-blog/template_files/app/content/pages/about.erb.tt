@@ -1,0 +1,19 @@
+---
+title: About me
+description: description
+nav_included: true
+---
+
+<article class="max-w-4xl mx-auto mt-16 px-2">
+  <h1 class="text-2xl font-sans font-bold text-gray-700 md:text-balance md:text-4xl md:tracking-tight">
+    <%= @resource.title %>
+  </h1>
+
+  <p class="mt-5 text-lg text-gray-800 md:text-2xl max-w-prose md:mt-8">
+    Minim ad et nostrud. Nisi culpa adipisicing nulla cupidatat eu adipisicing non occaecat tempor pariatur sint eiusmod ut pariatur. Et nisi occaecat id tempor qui ex reprehenderit ullamco ullamco duis ad. Amet aliquip velit non pariatur esse aliquip magna. Cillum Lorem proident dolor voluptate fugiat mollit mollit id fugiat dolor minim.
+  </p>
+
+  <p class="mt-5 text-lg text-gray-800 md:text-2xl max-w-prose md:mt-8">
+    Est esse ipsum mollit ad sit esse duis commodo voluptate irure commodo proident dolor. Cupidatat officia excepteur Lorem non id ullamco. Pariatur sunt dolore eiusmod Lorem sunt deserunt excepteur veniam occaecat in magna. Exercitation mollit enim eu consectetur adipisicing labore adipisicing eu.
+  </p>
+</article>

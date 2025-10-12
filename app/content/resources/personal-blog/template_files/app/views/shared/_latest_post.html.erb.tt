@@ -1,0 +1,13 @@
+<%# locals: (latest_post: Content::Post.last) %>
+
+<dl class="flex flex-col md:items-end gap-x-4 mt-8 font-sans text-base text-gray-900 md:flex-row md:mt-16 md:text-sm">
+  <dt class="font-semibold tracking-tight text-gray-800">
+    <hr class="h-px my-1 border-gray-400 md:border-gray-700">
+
+    My last writing
+  </dt>
+
+  <dd>
+    <%= link_to latest_post.title, latest_post, class: "text-gray-500 transition hover:text-gray-800" %>
+  </dd>
+</dl>

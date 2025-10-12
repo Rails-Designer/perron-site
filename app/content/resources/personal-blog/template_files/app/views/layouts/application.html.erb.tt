@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= meta_tags %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%= yield :head %>
+
+    <%= stylesheet_link_tag :app %>
+  </head>
+
+  <body class="font-serif antialiased">
+    <%= render partial: "shared/navigation", locals: { items: Content::Page.all.select(&:nav_included) } %>
+
+    <%= yield %>
+  </body>
+</html>

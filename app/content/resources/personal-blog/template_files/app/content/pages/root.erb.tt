@@ -1,0 +1,22 @@
+---
+title: Welcome to my blog
+description: Welcome to this blog of mine. Here I write about things, stuff and everything.
+---
+
+<div class="max-w-4xl mx-auto mt-16 px-2 sm:mt-32">
+  <p class="text-2xl font-normal text-gray-700 md:text-balance md:text-3xl md:tracking-tight">
+    Hi, my name is Rails Designer. I help companies make their Rails app prettier, more maintainable and a joy to use.
+  </p>
+
+  <div class="grid grid-cols-6 gap-5 mt-8 text-lg text-gray-900 md:mt-16 md:gap-12">
+    <p class="col-span-6 sm:col-span-3 first-letter:text-8xl first-letter:float-left first-letter:mr-2 first-letter:mt-2.5">
+      Minim ad et nostrud. Nisi culpa adipisicing nulla cupidatat eu adipisicing non occaecat tempor pariatur sint eiusmod ut pariatur. Et nisi occaecat id tempor qui ex reprehenderit ullamco ullamco duis ad. Amet aliquip velit non pariatur esse aliquip magna. Cillum Lorem proident dolor voluptate fugiat mollit mollit id fugiat dolor minim.
+    </p>
+
+    <p class="col-span-6 sm:col-span-3">
+      Est esse ipsum mollit ad sit esse duis commodo voluptate irure commodo proident dolor. Cupidatat officia excepteur Lorem non id ullamco. Pariatur sunt dolore eiusmod Lorem sunt deserunt excepteur veniam occaecat in magna. Exercitation mollit enim eu consectetur adipisicing labore adipisicing eu.
+    </p>
+  </div>
+
+  <%= render partial: "shared/latest_post" %>
+</div>

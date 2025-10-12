@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/rails-designer/perron.git
-  revision: 8018a2fe270357b5bc0bddf363eb07a02114fdd1
+  revision: b82accdb898a0b508e2c898c23defb991a8cdda7
   specs:
-    perron (0.13.0)
+    perron (0.13.2)
       csv
       json
       psych
@@ -84,7 +84,7 @@ GEM
       uri (>= 0.13.1)
     base64 (0.3.0)
     benchmark (0.4.1)
-    bigdecimal (3.3.0)
+    bigdecimal (3.3.1)
     builder (3.3.0)
     commonmarker (2.3.2)
       rb_sys (~> 0.9)
@@ -103,7 +103,7 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     drb (2.2.3)
-    erb (5.0.3)
+    erb (5.1.1)
     erubi (1.13.1)
     globalid (1.3.0)
       activesupport (>= 6.1)
@@ -170,7 +170,7 @@ GEM
     puma (7.0.1)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.2.2)
+    rack (3.2.3)
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)

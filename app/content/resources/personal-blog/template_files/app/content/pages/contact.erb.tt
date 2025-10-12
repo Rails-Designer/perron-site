@@ -1,0 +1,19 @@
+---
+title: Contact
+description: description
+nav_included: true
+---
+
+<article class="max-w-4xl mx-auto mt-16 px-2">
+  <h1 class="text-2xl font-sans font-bold text-gray-700 md:text-balance md:text-4xl md:tracking-tight">
+    <%= @resource.title %>
+  </h1>
+
+  <p class="mt-5 text-lg text-gray-800 md:text-2xl max-w-prose md:mt-8">
+    Want to say? Have a question? <%= mail_to "me@example.com", "Send me an email" %> or find me on a platform below.
+  </p>
+
+  <ul class="flex flex-col gap-y-1 mt-5 text-lg">
+    <%= render Perron::Site.data.social_links %>
+  </ul>
+</article>

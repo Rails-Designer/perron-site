@@ -1,0 +1,15 @@
+gem "tailwindcss-rails"
+
+after_bundle do
+  rails_command "tailwindcss:install"
+  rails_command "generate content page"
+  rails_command "generate content post"
+
+<% template_files.each do |path, file| %>
+file "<%= path %>" do
+<<~"_"
+<%= File.read(file) %>
+_
+end
+<% end %>
+end

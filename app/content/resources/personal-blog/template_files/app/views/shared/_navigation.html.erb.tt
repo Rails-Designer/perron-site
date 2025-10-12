@@ -1,0 +1,8 @@
+<%# locals: (items: []) %>
+<nav class="sticky top-0 flex items-center justify-between px-2 py-3 max-w-4xl mx-auto font-sans bg-white">
+  <%= link_to "", root_path, aria: {label: "Go to the homepage"}, class: "block w-14 h-3 bg-gray-800 rounded-xs transition hover:bg-gray-500" %>
+
+  <ul class="flex items-center gap-x-4 sm:gap-x-6">
+    <%= render partial: "shared/navigation/item", collection: items %>
+  </ul>
+</nav>

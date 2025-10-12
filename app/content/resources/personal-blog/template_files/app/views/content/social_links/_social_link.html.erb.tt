@@ -1,0 +1,4 @@
+<%# locals: (social_link:) %>
+<li>
+  <%= link_to social_link.name, social_link.url, target: "_blank", class: "underline text-gray-700 hover:no-underline" %>
+</li>

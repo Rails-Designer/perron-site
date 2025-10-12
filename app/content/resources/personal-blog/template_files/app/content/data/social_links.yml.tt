@@ -1,0 +1,6 @@
+- name: Social X
+  url: "https://example.com"
+- name: Social Y
+  url: "https://example.com"
+- name: Social Z
+  url: "https://example.com"

@@ -1,0 +1,9 @@
+<div class="max-w-4xl mx-auto mt-8 px-2 md:mt-16">
+  <h1 class="text-2xl font-sans font-bold text-gray-700 md:text-balance md:text-4xl md:tracking-tight">
+    My writings
+  </h1>
+
+  <ul class="grid mt-8 gap-y-2">
+    <%= render @resources %>
+  </ul>
+</div>

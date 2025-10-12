@@ -1,0 +1,11 @@
+<article class="max-w-4xl mx-auto mt-8 px-2 md:mt-16">
+  <%= link_to "← View all my writings", posts_path, class: "text-sm font-sans font-normal text-gray-500 transition hover:text-gray-800" %>
+
+  <h1 class="mt-2 text-2xl font-sans font-bold text-gray-700 md:text-balance md:text-4xl md:tracking-tight">
+    <%= @resource.title %>
+  </h1>
+
+  <div class="content my-5 md:my-8">
+    <%= markdownify @resource.content %>
+  </div>
+</article>
