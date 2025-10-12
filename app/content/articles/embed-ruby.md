@@ -24,7 +24,7 @@ erb: true
 ---
 
 This entire page will be processed by ERB.
-The current time is: <%= Time.current.strftime("%d %B %Y") %>
+The current date (upon building this site) is: <%= Time.current.strftime("%d %B %Y") %>
 ↳ uses `<%%= Time.current.strftime("%d %B %Y") %>`
 ```
 
@@ -58,3 +58,8 @@ Check out our amazing features:
 ```
 
 This would iterate over the `features` array and display its value within the `li`-element.
+
+
+## Rendering erb-tags
+
+When needing to show actual ERB tags (rather than having them processed), to escape them by doubling the percent signs. For example: `<%%` and `<%%=`.
