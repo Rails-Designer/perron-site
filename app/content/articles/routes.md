@@ -31,8 +31,9 @@ end
 For a typical “clean slug”, the filename without extensions serves as the `id` parameter.
 ```ruby
 <%# For app/content/posts/announcement.md %>
-<%= link_to "Announcment", post_path("announcement") %> # => <a href="/posts/announcement/">Announcment</a>
+<%= link_to "Announcement", post_path("announcement") %>
 ```
+This would render `<a href="/posts/announcement/">Announcement</a>`.
 
 
 ## Include extension
