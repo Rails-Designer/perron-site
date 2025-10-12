@@ -3,8 +3,12 @@
     <%= @resource.name %>
   </h1>
 
-  <div class="mt-6">
-    <code class="block p-2 bg-slate-900 text-sm text-slate-50 whitespace-nowrap overflow-x-auto rounded-md select-all"><%= @resource.command || "rails app:template LOCATION='#{resource_template_url(@resource, trailing_slash: false)}'" %></code>
+  <div class="mt-6 content">
+    <%= markdownify(nil, process: [CopyableCodeProcessor]) do %>
+      ```bash
+      <%== @resource.command || "rails app:template LOCATION='#{resource_template_url(@resource, trailing_slash: false)}'" %>
+      ```
+    <% end %>
   </div>
 
   <div class="content mt-6 max-w-prose text-lg text-slate-800">
@@ -16,6 +20,7 @@
       Template source
     </h3>
 
-    <pre class="mt-2 p-2 max-h-[12lh] overflow-y-auto text-sm text-slate-50 bg-slate-900 rounded-md"><%= resource.template %></pre>
+  <div class="mt-2 content">
+    <pre class="p-2 max-h-[12lh] overflow-y-auto text-sm text-slate-50 bg-slate-900 rounded-md"><%= resource.template %></pre>
   </div>
 </article>

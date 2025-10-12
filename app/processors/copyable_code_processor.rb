@@ -10,13 +10,13 @@ class CopyableCodeProcessor < Perron::HtmlProcessor::Base
 
       button = Nokogiri::XML::Node.new("button", @html)
       button["type"] = "button"
-      button["class"] = "absolute inline-block top-0 right-0 mx-3 my-4.5 bg-slate-900/90 text-white/80 cursor-pointer rounded-md transition hover:text-white hover:scale-102 active:scale-98"
+      button["class"] = "absolute inline-block top-0 right-0 my-1.5 pr-3 pl-1 py-3 bg-slate-900/50 text-white/80 cursor-pointer rounded-md backdrop-blur-sm transition hover:text-white"
       button["data-action"] = "copy"
       button["data-target"] = "##{id}"
       button["data-copy-duration"] = "5000"
 
-      copy_icon = icon("clipboard", class: "size-4 block group-has-[[data-copy-success=true]]/code:hidden")
-      success_icon = icon("clipboard-document-check", class: "size-4 hidden group-has-[[data-copy-success=true]]/code:block")
+      copy_icon = icon("clipboard", class: "size-4 block group-has-[[data-copy-success=true]]/code:hidden group-hover/code:scale-105 group-active/code:scale-95")
+      success_icon = icon("clipboard-document-check", class: "size-4 hidden group-has-[[data-copy-success=true]]/code:block group-hover/code:scale-105 group-active/code:scale-95")
 
       button.inner_html = [copy_icon, success_icon].join
 
