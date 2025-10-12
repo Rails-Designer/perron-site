@@ -42,4 +42,3 @@ create_file "README.md", <<~MARKDOWN
   RAILS_ENV=production rails perron:build
   ```
 MARKDOWN
-```
