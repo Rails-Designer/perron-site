@@ -9,7 +9,7 @@ class StyledBlockquoteProcessor < Perron::HtmlProcessor::Base
   private
 
   def styles
-    base_classes = "no-content flex items-baseline gap-x-3 px-3 py-2 text-base font-normal border border-white/50 ring ring-offset-0 rounded-md"
+    base_classes = "flex items-baseline gap-x-3 px-3 py-2 text-base font-normal border border-white/50 ring ring-offset-0 rounded-md"
 
     {
       "note" => {

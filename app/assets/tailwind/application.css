@@ -12,7 +12,7 @@
 
 @layer component {
   .content {
-    @apply [&_*:not(h1,h2,h3,h4,h5,h6)+*:not(pre,code,li,blockquote>p),blockquote+pre]:mt-5;
+    @apply [&_*:not(h1,h2,h3,h4,h5,h6)+*:not(pre,code,li,blockquote>p,svg),blockquote+pre]:mt-5;
     @apply [&_h1+p,&_h2+p,&_h3+p,&_h4+p,&_h5+p,&_h6+p]:mt-1.5;
     @apply [&>p,&_li]:text-lg [&>p]:text-slate-800;
 
