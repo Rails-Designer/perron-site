@@ -4,7 +4,7 @@
   </h1>
 
   <div class="mt-6 content">
-    <%= markdownify(nil, process: [CopyableCodeProcessor]) do %>
+    <%= markdownify nil, process: [CopyableCodeProcessor] do %>
       ```bash
       <%== @resource.command || "rails app:template LOCATION='#{resource_template_url(@resource, trailing_slash: false)}'" %>
       ```

@@ -5,7 +5,7 @@ class Content::ResourcesController < Content::DocsController
       description: "Snippets, template and UI components for your Perron-powered site."
     }
 
-    @resources = Content::Resource.all.group_by(&:type)
+    @resources = Content::Resource.all.sort_by(&:type).group_by(&:resource_type)
   end
 
   def show

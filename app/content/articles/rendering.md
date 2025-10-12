@@ -32,7 +32,7 @@ Or set a partial, and pass the collection:
 
 ## Enumerable methods
 
-All typical enumerable methods are available on Perron's resources.
+All typical enumerable methods are available on Perron's resources. Here are some examples:
 
 
 ### Filtering
