@@ -26,8 +26,8 @@ This gives each class its base behavior. It is just a regular Ruby class so you 
 class Content::Post < Perron::Resource
   delegate :title, to: :metadata
 
-  def loud_section
-    metadata.section.upcase
+  def loud_category
+    metadata.category.upcase
   end
 end
 ```
