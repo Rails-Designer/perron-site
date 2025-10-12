@@ -1,0 +1,16 @@
+create_file "app/processors/copyable_code_processor.rb", <<~RUBY
+  def process
+    @html.css("pre").each do |pre|
+      id = "pre_#{Random.hex(4)}"
+
+      button = Nokogiri::XML::Node.new("button", @html)
+      button["type"] = "button"
+      button["data-action"] = "copy"
+      button["data-target"] = "##{id}"
+      button.content = "Copy"
+
+      pre["id"] = id
+      pre.add_previous_sibling(button)
+    end
+  end
+end
