@@ -5,15 +5,34 @@ remove_file "config/database.yml"
 remove_file "config/credentials.yml.enc"
 remove_file "config/master.key"
 
+remove_file "public/400.html"
+remove_file "public/406-unsupported-browser.html"
+remove_file "public/422.html"
+remove_file "public/500.html"
+
 run "rm -r app/views/pwa"
 
+remove_file "app/views/layouts/application.html.erb"
+create_file "app/views/layouts/application.html.erb", <<~ERB
+<!DOCTYPE html>
+<html>
+  <head>
+    <%%= meta_tags %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-# Remove PWA-related lines from application layout
-gsub_file "app/views/layouts/application.html.erb", /^\s*<meta name="apple-mobile-web-app-capable" content="yes">\n/, ""
-gsub_file "app/views/layouts/application.html.erb", /^\s*<meta name="mobile-web-app-capable" content="yes">\n/, ""
-gsub_file "app/views/layouts/application.html.erb", /^\s*<%# Enable PWA manifest for installable apps \(make sure to enable in config\/routes\.rb too!\) %>\n/, ""
-gsub_file "app/views/layouts/application.html.erb", /^\s*<%#= tag\.link rel: "manifest", href: pwa_manifest_path\(format: :json\) %>\n/, ""
+    <%%= yield :head %>
 
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%%= stylesheet_link_tag :app %>
+  </head>
+  <body>
+    <%%= yield %>
+  </body>
+</html>
+ERB
 
 append_to_file ".gitignore", "/output/\n"
 
@@ -24,17 +43,18 @@ after_bundle do
 end
 
 remove_file "README.md"
-
 create_file "README.md", <<~MARKDOWN
   # My New Site
 
   TBD
+
 
   ## Development
 
   ```
   bin/dev
   ```
+
 
   ## Deploy/publish
 
