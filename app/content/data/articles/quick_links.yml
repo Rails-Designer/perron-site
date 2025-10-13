@@ -1,5 +1,5 @@
-- title: Get started
-  description: Learn how to get started with Perron with your Rails app.
+- title: Quick-start guide
+  description: Learn how to quickly set up your new Perron-powered site
   href: <%= article_path("quickstart") %>
 - title: Resources
   description: Snippets, templates and UI components to get started with your new site

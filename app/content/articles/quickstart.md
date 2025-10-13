@@ -1,12 +1,11 @@
 ---
 section: getting_started
 order: 1
-title: Quickstart
+title: Quick-start guide
 description: Learn how to get started quickly with Perron.
-toc: false
 ---
 
-Get started quickly with Perron by adding it to your existing Rails app or start a new (static) site.
+Get started quickly with Perron by adding it to your existing Rails app or start a new static site.
 
 ## An existing app
 
@@ -39,4 +38,10 @@ Start a new Perron-based site by running this command:
 rails new MyNewSite --minimal -T -O -m https://perron.railsdesigner.com/resources/new/template.rb
 ```
 
-Read [more about this snippet](/resources/new/).
+> [!note]
+> This is using a [resource](/resources/) from Perron, read [more about this snippet here](/resources/new/).
+
+
+## Create your first content
+
+Perron works with collections, e.g. pages or posts. [Learn about collections](/docs/collections/) and [how to generate one](/docs/generator/).

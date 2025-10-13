@@ -1,0 +1,8 @@
+<%# locals: (quick_link:) %>
+<li class="col-span-6 sm:col-span-3">
+  <%= link_to quick_link.href, class: "block h-full px-3 py-4 bg-gradient-to-br from-slate-100/80 to-slate-100/50 border border-white/70 ring ring-offset-0 ring-slate-200 rounded-md transition hover:ring-slate-300" do %>
+    <%= tag.h3 quick_link.title, class: "text-base font-semibold tracking-tight text-slate-900 sm:text-lg" %>
+
+    <%= tag.p quick_link.description, class: "mt-0.5 text-sm text-slate-700 sm:text-base sm:text-slate-600" %>
+  <% end %>
+</li>
