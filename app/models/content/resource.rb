@@ -7,10 +7,10 @@ class Content::Resource < Perron::Resource
 
   def self.nested_routes = [:template]
 
-  delegate :type, :name, :description, :command, to: :metadata
-  alias_method :title, :name
+  delegate :type, :title, :description, :command, to: :metadata
+  alias_method :name, :title
 
-  validates :name, :description, presence: true
+  validates :title, :description, presence: true
   validates :type, inclusion: { in: TYPES }
 
   def template = ERB.new(File.read(template_path)).result(binding)

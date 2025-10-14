@@ -1,6 +1,6 @@
 ---
 type: snippet
-name: Netlify deployment configuration for Perron
+title: Netlify deployment configuration for Perron
 description: Add a netlify.toml file with custom build commands and environment settings for simplified Netlify deployments.
 ---
 

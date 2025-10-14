@@ -1,6 +1,6 @@
 ---
 type: snippet
-name: Processor for styled blockquotes
+title: Processor for styled blockquotes
 description: This snippet adds a processor to transform GitHub-style alert syntax ([!NOTE], [!TIP], etc.) into styled blockquotes with optional icons.
 ---
 

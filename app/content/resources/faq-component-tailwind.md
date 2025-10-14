@@ -1,6 +1,6 @@
 ---
 type: component
-name: FAQ (accordion) component using Tailwind CSS
+title: FAQ (accordion) component using Tailwind CSS
 description: A FAQ (accordion) component designed with Tailwind CSS.
 ---
 

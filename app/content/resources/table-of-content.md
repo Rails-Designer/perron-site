@@ -1,6 +1,6 @@
 ---
 type: component
-name: Table of Content Custom Element
+title: Table of Content Custom Element
 description: A custom element for a Table of Contents component.
 ---
 

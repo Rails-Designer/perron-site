@@ -1,6 +1,6 @@
 ---
 type: snippet
-name: Surge deployment configuration for Perron
+title: Surge deployment configuration for Perron
 description: Add a complete deployment script for Surge.sh static site hosting with Perron.
 ---
 

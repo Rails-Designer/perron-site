@@ -1,7 +1,6 @@
 ---
-# render.md
 type: snippet
-name: Render.com deployment configuration for Perron
+title: Render.com deployment configuration for Perron
 description: Add a render.yaml file with build configuration for your Perron static site generator on Render.com.
 ---
 

@@ -1,6 +1,6 @@
 ---
 type: snippet
-name: Add IndexNow Key
+title: Add IndexNow Key
 description: Adds a unique IndexNow key file to the public folder.
 ---
 

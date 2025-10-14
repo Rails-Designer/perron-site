@@ -1,6 +1,6 @@
 ---
 type: snippet
-name: Processor to add `?ref` parameter
+title: Processor to add `?ref` parameter
 description: This snippet adds a processor for the `markdownify` helper to add a `?ref` parameter to your outgoing links.
 ---
 
