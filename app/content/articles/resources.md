@@ -1,8 +1,8 @@
 ---
 section: content
 order: 1
-title: Collections
-description: Collections can be used to similar content and resources, like posts, articles or people.
+title: Resources
+description: Resources are a collection of similar content and resources, like posts, articles or people.
 ---
 
 Perron is, just like Rails, designed with convention over configuration in mind.
@@ -31,6 +31,36 @@ class Content::Post < Perron::Resource
   end
 end
 ```
+
+
+### Validate your content
+
+Just like Rails' ActiveModel backed classes, you can also validate values from your resource class, for example your frontmatter.
+
+Perron offers a `bin/rails perron:validate` task that runs all validations and outputs any failures. Output could look like this:
+```bash
+rails perron:validate
+..........................F.....
+Resource: /perron/docs/app/content/articles/resources.md
+  - Description can't be blank
+
+Validation finished with 1 failure.
+```
+
+Useful to check if your title or meta description is within the correct range for SERP's or to make sure you added the correct category or tags.
+```ruby
+class Content::Post < Perron::Resource
+  CATEGORIES = %w[rails ruby hotwire javascript updates]
+  delegate :category, :title, :description, to: :metadata
+
+  validates :title, :description, presence: true
+  validates :category, inclusion: { in: CATEGORIES }
+
+  # …
+end
+```
+
+If you want to validate your frontmatter, you need them calleable directly from the class, as seen above using `delegate`.
 
 
 ## `@resource` instance

@@ -44,4 +44,4 @@ rails new MyNewSite --minimal -T -O -m https://perron.railsdesigner.com/resource
 
 ## Create your first content
 
-Perron works with collections, e.g. pages or posts. [Learn about collections](/docs/collections/) and [how to generate one](/docs/generator/).
+Perron works with resources, e.g. pages or posts. [Learn about collections](/docs/resources//) and [how to generate one](/docs/generator/).
