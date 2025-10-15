@@ -1,0 +1,5 @@
+create_file "statichost.yml", <<~YAML
+image: ruby:3.4
+command: bin/rails perron:build
+public: output
+YAML
