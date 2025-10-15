@@ -7,22 +7,23 @@ description: Resources are a collection of similar content and resources, like p
 
 Perron is, just like Rails, designed with convention over configuration in mind.
 
-Content is stored in `app/content/*/*.{erb,md,*}` and backed by a class, located in `app/models/content/` that inherits from `Perron::Resource`.
+All content is stored in `app/content/*/*.{erb,md,*}` and backed by a class, located in `app/models/content/` that inherits from `Perron::Resource`.
 
 The controllers are located in `app/controllers/content/`. To make them available, create a route: `resources :posts, module: :content, only: %w[index show]`.
 
 
 ## Resource class
 
-Every collection's class inherits from `Perron::Resource`, e.g.:
+Every resource class inherits from `Perron::Resource`, e.g.:
 ```ruby
+# app/models/content/post.rb
 class Content::Post < Perron::Resource
-  # …
 end
 ```
 
-This gives each class its base behavior. It is just a regular Ruby class so you use common features:
+This gives each class its base behavior. It is just a regular Ruby class so you can use common features:
 ```ruby
+# app/models/content/post.rb
 class Content::Post < Perron::Resource
   delegate :title, to: :metadata
 
@@ -35,7 +36,7 @@ end
 
 ### Validate your content
 
-Just like Rails' ActiveModel backed classes, you can also validate values from your resource class, for example your frontmatter.
+Just like Rails' ActiveModel classes, you can validate values from your resource class, for example your frontmatter.
 
 Perron offers a `bin/rails perron:validate` task that runs all validations and outputs any failures. Output could look like this:
 ```bash
@@ -60,12 +61,12 @@ class Content::Post < Perron::Resource
 end
 ```
 
-If you want to validate your frontmatter, you need them calleable directly from the class, as seen above using `delegate`.
+If you want to validate your frontmatter, make them callable in the class, as seen above using `delegate`.
 
 
 ## `@resource` instance
 
-In a `show` action, the resource (e.g. `Content::Post`) is expected to be set at `@resource`. For example:
+In a `show` action, a resource instance variable is expected to be set.
 ```ruby
 class Content::PostsController < ApplicationController
   def show
