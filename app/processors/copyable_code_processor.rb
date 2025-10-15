@@ -3,6 +3,8 @@ class CopyableCodeProcessor < Perron::HtmlProcessor::Base
 
   def process
     @html.css("pre").each do |pre|
+      next if skippable? pre
+
       id = "pre_#{Random.hex(4)}"
 
       wrapper = Nokogiri::XML::Node.new("div", @html)
@@ -24,5 +26,11 @@ class CopyableCodeProcessor < Perron::HtmlProcessor::Base
       pre.wrap(wrapper)
       pre.add_previous_sibling(button)
     end
+  end
+
+  private
+
+  def skippable?(pre)
+    ["shell-session", "console"].include? pre["lang"]
   end
 end

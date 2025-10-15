@@ -39,7 +39,7 @@ end
 Just like Rails' ActiveModel classes, you can validate values from your resource class, for example your frontmatter.
 
 Perron offers a `bin/rails perron:validate` task that runs all validations and outputs any failures. Output could look like this:
-```bash
+```console
 rails perron:validate
 ..........................F.....
 Resource: /perron/docs/app/content/articles/resources.md
