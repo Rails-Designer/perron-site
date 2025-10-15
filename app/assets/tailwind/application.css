@@ -37,6 +37,45 @@
     @apply [&_td]:px-2 [&_td]:py-1.5 [&_td]:text-base [&_td]:sm:text-lg [&_td]:text-slate-800;
 
     @apply marker:text-red-500;
+
+    :is(h2, h3, h4, h5, h6) {
+      position: relative;
+      display: flex;
+      align-items: center;
+      column-gap: .25rem;
+      justify-content: start;
+
+      .anchor {
+        scroll-margin-top: 3rem;
+
+        &::before {
+          content: "#";
+          display: inline-block;
+          width: 1rem; height: 1rem;
+          font-size: .75em;
+          font-weight: 400;
+          color: var(--color-slate-500);
+          opacity: 0;
+        }
+      }
+
+      @media (hover: hover) {
+        margin-left: -1rem;
+
+        &:hover .anchor::before {
+          opacity: 1;
+        }
+      }
+
+      @media (hover: none) {
+        flex-direction: row-reverse;
+
+        .anchor::before {
+          position: relative;
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 
