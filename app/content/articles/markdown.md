@@ -123,7 +123,7 @@ The following processors are built-in and can be activated by passing their stri
 - `syntax_highlight`: Applies syntax highlighting to fenced code blocks (e.g., \`\`\`ruby).
 
 > [!note]
-> Processors are included as _first-party_ options only when they require no setup or configuration. Otherwise, they are added as [resources](/resources/).
+> Processors are included as _first-party_ options only when they require no setup or configuration. Otherwise, they are added to the [library](/library/).
 
 
 ### Create your own processor

@@ -3,7 +3,7 @@
   PERRON_PROTOCOL = "https"
 
 [[headers]]
-  for = "/resources/:id/template.rb"
+  for = "/library/:id/template.rb"
   [headers.values]
     Content-Type = "application/x-thor-template; charset=utf-8"
     Access-Control-Allow-Origin = "*"

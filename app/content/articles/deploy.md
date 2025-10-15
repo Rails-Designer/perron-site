@@ -22,4 +22,4 @@ RAILS_ENV=production rails perron:build
 
 This will create your static site in the configured output directory (`output` by default).
 
-View the [resources](/resources/) for deploy scripts to various platforms.
+View the [Library](/library/) for deploy scripts to various platforms.

@@ -1,7 +1,7 @@
 - title: Quick-start guide
   description: Learn how to quickly set up your new Perron-powered site
   href: <%= article_path("quickstart") %>
-- title: Resources
+- title: Library
   description: Snippets, templates and UI components to get started with your new site
   href: <%= resources_path %>
 - title: Deploy to production
