@@ -14,7 +14,7 @@
       <%= markdownify @resource.content, process: [NofollowProcessor, StyledBlockquoteProcessor, CopyableCodeProcessor] %>
     </div>
 
-    <table-of-content items="<%= @resource.table_of_content(levels: %w[h2 h3]).to_json %>" id="toc" active-classes="bg-slate-100" open class="hidden top-0 col-span-3 lg:flex lg:sticky">
+    <table-of-content items="<%= @resource.table_of_content(levels: %w[h2 h3]).to_json %>" id="toc" active-classes="bg-white lg:bg-slate-100" open class="hidden top-0 col-span-3 lg:flex lg:sticky">
       <template type="title">
         <p class="hidden items-center gap-x-2 text-xs text-slate-600 font-medium lg:flex">
           <%= icon "bars-3-center-left", class: "size-3 text-xs text-slate-600" %>
