@@ -1,7 +1,7 @@
 ---
+nav_label: About
 title: About me
 description: description
-nav_included: true
 ---
 
 <article class="max-w-4xl mx-auto mt-16 px-2">

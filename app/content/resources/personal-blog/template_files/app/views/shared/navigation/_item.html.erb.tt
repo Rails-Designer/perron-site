@@ -1,3 +1,3 @@
 <li>
-  <%= link_to item.title, item, class: class_names("block px-1 py-2 text-sm font-medium tracking-tight text-gray-800 sm:text-base hover:text-gray-500", {"text-gray-800": current_page?(item)}) %>
+  <%= link_to item.nav_label, item, class: class_names("block px-1 py-2 text-sm font-medium tracking-tight text-gray-800 border-b-2 transparent sm:text-base hover:border-gray-200", {"border-transparent": !current_page?(item), "border-gray-800": current_page?(item)}) %>
 </li>

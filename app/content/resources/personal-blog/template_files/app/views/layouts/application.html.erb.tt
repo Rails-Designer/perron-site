@@ -10,7 +10,7 @@
   </head>
 
   <body class="font-serif antialiased">
-    <%= render partial: "shared/navigation", locals: { items: Content::Page.all.select(&:nav_included) } %>
+    <%= render partial: "shared/navigation", locals: { items: Content::Page.all.select(&:nav_label) } %>
 
     <%= yield %>
   </body>

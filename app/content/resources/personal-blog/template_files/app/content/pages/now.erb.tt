@@ -1,0 +1,26 @@
+---
+nav_label: Now
+title: What am I doing now?
+description: description
+updated_at: 2025-01-01T00:00:00Z
+doing:
+  - Mastering Blender 3D's geometry nodes system 
+  - Writing a book on sustainable design practices 
+  - Learning Thai language (currently at B1 level) 
+  - Building a hydroponic garden in my apartment
+---
+
+<article class="max-w-4xl mx-auto mt-16 px-2">
+  <h1 class="text-2xl font-sans font-bold text-gray-700 md:text-balance md:text-4xl md:tracking-tight">
+    <%= @resource.title %>
+  </h1>
+
+  <p class="mt-5 text-lg text-gray-800 md:text-2xl max-w-prose md:mt-8">
+    These things are keeping me busy day-to-day. Last updated on <%= tag.time @resource.metadata.updated_at.strftime("%Y/%m/%d"), datetime: @resource.metadata.updated_at %>
+  </p>
+
+  <ul class="flex flex-col gap-y-2 mt-5 text-lg list-inside">
+    <%= safe_join @resource.metadata.doing.map { tag.li it, class: "list-disc" } %>
+  </ul>
+</article>
+
