@@ -59,8 +59,16 @@
         }
       }
 
-      @media (hover: hover) {
-        margin-left: -1rem;
+      @media (hover: hover) and (min-width: 1024px) {
+        margin-left: -1.25rem;
+
+        &:hover .anchor::before {
+          opacity: 1;
+        }
+      }
+
+      @media (hover: hover) and (max-width: 1023px) {
+        flex-direction: row-reverse;
 
         &:hover .anchor::before {
           opacity: 1;
@@ -72,6 +80,7 @@
 
         .anchor::before {
           position: relative;
+          color: var(--color-slate-600);
           opacity: 1;
         }
       }
