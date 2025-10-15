@@ -40,6 +40,27 @@ gem "perron"
 
 after_bundle do
   rails_command("generate perron:install")
+
+  markdown_gem = ask("Which markdown parser would you like to use? (commonmarker/kramdown/redcarpet or leave blank to skip):")
+
+  unless markdown_gem.blank?
+    case markdown_gem.strip.downcase
+    when "commonmarker"
+      uncomment_lines "Gemfile", /gem "commonmarker"/
+
+      Bundler.with_unbundled_env { run "bundle install" }
+    when "kramdown"
+      uncomment_lines "Gemfile", /gem "kramdown"/
+
+      Bundler.with_unbundled_env { run "bundle install" }
+    when "redcarpet"
+      uncomment_lines "Gemfile", /gem "redcarpet"/
+
+      Bundler.with_unbundled_env { run "bundle install" }
+    else
+      say "Invalid markdown parser option. Skipping…", :yellow
+    end
+  end
 end
 
 remove_file "README.md"
