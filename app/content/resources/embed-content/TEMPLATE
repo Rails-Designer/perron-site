@@ -1,0 +1,31 @@
+create_file "app/processors/embed_processor", <<~ERB
+class EmbedProcessor < Perron::HtmlProcessor::Base
+  def process
+    @html.css("p").each do |paragraph|
+      text = paragraph.text
+      provider = PROVIDERS.find { it.constantize.matches?(text) } if text.present?
+
+      paragraph.replace(provider.constantize.embed(text, @html)) if provider
+    end
+  end
+
+  private
+
+  PROVIDERS = %w[
+    EmbedProcessor::Codepen
+    EmbedProcessor::Gist
+    EmbedProcessor::Loom
+    EmbedProcessor::Vimeo
+    EmbedProcessor::Youtube
+  ]
+end
+end
+
+<% template_files.each do |path, file| %>
+file "<%= path %>" do
+<<~"_"
+<%= File.read(file) %>
+_
+end
+<% end %>
+end
