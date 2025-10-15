@@ -1,6 +1,6 @@
 ---
 type: template
-title: Personal blog template for Perron, the Rails-based SSG
+title: Personal, minimal blog template
 description: Template for a stylish personal blog. Apply it and get writing right away.
 ---
 
