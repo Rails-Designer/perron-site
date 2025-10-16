@@ -12,6 +12,12 @@ remove_file "public/500.html"
 
 run "rm -r app/views/pwa"
 
+remove_file "app/controllers/application_controller.rb"
+create_file "app/controllers/application_controller.rb", <<~RB
+class ApplicationController < ActionController::Base
+end
+RB
+
 remove_file "app/views/layouts/application.html.erb"
 create_file "app/views/layouts/application.html.erb", <<~ERB
 <!DOCTYPE html>
