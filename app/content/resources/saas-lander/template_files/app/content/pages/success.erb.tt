@@ -1,0 +1,15 @@
+---
+title: You are on the list
+---
+
+<div class="relative flex flex-col w-full md:h-[80dvh] bg-gradient-to-b from-blue-950 via-blue-500 to-white noise">
+  <section class="w-full max-w-3xl mx-auto pt-8 px-3 pb-32 md:pt-48">
+    <h1 class="text-4xl font-extrabold tracking-tight text-center text-balance text-white animate-zoom-in md:text-6xl">
+      Awesome. You are on the list!
+    </h1>
+
+    <p class="max-w-2xl mx-auto mt-4 text-2xl font-extralight text-center text-cyan-100 animate-zoom-in delay-200 md:text-3xl md:mt-8">
+      Thanks for being interested in my new SaaS. You have been added to the list and I will be in touch soon.
+    </p>
+  </section>
+</div>

@@ -1,0 +1,15 @@
+<div class="fixed inset-x-0 bottom-4 z-10 flex items-center justify-center animate-fade-up md:bottom-12">
+  <div class="w-full max-w-2xl px-3 lg:px-10">
+    <div class="-mx-1.5 w-[calc(100%+0.625rem)] rounded-2xl border border-gray-200/60 bg-white/60 p-1.5 backdrop-blur">
+      <form action="<%= page_path("success") %>" name="email" class="relative flex items-center w-full p-2 overflow-hidden bg-white shadow-2xl rounded-xl outline outline-1 outline-gray-300/60">
+        <div class="w-full">
+          <label for="email" class="sr-only">Email</label>
+
+          <input type="email" name="email" id="email" required placeholder="you@company.com" class="w-full px-2 text-sm font-light tracking-wide border-0 text-gray-800 placeholder:text-gray-400 focus:ring-0 focus-visible:outline-none">
+        </div>
+
+        <input type="submit" value="Subscribe" class="px-3.5 py-2 text-xs font-medium text-white cursor-pointer flex-shrink-0 bg-blue-600 rounded-md transition-colors duration-200 hover:bg-blue-500">
+      </form>
+    </div>
+  </div>
+</div>
