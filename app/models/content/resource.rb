@@ -20,6 +20,14 @@ class Content::Resource < Perron::Resource
   end
   alias_method :article_section, :resource_type # required for a consistent API with Content::Article
 
+  def images
+    base_path = Rails.root.join("app", "content", "resources", slug, "images")
+
+    Dir.glob(File.join(base_path, "**", "*"))
+      .reject { File.directory?(it) || it =~ /\.+$/ }
+      .map { it.delete_prefix("#{base_path}/") }
+  end
+
   private
 
   def template_files

@@ -3,6 +3,8 @@
     <%= @resource.name %>
   </h1>
 
+  <%= render "image_gallery" %>
+
   <div class="mt-6 content">
     <%= markdownify nil, process: [CopyableCodeProcessor] do %>
       ```bash
@@ -24,3 +26,5 @@
     <pre class="p-2 max-h-[12lh] overflow-y-auto text-sm text-slate-900 bg-slate-100 rounded-md"><%= resource.template %></pre>
   </div>
 </article>
+
+<%= render "image_dialog" %>
