@@ -3,6 +3,6 @@
   <%= link_to post, class: "flex items-center justify-between text-lg text-gray-800 underline hover:text-gray-500 hover:no-underline" do %>
     <%= tag.span post.title %>
 
-    <%= tag.time post.published_at.to_fs(:iso8601), datetime: post.published_at, class: "text-base" %>
+    <%= tag.time post.published_at.strftime("%Y/%m/%d"), datetime: post.published_at, class: "text-base" %>
   <% end %>
 </li>
