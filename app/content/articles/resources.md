@@ -81,6 +81,6 @@ end
 
 ## Setting a root page
 
-To set a root page, include `Perron::Root` in your `Content::PagesController` and add a `app/content/pages/root.{md,erb,*}` file. Then add `root to: "content/pages#root"` add the bottom of your `config/routes.erb`.
+To set a root page, include `Perron::Root` in your `Content::PagesController` and add a `app/content/pages/root.{md,erb,*}` file. Then add `root to: "content/pages#root"` add the bottom of your `config/routes.rb`.
 
 This is automatically added for you when you [create a `Page` collection](/docs/generator/).
