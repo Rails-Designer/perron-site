@@ -9,7 +9,7 @@ create_file "bin/deploy", <<~BASH
 set -e
 
 echo "Building site with Perron…"
-bin/rails perron:build
+RAILS_ENV=production bin/rails perron:build
 
 echo "Deploying to Surge.sh…"
 surge ./output
