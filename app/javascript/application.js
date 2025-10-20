@@ -1,4 +1,4 @@
-import Attractive from "attractive.js"
+import Attractive from "attractivejs"
 import "components"
 
 Attractive.activate();

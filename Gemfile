@@ -13,3 +13,6 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 end
+
+# https://github.com/rails/importmap-rails/issues/316
+gem "openssl", "~> 3.3"
