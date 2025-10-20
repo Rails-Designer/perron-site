@@ -5,24 +5,34 @@
 
   <%= render "image_gallery" %>
 
-  <div class="mt-6 content">
-    <%= markdownify nil, process: [CopyableCodeProcessor] do %>
-      ```bash
-      <%== @resource.command || "rails app:template LOCATION='#{resource_template_url(@resource, trailing_slash: false)}'" %>
-      ```
-    <% end %>
-  </div>
+  <p class="mt-6 font-normal text-gray-800">
+    <button
+      data-action="copy#`<%== @resource.command || "rails app:template LOCATION='#{resource_template_url(@resource, trailing_slash: false)}'" %>`"
+      data-copy-duration="7500"
+      class="inline-flex items-center gap-x-1 px-2.5 py-0.5 text-sm font-medium tracking-tight text-gray-800 bg-white ring ring-gray-300 rounded-md shadow transition hover:ring-gray-400 active:scale-98"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon" stroke-width="" class="size-3 block text-current/80 [[data-copy-success=true]_&]:hidden">
+        <path fill-rule="evenodd" d="M13.887 3.182c.396.037.79.08 1.183.128C16.194 3.45 17 4.414 17 5.517V16.75A2.25 2.25 0 0 1 14.75 19h-9.5A2.25 2.25 0 0 1 3 16.75V5.517c0-1.103.806-2.068 1.93-2.207.393-.048.787-.09 1.183-.128A3.001 3.001 0 0 1 9 1h2c1.373 0 2.531.923 2.887 2.182ZM7.5 4A1.5 1.5 0 0 1 9 2.5h2A1.5 1.5 0 0 1 12.5 4v.5h-5V4Z" clip-rule="evenodd"></path>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon" class="size-3 hidden text-current/80 [[data-copy-success=true]_&]:block">
+        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/>
+      </svg>
+
+      Run this template
+    </button> in your site's root
+  </p>
 
   <div class="content mt-6 max-w-prose text-lg text-slate-800">
     <%= markdownify @resource.content, process: [NofollowProcessor, StyledBlockquoteProcessor] %>
   </div>
 
   <div class="mt-6">
-    <h3 class="text-base font-bold tracking-tight text-gray-800">
+    <h3 class="text-sm font-bold text-gray-800">
       Template source
     </h3>
 
-  <div class="mt-0.5 mb-12 content">
+  <div class="mb-12 content">
     <pre class="p-2 max-h-[12lh] overflow-y-auto text-sm text-slate-900 bg-slate-100 rounded-md"><%= resource.template %></pre>
   </div>
 </article>
