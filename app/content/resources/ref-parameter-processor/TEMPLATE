@@ -35,4 +35,4 @@ create_file "app/processors/ref_parameter_processor.rb", <<~RUBY
       end.to_s
     end
   end
-end
+RUBY

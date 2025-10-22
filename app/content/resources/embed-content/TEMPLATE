@@ -1,4 +1,4 @@
-create_file "app/processors/embed_processor", <<~ERB
+create_file "app/processors/embed_processor", <<~RUBY
 class EmbedProcessor < Perron::HtmlProcessor::Base
   def process
     @html.css("p").each do |paragraph|
@@ -19,7 +19,7 @@ class EmbedProcessor < Perron::HtmlProcessor::Base
     EmbedProcessor::Youtube
   ]
 end
-end
+RUBY
 
 <% template_files.each do |path, file| %>
 file "<%= path %>" do

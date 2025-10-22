@@ -9,7 +9,6 @@ create_file "app/processors/styled_blockquote_processor.rb", <<~RUBY
 
     private
 
-
     # Add an `icon` key with a Rails Icons name to include an icon
     # Example: "note" => { class: "alert alert-note", icon: "information-circle" }
     STYLES = {
@@ -50,4 +49,4 @@ create_file "app/processors/styled_blockquote_processor.rb", <<~RUBY
       blockquote.prepend_child(icon(style[:icon])) if style[:icon] && respond_to?(:icon)
     end
   end
-end
+RUBY
