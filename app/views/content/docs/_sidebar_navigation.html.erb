@@ -1,6 +1,6 @@
 <%# locals: (top_level_items: [], sections: []) %>
 <nav id="nav" data-action="scrollTo#instant" data-target="#current-item" class="hidden fixed top-0 bottom-0 right-auto w-(--nav-width) bg-white z-10 overflow-y-auto lg:block [&[open]]:block">
-  <ul class="mt-4 px-2 grid gap-y-1 text-base overflow-y-auto mt-12 md:px-4 lg:px-8 md:text-sm lg:mt-8 [--nav-vertical-spacing:1.25rem]">
+  <ul class="mt-4 px-2 grid gap-y-1 text-base overflow-y-auto md:px-4 lg:px-8 md:text-sm lg:mt-8 [--nav-vertical-spacing:1.25rem]">
     <% top_level_items.each do |item| %>
       <li>
         <%= link_to safe_join([icon(item[:icon], variant: :mini, class: "size-5 p-px text-slate-600 bg-white border border-slate-200 shadow-sm rounded-md transition group-hover/link:border-slate-300"), item[:label]]), item[:href], class: class_names("flex items-center gap-x-2 px-(--nav-vertical-spacing) py-2 font-bold text-slate-800 rounded-md group/link", {"bg-slate-100": item[:current_page?]}) %>

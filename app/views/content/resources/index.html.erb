@@ -1,4 +1,4 @@
-<article class="mt-4 mt:mt-6 lg:mt-5">
+<article class="mt-4 px-2 mt:mt-6 lg:mt-5">
   <h1 class="text-2xl font-bold text-gray-800 tracking-tight sm:text-3xl">
     Library
   </h1>
@@ -10,7 +10,7 @@
   <ul class="grid gap-4 mt-8 mb-12">
     <% @resources.each do |type, resources| %>
       <li>
-        <%= tag.h2 type.name, id: type.slug, class: "mx-2 text-lg font-bold text-slate-800" %>
+        <%= tag.h2 type.name, id: type.slug, class: "text-lg font-bold text-slate-800" %>
 
         <ul class="grid gap-2 mt-2">
           <%= render resources %>
