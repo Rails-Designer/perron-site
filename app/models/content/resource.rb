@@ -1,4 +1,6 @@
 class Content::Resource < Perron::Resource
+  include Templates
+
   TYPES = {
     template: "Templates",
     snippet: "Snippets",
@@ -12,8 +14,6 @@ class Content::Resource < Perron::Resource
 
   validates :title, :description, presence: true
   validates :type, inclusion: { in: TYPES }
-
-  def template = ERB.new(File.read(template_path)).result(binding)
 
   def resource_type
     Type.new(name: TYPES[metadata.type], slug: TYPES[metadata.type].parameterize)
@@ -29,16 +29,6 @@ class Content::Resource < Perron::Resource
   end
 
   private
-
-  def template_files
-    base_path = Rails.root.join("app", "content", "resources", slug, "template_files")
-
-    Dir.glob(File.join(base_path, "**", "*"))
-      .reject { File.directory?(it) || it =~ /\.+$/ }
-      .map { [ it.delete_prefix("#{base_path}/").delete_suffix(".tt"), it ] }
-  end
-
-  def template_path = Rails.root.join("app", "content", "resources", slug, "TEMPLATE")
 
   Type = Data.define(:name, :slug)
 end
