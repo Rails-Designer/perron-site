@@ -1,0 +1,20 @@
+<%# locals: (link_css: "flex flex-col my-1 px-2 py-1 [&_span]:block [&_span]:text-xs [&_span]:text-gray-600 [&_strong]:text-sm [&_strong]:font-medium [&_strong]:text-gray-800 rounded-md transition hover:bg-gray-100 odd:justify-end") %>
+<nav aria-label="Pagination" class="max-w-prose border-y border-gray-200">
+  <ul class="grid grid-cols-6 w-full">
+    <%= tag.li class: "col-span-3" do %>
+      <%= link_to @resource.previous, rel: "prev", class: link_css do %>
+        <span>Previous</span>
+
+        <strong><%= @resource.previous.title %></strong>
+      <% end %>
+    <% end if @resource.previous %>
+
+    <%= tag.li class: "col-span-3" do %>
+      <%= link_to @resource.next, rel: "next", class: class_names(link_css, { "items-end": @resource.previous.present? }) do %>
+        <span>Next</span>
+
+        <strong><%= @resource.next.title %></strong>
+      <% end %>
+    <% end if @resource.next %>
+  </ul>
+</nav>

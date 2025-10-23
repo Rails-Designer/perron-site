@@ -1,4 +1,6 @@
 class Content::Article < Perron::Resource
+  include Adjacency
+
   SECTIONS = {
     getting_started: "Getting started",
     content: "Content",

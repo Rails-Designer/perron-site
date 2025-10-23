@@ -25,7 +25,9 @@
     </table-of-content>
   </div>
 
-  <section class="pb-12">
+  <%= render "content/resources/adjacency" %>
+
+  <section class="my-12">
     <%= link_to edit_on_github_url(@resource), rel: :nofollow, target: :blank, class: "flex items-center gap-x-1 text-sm font-medium text-slate-600 transition hover:text-slate-800" do %>
       <%= icon "pencil", class: "size-3 text-slate-500" %>
 
