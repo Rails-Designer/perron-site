@@ -17,4 +17,3 @@ class EmbedProcessor
     end
   end
 end
-

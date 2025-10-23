@@ -20,7 +20,7 @@ class CopyableCodeProcessor < Perron::HtmlProcessor::Base
       copy_icon = icon("clipboard", class: "size-3 sm:size-4 block group-has-[[data-copy-success=true]]/code:hidden group-hover/code:scale-105 group-active/code:scale-95")
       success_icon = icon("clipboard-document-check", class: "size-3 sm:size-4 hidden group-has-[[data-copy-success=true]]/code:block group-hover/code:scale-105 group-active/code:scale-95")
 
-      button.inner_html = [copy_icon, success_icon].join
+      button.inner_html = [ copy_icon, success_icon ].join
 
       pre["id"] = id
       pre.wrap(wrapper)
@@ -31,6 +31,6 @@ class CopyableCodeProcessor < Perron::HtmlProcessor::Base
   private
 
   def skippable?(pre)
-    ["shell-session", "console"].include? pre["lang"]
+    [ "shell-session", "console" ].include? pre["lang"]
   end
 end

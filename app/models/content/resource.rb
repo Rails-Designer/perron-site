@@ -2,10 +2,10 @@ class Content::Resource < Perron::Resource
   TYPES = {
     template: "Templates",
     snippet: "Snippets",
-    component: "Components",
+    component: "Components"
   }.with_indifferent_access
 
-  def self.nested_routes = [:template]
+  def self.nested_routes = [ :template ]
 
   delegate :type, :title, :description, :command, to: :metadata
   alias_method :name, :title
@@ -35,7 +35,7 @@ class Content::Resource < Perron::Resource
 
     Dir.glob(File.join(base_path, "**", "*"))
       .reject { File.directory?(it) || it =~ /\.+$/ }
-      .map { [it.delete_prefix("#{base_path}/").delete_suffix(".tt"), it] }
+      .map { [ it.delete_prefix("#{base_path}/").delete_suffix(".tt"), it ] }
   end
 
   def template_path = Rails.root.join("app", "content", "resources", slug, "TEMPLATE")
