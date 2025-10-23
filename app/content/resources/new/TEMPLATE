@@ -71,7 +71,7 @@ end
 
 remove_file "README.md"
 create_file "README.md", <<~MARKDOWN
-  # My New Site
+  # #{app_name.titleize}
 
   TBD
 
