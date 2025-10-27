@@ -119,7 +119,7 @@ Apply transformations by passing an array of processor names or classes to the `
 The following processors are built-in and can be activated by passing their string name:
 
 - `target_blank`: Adds `target="_blank"` to all external links;
-- `lazy_load_images`: Adds `loading="lazy"` to all `<img>` tags.
+- `lazy_load_images`: Adds `loading="lazy"` to all `<img>` tags;
 - `syntax_highlight`: Applies syntax highlighting to fenced code blocks (e.g., \`\`\`ruby).
 
 > [!note]
@@ -129,7 +129,6 @@ The following processors are built-in and can be activated by passing their stri
 ### Create your own processor
 
 You can create your own processor by defining a class that inherits from `Perron::HtmlProcessor::Base` and implements a `process` method.
-Then, pass the class constant directly in the `process` array.
 ```ruby
 # app/processors/add_nofollow_processor.rb
 class AddNofollowProcessor < Perron::HtmlProcessor::Base
@@ -142,6 +141,7 @@ end
 > [!note]
 > The `@html` instance variable is a `Nokogiri::HTML::DocumentFragment` object, giving you access to methods like `css()`, `xpath()`, and DOM manipulation. See the [Nokogiri docs](https://nokogiri.org/) for more.
 
+Then, pass the class constant directly in the `process` array.
 ```erb
 <%= markdownify @resource.content, process: ["target_blank", AddNofollowProcessor] %>
 ```
