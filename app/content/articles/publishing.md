@@ -18,11 +18,15 @@ There are two ways to define when a piece of content should be considered publis
 
 ### Frontmatter (Recommended)
 
-You can set a `published_at` key in the resource's frontmatter. This gives you precise control over the publication time. The value should be a valid date or datetime string.
+You can set a `published_at` key in the resource's frontmatter. This gives you precise control over the publication time. The value should be a valid date or datetime string. Examples:
+* Date only: `<%= Time.current.yesterday.to_date %>`
+* Date with time: `<%= Time.current.yesterday.beginning_of_day.strftime("%Y-%m-%d %H:%M:%S") %>`
+* ISO 8601 with timezone: `<%= Time.current.yesterday.beginning_of_day.iso8601 %>`
+
 ```yaml
 ---
 title: My Scheduled Post
-published_at: <%= Time.current.yesterday.beginning_of_day %>
+published_at: <%= Time.current.yesterday.beginning_of_day.strftime("%Y-%m-%d %H:%M:%S") %>
 ---
 ```
 

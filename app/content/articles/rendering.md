@@ -40,7 +40,7 @@ All typical enumerable methods are available on Perron's resources. Here are som
 ```ruby
 published_posts = Content::Post.all.select { it.published? }
 ruby_posts = Content::Post.all.select { it.metadata.category == "ruby" }
-recent_posts = Content::Post.all.reject { it.published_at < 1.month.ago }
+recent_posts = Content::Post.all.select { (t.published_at.after? 1.month.ago }
 ```
 
 
@@ -55,9 +55,9 @@ slugs_with_titles = Content::Post.all.map { [it.slug, it.title] }.to_h
 ### Sorting
 
 ```ruby
-sorted_by_date = Content::Post.all.sort_by(&:date)
+sorted_by_date = Content::Post.all.sort_by(&:publication_date)
 sorted_by_title = Content::Post.all.sort_by(&:title)
-newest_first = Content::Post.all.sort_by(&:date).reverse
+newest_first = Content::Post.all.sort_by(&:publication_date).reverse
 ```
 
 
@@ -65,14 +65,14 @@ newest_first = Content::Post.all.sort_by(&:date).reverse
 
 ```ruby
 first_three = Content::Post.all.first(3)
-most_recent = Content::Post.all.sort_by(&:date).reverse.first(5)
+most_recent = Content::Post.all.sort_by(&:publication_date).reverse.first(5)
 ```
 
 
 ### Finding
 
 ```ruby
-ruby_tutorial = Content::Post.all.find { it.title.include?("Ruby Tutorial") }
+ruby_tutorial = Content::Post.all.find { it.metadatatitle.include?("Ruby Tutorial") }
 posts_with_images = Content::Post.all.select { it.content.include?("![") } # assuming markdown usage
 ```
 
@@ -89,7 +89,7 @@ posts_by_year = Content::Post.all.group_by { it.published_at.year }
 
 ```ruby
 total_posts = Content::Post.all.count
-published_count = Content::Post.all.count { it.published? }
+published_count = Content::Post.all.count { it.published? } # assuming `category` is delegated to `metadata`
 category_counts = Content::Post.all.group_by(&:category).transform_values(&:count) # assuming `category` is delegated to `metadata`
 ```
 
@@ -110,5 +110,5 @@ Sorted by date within each category.
 categorized_posts = Content::Post.all
   .select { it.published? }
   .group_by(&:category)
-  .transform_values { it.sort_by(&:date).reverse }
+  .transform_values { it.sort_by(&:publication_date).reverse }
 ```
