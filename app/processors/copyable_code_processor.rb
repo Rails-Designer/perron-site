@@ -8,11 +8,12 @@ class CopyableCodeProcessor < Perron::HtmlProcessor::Base
       id = "pre_#{Random.hex(4)}"
 
       wrapper = Nokogiri::XML::Node.new("div", @html)
+      wrapper["data-slot"] = "code"
       wrapper["class"] = "relative group/code"
 
       button = Nokogiri::XML::Node.new("button", @html)
       button["type"] = "button"
-      button["class"] = "absolute inline-block top-0 right-0 py-2 pr-2 my-1.5 pl-1 bg-slate-900/50 text-white/80 cursor-pointer rounded-md backdrop-blur-sm transition hover:text-white sm:pr-3 sm:py-3"
+      button["class"] = "absolute inline-block top-0 right-0 py-2 pr-2 my-2 pl-1 bg-slate-900/50 text-white/80 cursor-pointer rounded-md backdrop-blur-sm transition hover:text-white sm:pr-3 sm:py-3"
       button["data-action"] = "copy"
       button["data-target"] = "##{id}"
       button["data-copy-duration"] = "5000"
