@@ -38,20 +38,11 @@ end
 
 Just like Rails' ActiveModel classes, you can validate values from your resource class, for example your frontmatter.
 
-Perron offers a `bin/rails perron:validate` task that runs all validations and outputs any failures. Output could look like this:
-```console
-rails perron:validate
-..........................F.....
-Resource: /perron/docs/app/content/articles/resources.md
-  - Description can't be blank
-
-Validation finished with 1 failure.
-```
-
-Useful to check if your title or meta description is within the correct range for SERP's or to make sure you added the correct category or tags.
+Perron offers a `bin/rails perron:validate` task that runs all validations and outputs any failures. Useful to check if your title or meta description is within the correct range for SERP's or to make sure you added the correct category.
 ```ruby
 class Content::Post < Perron::Resource
   CATEGORIES = %w[rails ruby hotwire javascript updates]
+
   delegate :category, :title, :description, to: :metadata
 
   validates :title, :description, presence: true
@@ -62,6 +53,19 @@ end
 ```
 
 If you want to validate your frontmatter, make them callable in the class, as seen above using `delegate`.
+
+When you run the task, output could look like this:
+```console
+rails perron:validate
+..........................F.....
+Resource: /perron/docs/app/content/articles/resources.md
+  - Description can't be blank
+
+Validation finished with 1 failure.
+```
+
+> [!tip]
+> When using Rails 8.1, you can make Perron's validate task part of your `bin/ci` script. Simply add `step "Perron: validate", "bin/rails perron:validate"` within the `CI.run do` block.
 
 
 ## `@resource` instance
