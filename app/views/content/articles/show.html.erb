@@ -28,7 +28,7 @@
   <%= render "content/resources/adjacency" %>
 
   <section class="my-12">
-    <%= link_to edit_on_github_url(@resource), rel: :nofollow, target: :blank, class: "flex items-center gap-x-1 text-sm font-medium text-slate-600 transition hover:text-slate-800" do %>
+    <%= link_to edit_on_github_url(@resource), rel: :nofollow, target: :blank, class: "inline-flex items-center gap-x-1.5 px-2.5 py-1 text-sm font-medium text-slate-600 transition rounded-md hover:text-slate-800 hover:bg-slate-100" do %>
       <%= icon "pencil", class: "size-3 text-slate-500" %>
 
       <%= tag.span "Edit this page" %>
