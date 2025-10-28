@@ -1,0 +1,32 @@
+APPLICATION_LAYOUT_PATH = Rails.root.join("app/views/layouts/application.html.erb")
+TEMPLATES = {
+<% template_files.each do |path, file| %>
+  "<%= path.delete_suffix(".html") %>" => <<~HTML,
+<%= File.read(file).chomp %>
+  HTML
+<% end %>
+}
+PROVIDERS = TEMPLATES.keys
+
+say "Available analytics providers: #{PROVIDERS.join(", ")}"
+provider = ask("Your analytics provider:").downcase.strip
+
+abort "Invalid provider. Choose from: #{PROVIDERS.join(", ")}" unless PROVIDERS.include?(provider)
+
+create_file "app/views/shared/_analytics.html.erb", TEMPLATES[provider]
+
+if APPLICATION_LAYOUT_PATH.exist?
+  if File.read(APPLICATION_LAYOUT_PATH) =~ /<\/head>/
+    insert_into_file APPLICATION_LAYOUT_PATH.to_s, <<~ERB.indent(4), before: /^\s*<\/head>/
+      <%%= render partial: "shared/analytics" %>
+    ERB
+  else
+    say "The <head> tag is missing in your application layout", :red
+    say %(        Add `<%%= render partial: "shared/analytics" %>` within the `<head>` of your layout.)
+  end
+else
+  say "Default application.html.erb is missing!", :red
+  say %(        Add `<%%= render partial: "shared/analytics" %>` within the `<head>` of your layout.)
+end
+
+def run_bundle; end
