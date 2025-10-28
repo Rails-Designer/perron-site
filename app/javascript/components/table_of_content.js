@@ -27,7 +27,7 @@ class TableOfContentElement extends HTMLElement {
   get #template() {
     return `
       <nav class="
-        flex fixed top-11 right-0 flex-col gap-y-2.5 w-full max-w-[16rem] bg-white/80 border-slate-200/50 rounded-bl-md backdrop-blur-sm lg:right-auto
+        flex fixed top-11 right-0 flex-col gap-y-2.5 w-full max-w-[16rem] bg-white/85 border-slate-200/50 rounded-bl-md backdrop-blur-md lg:right-auto
         max-lg:p-2 max-lg:border-b max-lg:border-l max-lg:shadow-lg
       ">
         ${this.#leader}
