@@ -40,7 +40,7 @@ All typical enumerable methods are available on Perron's resources. Here are som
 ```ruby
 published_posts = Content::Post.all.select { it.published? }
 ruby_posts = Content::Post.all.select { it.metadata.category == "ruby" }
-recent_posts = Content::Post.all.select { (t.published_at.after? 1.month.ago }
+recent_posts = Content::Post.all.select { (it.published_at.after? 1.month.ago }
 ```
 
 
@@ -89,8 +89,8 @@ posts_by_year = Content::Post.all.group_by { it.published_at.year }
 
 ```ruby
 total_posts = Content::Post.all.count
-published_count = Content::Post.all.count { it.published? } # assuming `category` is delegated to `metadata`
-category_counts = Content::Post.all.group_by(&:category).transform_values(&:count) # assuming `category` is delegated to `metadata`
+published_count = Content::Post.all.count { it.published? }
+category_counts = Content::Post.all.group_by(&:category).transform_values(&:count)
 ```
 
 
