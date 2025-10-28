@@ -21,9 +21,10 @@ RB
 remove_file "app/views/layouts/application.html.erb"
 create_file "app/views/layouts/application.html.erb", <<~ERB
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <%%= meta_tags %>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <%%= yield :head %>
@@ -49,23 +50,15 @@ after_bundle do
 
   markdown_gem = ask("Which markdown parser would you like to use? (commonmarker/kramdown/redcarpet or leave blank to skip):")
 
-  unless markdown_gem.blank?
-    case markdown_gem.strip.downcase
-    when "commonmarker"
-      uncomment_lines "Gemfile", /gem "commonmarker"/
+  VALID_MARKDOWN_GEMS = %w[commonmarker kramdown redcarpet]
 
-      Bundler.with_unbundled_env { run "bundle install" }
-    when "kramdown"
-      uncomment_lines "Gemfile", /gem "kramdown"/
+  gem_name = markdown_gem.strip.downcase
+  if VALID_MARKDOWN_GEMS.include?(gem_name)
+    uncomment_lines "Gemfile", /gem "#{gem_name}"/
 
-      Bundler.with_unbundled_env { run "bundle install" }
-    when "redcarpet"
-      uncomment_lines "Gemfile", /gem "redcarpet"/
-
-      Bundler.with_unbundled_env { run "bundle install" }
-    else
-      say "Invalid markdown parser option. Skipping…", :yellow
-    end
+    Bundler.with_unbundled_env { run "bundle install" }
+  elsif markdown_gem.present?
+    say "Invalid markdown parser option. Skipping…", :yellow
   end
 end
 
