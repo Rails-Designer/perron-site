@@ -9,12 +9,7 @@ Sites that use Perron. Want to list your site here too? Open a PR.
 
 ## Standalone (as a SSG)
 
-- [AppRefresher](https://apprefresher.com)
-- [Forge](https://forge.railsdesigner.com)
-- [Helptail](https://helptail.com)
-- [Perron Docs](https://perron.railsdesigner.com)
-
-
-## Integrated (part of a Rails app)
-
-- [Rails Designers (private community for Rails UI engineers)](https://railsdesigners.com)
+- [AppRefresher](https://apprefresher.com) — AI-powered tool to keep your knowledge base articles images/screenshots up-to-date
+- [Feedstrum](https://feedstrum.com/) — Precise SaaS customer feedback
+- [Helptail](https://helptail.com) — Precise SaaS customer feedback
+- [Perron Docs](https://perron.railsdesigner.com) — This site
