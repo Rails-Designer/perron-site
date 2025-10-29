@@ -22,22 +22,18 @@
 
       Copy command
     </button>
-    to run this template in your site's root directory
+    to run <button data-action="toggleAttribute#open" data-target="#source" aria-label="View template source" class="underline hover:no-underline">this template</button> in your site's root directory
 
     <span class="-z-10 absolute inset-0 block bg-[size:11px_11px] bg-[position:-1px_-1px] bg-[linear-gradient(to_right,#dbeafe,transparent_1px),linear-gradient(to_bottom,#dbeafe,transparent_1px)]"></span>
   </p>
 
+  <details id="source" class="content opacity-0 [&_summary]:sr-only ease-in-out duration-300 open:mt-4 starting:open:opacity-0 open:opacity-100">
+    <summary>View template source</summary>
+    <pre class="px-3 py-1 max-h-[12lh] overflow-y-auto text-sm text-slate-900 bg-slate-50 border border-slate-100 rounded-md"><%= resource.template %></pre>
+  </details>
+
   <div class="content mt-6 max-w-prose text-lg text-slate-800">
     <%= markdownify @resource.content, process: [NofollowProcessor, StyledBlockquoteProcessor] %>
-  </div>
-
-  <div class="mt-6">
-    <h3 class="text-sm font-bold text-slate-800">
-      Template source
-    </h3>
-
-  <div class="mb-12 content">
-    <pre class="p-2 max-h-[12lh] overflow-y-auto text-sm text-slate-900 bg-slate-50 rounded-md"><%= resource.template %></pre>
   </div>
 </article>
 
