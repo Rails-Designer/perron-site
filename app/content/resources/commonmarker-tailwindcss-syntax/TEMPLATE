@@ -6,7 +6,7 @@ THEMES = {
 <% end %>
 }
 
-abort "Commonmarker is not installed. Please make sure it is installed. Run `bundle add commonmarker`." unless defined?(::Commonmarker)
+abort set_color("Commonmarker is not installed. Please make sure it is installed. Run `bundle add commonmarker`.", :red, :bold) unless defined?(::Commonmarker)
 
 say "Available themes: #{THEMES.keys.join(", ")}"
 theme = ask("Which theme do you want?").downcase.strip
@@ -15,7 +15,8 @@ abort "Invalid theme. Choose from: #{THEMES.join(", ")}" if THEMES.exclude?(them
 
 create_file "app/themes/#{theme}.tmTheme", THEMES[theme]
 
-inject_into_file "config/initializers/perron.rb", before: /^end\s*$/ do <<~RUBY.chomp
+inject_into_file "config/initializers/perron.rb", before: /^end\s*$/ do
+  <<~RUBY.indent(2)
 
   config.markdown_options = {
     plugins: {
@@ -25,5 +26,5 @@ inject_into_file "config/initializers/perron.rb", before: /^end\s*$/ do <<~RUBY.
       }
     }
   }
-RUBY
+  RUBY
 end
