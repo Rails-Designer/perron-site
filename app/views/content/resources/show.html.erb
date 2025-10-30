@@ -32,7 +32,7 @@
     <pre class="px-3 py-1 max-h-[12lh] overflow-y-auto text-sm text-slate-900 bg-slate-50 border border-slate-100 rounded-md"><%= resource.template %></pre>
   </details>
 
-  <div class="content mt-6 max-w-prose text-lg text-slate-800">
+  <div class="content my-6 text-lg text-slate-800">
     <%= markdownify @resource.content, process: [NofollowProcessor, StyledBlockquoteProcessor] %>
   </div>
 </article>

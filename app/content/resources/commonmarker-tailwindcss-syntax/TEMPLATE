@@ -1,0 +1,29 @@
+THEMES = {
+<% template_files.each do |path, file| %>
+  "<%= path.delete_suffix(".tmTheme") %>" => <<~XML,
+<%= File.read(file).chomp %>
+  XML
+<% end %>
+}
+
+abort "Commonmarker is not installed. Please make sure it is installed. Run `bundle add commonmarker`." unless defined?(::Commonmarker)
+
+say "Available themes: #{THEMES.keys.join(", ")}"
+theme = ask("Which theme do you want?").downcase.strip
+
+abort "Invalid theme. Choose from: #{THEMES.join(", ")}" if THEMES.exclude?(theme)
+
+create_file "app/themes/#{theme}.tmTheme", THEMES[theme]
+
+inject_into_file "config/initializers/perron.rb", before: /^end\s*$/ do <<~RUBY.chomp
+
+  config.markdown_options = {
+    plugins: {
+      syntax_highlighter: {
+        theme: "#{theme}",
+        path: Rails.root.join("app", "themes").to_s
+      }
+    }
+  }
+RUBY
+end
