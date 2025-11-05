@@ -33,8 +33,66 @@ class Content::Post < Perron::Resource
 end
 ```
 
+## Associations
 
-### Validate your content
+Resources can be associated with each other using `has_many` and `belongs_to`, similar to ActiveRecord associations.
+
+
+### has_many
+
+Define a `has_many` association to retrieve all resources that belong to the current resource:
+```ruby
+# app/models/content/author.rb
+class Content::Author < Perron::Resource
+  has_many :posts
+end
+```
+
+```markdown
+<!-- app/content/authors/rails-designer.md -->
+---
+name: Rails Designer
+bio: Creator of Perron
+---
+
+What could I say? I create lots of things? Like Perron, for example! 😊
+```
+
+Access the collection:
+```ruby
+author = Content::Author.find("rails-designer")
+author.posts # => Array of Content::Post instances where author_id matches
+```
+
+### belongs_to
+
+Define a `belongs_to` association when a resource references another resource:
+```ruby
+# app/models/content/post.rb
+class Content::Post < Perron::Resource
+  belongs_to :author
+end
+```
+
+In your content's frontmatter, add the foreign key with `_id` suffix:
+```markdown
+<!-- app/content/posts/my-first-post.md -->
+---
+title: My First Post
+author_id: rails-designer
+---
+
+Post content here…
+```
+
+Access the associated resource:
+```ruby
+post = Content::Post.find("my-first-post")
+post.author # => Content::Author instance
+```
+
+
+## Validate your content
 
 Just like Rails' ActiveModel classes, you can validate values from your resource class, for example your frontmatter.
 
