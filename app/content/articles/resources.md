@@ -92,7 +92,7 @@ post.author # => Content::Author instance
 ```
 
 
-## Validate your content
+## Validations
 
 Just like Rails' ActiveModel classes, you can validate values from your resource class, for example your frontmatter.
 
