@@ -23,7 +23,7 @@ rails generate perron:install
 This creates an initializer:
 ```ruby
 Perron.configure do |config|
-  config.site_name = "Helptail"
+  config.site_name = "Chirp Form"
 
   # …
 end

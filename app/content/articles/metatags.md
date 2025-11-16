@@ -74,8 +74,8 @@ class Content::Post < Perron::Resource
   Perron.configure do |config|
     # …
 
-    config.metadata.description = "Put your routine tasks on autopilot"
-    config.metadata.author = "Helptail team"
+    config.metadata.description = "Add forms to any static site. Display responses anywhere."
+    config.metadata.author = "Chirp Form team"
   end
 end
 ```
@@ -88,8 +88,8 @@ Set site-wide defaults in the initializer:
 Perron.configure do |config|
   # …
 
-  config.metadata.description = "Put your routine tasks on autopilot"
-  config.metadata.author = "Helptail team"
+  config.metadata.description = "Add forms to any static site. Display responses anywhere."
+  config.metadata.author = "Chirp Form team"
 end
 ```
 
