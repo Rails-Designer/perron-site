@@ -35,6 +35,8 @@ end
 
 ## Associations
 
+[!label v0.14.0+]
+
 Resources can be associated with each other using `has_many` and `belongs_to`, similar to ActiveRecord associations.
 
 
