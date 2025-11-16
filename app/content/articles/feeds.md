@@ -44,12 +44,14 @@ class Content::Post < Perron::Resource
     # config.feeds.rss.description = "My RSS feed description" # defaults to configured site_description
     # config.feeds.rss.path = "path-to-feed.xml"
     # config.feeds.rss.max_items = 25
+    # config.feeds.rss.ref = "chirpform.com" # adds ?ref=chirpform.com to item links for tracking
     #
     config.feeds.json.enabled = true
     # config.feeds.json.title = "My JSON feed" # defaults to configured site_name
     # config.feeds.json.description = "My JSON feed description" # defaults to configured site_description
     # config.feeds.json.max_items = 15
     # config.feeds.json.path = "path-to-feed.json"
+    # config.feeds.json.ref = "chirpform.com" # adds ?ref=chirpform.com to item links for tracking
   end
 end
 ```
