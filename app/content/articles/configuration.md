@@ -34,6 +34,7 @@ Below are available settings:
 - **excluded_assets**; exclude which assets shoud be excluded when compiling, defaults to `%w[action_cable actioncable actiontext activestorage rails-ujs trix turbo]`
 - **view_unpublished**; option to show [unpublished content](/docs/publishing/) content, defaults to `Rails.env.development?`
 - **default_url_options**; set options for route helpers
+- **markdown_parser**; specifiy custom markdown parser
 - **markdown_options**; pass options for your markdown gem
 - **sitemap.enabled**; enable creation of the sitemap.xml, defaults to `false`
 - **sitemap.priority**; default priority for sitemap items, defaults to `0.5`

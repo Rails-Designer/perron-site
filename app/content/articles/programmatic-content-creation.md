@@ -12,29 +12,7 @@ Generate content programmatically from data sources instead of creating files ma
 
 ## Basic Usage
 
-Declare data sources in your resource class:
-```ruby
-# app/models/content/product.rb
-class Content::Product < Perron::Resource
-  sources :products, :countries
-
-  def self.source_template(sources)
-    <<~TEMPLATE
-    ---
-    title: #{sources.products.name} in #{sources.countries.name}
-    product_id: #{sources.products.id}
-    country_id: #{sources.countries.id}
-    ---
-
-    # #{sources.products.name}
-
-    Available in #{sources.countries.name} for $#{sources.products.price}.
-    TEMPLATE
-  end
-end
-```
-
-Create your data files:
+First create your data files:
 ```csv
 # app/content/data/products.csv
 id,name,price
@@ -48,6 +26,28 @@ id,name,price
   {"id": "de", "name": "Germany"},
   {"id": "nl", "name": "The Netherlands"}
 ]
+```
+
+Then define data sources in your resource class:
+```ruby
+# app/models/content/product.rb
+class Content::Product < Perron::Resource
+  sources :countries, :products
+
+  def self.source_template(sources)
+    <<~TEMPLATE
+    ---
+    title: #{sources.products.name} in #{sources.countries.name}
+    country_id: #{sources.countries.id}
+    product_id: #{sources.products.id}
+    ---
+
+    # #{sources.products.name}
+
+    Available in #{sources.countries.name} for $#{sources.products.price}.
+    TEMPLATE
+  end
+end
 ```
 
 Generate resources:
@@ -75,8 +75,8 @@ class Content::Product < Perron::Resource
     <<~TEMPLATE
     ---
     title: #{sources.products.name}
-    product_code: #{sources.products.code}
     country_id: #{sources.countries.id}
+    product_code: #{sources.products.code}
     ---
     TEMPLATE
   end
@@ -86,7 +86,7 @@ end
 Filenames use the specified primary keys: `us-iphone-15.erb`
 
 
-## Single Source
+## Single source
 
 Use `source` (singular) for a single data source:
 ```ruby

@@ -101,6 +101,32 @@ end
 ```
 
 
+## Custom markdown parser
+
+[!label v0.14.0+]
+
+If you want to use your own Markdown parser, you can do so by creating your own:
+```ruby
+class MyParser < Perron::Markdown::Parser
+  def parse(text)
+    # Do whatever you want here
+    # `config.markdown_options` is available as `options` instance method
+  end
+end
+```
+
+You can extend the `Perron::Markdown::Parser` class or any of the three provided markdown providers.
+
+Then use it by setting `markdown_parser`:
+```ruby
+Perron.configure do |config|
+  # …
+  config.markdown_parser = :my_parser
+  # …
+end
+```
+
+
 ## HTML transformations
 
 Perron can post-process the HTML generated from your Markdown content.
