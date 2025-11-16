@@ -3,6 +3,7 @@ section: getting_started
 order: 5
 title: Sites built with Perron
 description: An overview of sites that are built with Perron.
+toc: false
 ---
 
 Sites that use Perron. Want to list your site here too? Open a PR.
