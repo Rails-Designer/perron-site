@@ -3,11 +3,11 @@
     <%= @resource.name %>
   </h1>
 
-  <%= render "image_gallery" %>
-
   <%= render "content/resources/copy_template", resource: @resource %>
 
   <%= render "content/resources/source_template", resource: @resource %>
+
+  <%= render "image_gallery" %>
 
   <div class="content my-6 text-lg text-slate-800">
     <%= markdownify @resource.content, process: [NofollowProcessor, StyledBlockquoteProcessor] %>
