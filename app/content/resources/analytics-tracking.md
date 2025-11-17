@@ -10,7 +10,6 @@ This script adds analytics tracking into your Perron site. It creates a partial 
 ## Supported providers
 
 - [Fathom](https://usefathom.com/)
-- [Google Analytics (GA4)](https://analytics.google.com/)
 - [Matomo](https://matomo.org/)
 - [Plausible](https://plausible.io/)
 - [Simple Analytics](https://simpleanalytics.com/)
