@@ -2,6 +2,7 @@
 type: snippet
 title: Visitor greeting custom element
 description: Display personalized greetings based on referrer or ref parameter.
+category: setup
 ---
 
 This custom element displays personalized messages to visitors based on where they came from. It checks both the HTTP referrer and the `ref` URL parameter.

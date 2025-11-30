@@ -9,11 +9,11 @@ class Content::Resource < Perron::Resource
 
   def self.nested_routes = [ :template ]
 
-  delegate :type, :title, :description, :command, to: :metadata
+  delegate :type, :title, :description, :category, :command, to: :metadata
   alias_method :name, :title
 
   validates :title, :description, presence: true
-  validates :type, inclusion: { in: TYPES }
+  validates :type, inclusion: { in: TYPES.keys }
 
   def resource_type
     Type.new(name: TYPES[metadata.type], slug: TYPES[metadata.type].parameterize)
@@ -27,6 +27,8 @@ class Content::Resource < Perron::Resource
       .reject { File.directory?(it) || it =~ /\.+$/ }
       .map { it.delete_prefix("#{base_path}/") }
   end
+
+  def order = metadata.order || 5
 
   private
 

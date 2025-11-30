@@ -7,13 +7,21 @@
     A growing collection of snippets, templates and UI components for Perron.
   </p>
 
-  <ul class="grid gap-4 mt-8 mb-12">
+  <ul class="grid gap-6 mt-8 mb-12">
     <% @resources.each do |type, resources| %>
       <li>
-        <%= tag.h2 type.name, id: type.slug, class: "text-lg font-bold text-slate-800" %>
+        <%= tag.h2 type.name, id: type.slug, class: "ml-2 text-lg font-bold text-slate-800" %>
 
-        <ul class="grid gap-2 mt-2">
-          <%= render resources %>
+        <ul class="grid gap-4 mt-2">
+          <% resources.sort_by(&:category).group_by(&:category).each do |category, resources| %>
+            <li>
+              <%= tag.h3 category.to_s.humanize, class: "ml-2 text-sm font-semibold text-slate-800" %>
+
+              <ul class="grid grid-cols-12 gap-4 mt-2 px-2">
+                <%= render resources.sort_by(&:order) %>
+              </ul>
+            </li>
+          <% end %>
         </ul>
       </li>
     <% end %>
