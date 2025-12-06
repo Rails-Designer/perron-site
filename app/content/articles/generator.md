@@ -13,6 +13,7 @@ bin/rails generate content Post show
 ```
 This will create the following files:
 
+* `app/content/posts/` (all `.md`, `.erb` content will be added here)
 * `app/models/content/post.rb`
 * `app/controllers/content/posts_controller.rb`
 * `app/views/content/posts/index.html.erb`
