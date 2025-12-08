@@ -1,3 +1,10 @@
+<%# locals: (resource:, highlight: resource.metadata.highlight) %>
 <li class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
-  <%= link_to resource.name, resource, class: "block px-3 py-4 text-sm font-medium text-slate-800 border border-slate-100 rounded-md hover:bg-slate-100" %>
+  <%= link_to resource, class: class_names("relative block px-3 py-4 border rounded-md", {"border-slate-100 hover:bg-slate-100": highlight.blank?, "bg-gradient-to-b from-white to-amber-50 border-amber-200 hover:to-amber-100 hover:border-amber-300": highlight.present?}) do %>
+    <%= tag.p highlight, class: "absolute top-0 right-3 inline-flex px-3 py-0.5 text-xs font-medium text-amber-900 bg-amber-100/50 border-r border-b border-l border-amber-200 rounded-b-md" if highlight.present? %>
+
+    <%= tag.h4 resource.name, class: class_names("text-sm font-medium", {"text-slate-800": highlight.blank?, "text-amber-950": highlight.present?}) %>
+
+    <%= tag.p resource.metadata.about, class: class_names("mt-1 text-xs", {"text-slate-500": highlight.blank?, "text-amber-800": highlight.present?}) if resource.metadata.about.present? %>
+  <% end %>
 </li>

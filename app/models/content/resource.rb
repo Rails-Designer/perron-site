@@ -7,6 +7,12 @@ class Content::Resource < Perron::Resource
     component: "Components"
   }.with_indifferent_access
 
+  DESCRIPTIONS = {
+    template: "Complete HTML templates for pages, site sections and full websites",
+    snippet: "Code snippets to inject functionality into your site",
+    component: "Static site specific UI components"
+  }.with_indifferent_access
+
   def self.nested_routes = [ :template ]
 
   delegate :type, :title, :description, :category, :command, to: :metadata
@@ -16,7 +22,7 @@ class Content::Resource < Perron::Resource
   validates :type, inclusion: { in: TYPES.keys }
 
   def resource_type
-    Type.new(name: TYPES[metadata.type], slug: TYPES[metadata.type].parameterize)
+    Type.new(name: TYPES[metadata.type], description: DESCRIPTIONS[metadata.type], slug: TYPES[metadata.type].parameterize)
   end
   alias_method :article_section, :resource_type # required for a consistent API with Content::Article
 
@@ -32,5 +38,5 @@ class Content::Resource < Perron::Resource
 
   private
 
-  Type = Data.define(:name, :slug)
+  Type = Data.define(:name, :description, :slug)
 end

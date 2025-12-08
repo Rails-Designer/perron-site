@@ -2,6 +2,7 @@
 type: snippet
 title: Surge
 description: Add a complete deployment script for Surge.sh static site hosting with Perron.
+about: "Surge is a simple, single-command static web publishing platform for front-end developers. Deploy sites instantly from the command line with custom domains, free SSL, and no configuration required."
 category: deployment
 order: 3
 ---
