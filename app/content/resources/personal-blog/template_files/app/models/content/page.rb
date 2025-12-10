@@ -1,3 +1,3 @@
 class Content::Page < Perron::Resource
-  delegate :title, :nav_included, to: :metadata
+  delegate :title, :nav_label, to: :metadata
 end
