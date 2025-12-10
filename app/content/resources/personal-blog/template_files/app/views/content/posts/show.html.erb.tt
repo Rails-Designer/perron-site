@@ -6,7 +6,7 @@
   </h1>
 
   <p class="mt-6 flex items-center gap-x-4 empty:hidden">
-    <%= tag.span "Published at #{@resource.published_at.strftime("%Y/%m/%d")}", class: "text-sm text-gray-500" if @resource.published_at.present? %>
+    <%= tag.span "Published at \#{@resource.published_at.strftime(\"%Y/%m/%d\")}", class: "text-sm text-gray-500" if @resource.published_at.present? %>
 
     <%= tag.span "Scheduled", class: "inline-block px-2 py-0.5 font-sans text-xs font-medium text-orange-600 bg-orange-100 rounded-md" if @resource.scheduled? %>
   </p>
