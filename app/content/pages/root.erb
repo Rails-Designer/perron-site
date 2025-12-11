@@ -40,25 +40,25 @@ description: Perron is a static site generator for Ruby on Rails. Build your sta
   <%= markdownify do %>
     Hey! 👋
 
-    **Another Static Site Generator (SSG)? In 2025?** Yes! For years I've built static sites using Ruby-based SSGs and occasionally tried JavaScript alternatives. But there's always been a frustrating disconnect when switching between building Rails apps and creating static sites. Stimulus works differently, Tailwind CSS requires separate configurations, and countless other tools from my Rails workflow simply weren't reusable in static site generators (even Ruby-based ones!).
+    **Another Static Site Generator (SSG)? Launched in 2025?** Yes! For years I've built static sites using Ruby-based SSGs and occasionally tried JavaScript alternatives. But there's always been a frustrating disconnect when switching between building Rails apps and creating static sites. Stimulus works differently, Tailwind CSS requires separate configurations and countless other tools from my Rails workflow simply weren't reusable in static site generators (even Ruby-based ones!).
 
     **Perron** (Dutch/French; *a platform at a railway station from where passengers can board or disembark trains*) bridges this gap elegantly. Rather than being a standalone SSG, Perron is packaged as a gem that runs within your Rails app. This approach gives you the best of both worlds:
 
-    * all the Rails features you know and love: layouts, views, partials, and helpers (including all the gems you love to use);
-    * purpose-built tools for static content: markdown processing with syntax highlighting, collection management, and content organization;
-    * SEO essentials: meta tags, sitemap.xml, and RSS/JSON feeds;
-    * smart features like related content recommendations (using TF-IDF algorithm);
-    * flexible data handling through YML, JSON, or CSV files.
+    * all the Rails features you know and love: layouts, views, partials, helpers and all the gems you love to use in Rails;
+    * purpose-built tools for static content: markdown processing with syntax highlighting, collection management and content organization;
+    * SEO essentials: meta tags, sitemap.xml and RSS/JSON feeds;
+    * smart features like related content recommendations (using TF-IDF algorithm) and programmatic content;
+    * flexible data handling through YML, JSON or CSV files.
 
     Perron offers two operating modes to fit your needs:
-    * **Standalone mode**: generate a complete static site for deployment to services like Netlify, Render, etc.;
-    * **Integrated mode**: add static pages directly to your existing Rails application.
+    * **Standalone**: generate a complete static site for deployment to services like Netlify, Render, statichost.eu, etc.;
+    * **Integrated**: add static pages directly to your existing Rails application.
 
-    With Perron's convention-over-configuration approach, you can organize content in familiar Rails patterns. Create collections with generators, set up routes naturally, and leverage ERB embedding in your markdown when needed.
+    With Perron's convention-over-configuration approach, you can organize content in familiar Rails patterns. Create collections with generators, set up routes naturally and leverage ERB embedding in your markdown when needed.
 
-    Perron is already powering [multiple sites](/docs/sites/) ([this site's repo can be found here](https://github.com/Rails-Designer/perron-site)). I'd love to see you give Perron a try for your next marketing site, blog, or documentation project! 😊
+    Perron is already powering [multiple sites](/docs/sites/) ([this site's repo can be found here](https://github.com/Rails-Designer/perron-site)). I'd love to see you give Perron a try for your next marketing site, blog or documentation project! 😊
 
-    Be sure to [check it out (and ⭐ it) on GitHub](https://github.com/Rails-Designer/perron). ❤️
+    [Check it out (and ⭐ it) on GitHub](https://github.com/Rails-Designer/perron). ❤️
 
     *-Rails Designer*
   <% end %>
