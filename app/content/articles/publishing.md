@@ -1,7 +1,7 @@
 ---
 section: content
 order: 3.7
-title: Publishing & scheduling
+title: Publishing
 description: Control the visibility of your content by marking it as published, scheduled, or draft.
 erb: true
 ---
@@ -65,16 +65,36 @@ published: false
 > A resource will not be published if `draft` is `true`, if `published` is `false` or if its publication date is in the future.
 
 
+## Preview
+
+Set `preview: true` frontmatter to allow draft or scheduled content to be built with a secret token appended to the slug.
+
+Examples:
+```yml
+preview: true # → "my-post-a1b2c3d4e5f6"
+preview: custom-token # → "my-post-custom-token"
+```
+
+Note that anyone with the “secret link” can view the content, including (search) bots. To skip indexing, by search engines, of previewable resources add this to the `<head>`:
+```erb
+<%% if @resource.previewable? %>
+  <meta name="robots" content="nofollow, noindex" />
+<%% end %>
+```
+
+
 ## Available Methods
 
 The publishing logic adds several helpful methods to your resource objects.
 
-| Method             | Description                                                                                               |
-| :----------------- | :-------------------------------------------------------------------------------------------------------- |
-| `published?`       | Returns `true` if the resource is currently visible to the public.                                        |
-| `scheduled?`       | Returns `true` if the resource's publication date is in the future.                                       |
-| `publication_date` | Returns the `Time` object for when the resource is/was published. Aliased as `published_at`.              |
-| `scheduled_at`     | Returns the publication date, but only if the resource is scheduled (otherwise returns `nil`).             |
+| Method             | Description
+| :----------------- | :----------
+| `published?`       | Returns `true` if the resource is currently visible to the public
+| `scheduled?`       | Returns `true` if the resource's publication date is in the future
+| `draft?`           | Returns `true` if the resource's frontmatter has `draft: true` or `published: false`
+| `previewable?`     | Returns `true` if the resource's frontmatter has `preview: true`
+| `publication_date` | Returns the `Time` object for when the resource is/was published. Aliased as `published_at`
+| `scheduled_at`     | Returns the publication date, but only if the resource is scheduled (otherwise returns `nil`)
 
 
 ## Viewing Unpublished Content
