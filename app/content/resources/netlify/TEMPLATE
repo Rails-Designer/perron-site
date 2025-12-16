@@ -6,4 +6,7 @@ create_file "netlify.toml", <<~TOML
   [build.environment]
     RAILS_ENV = "production"
     RUBY_VERSION = "3.4.5"
+[context.production.environment]
+  PERRON_HOST = "yourdomain.com"
+  PERRON_PROTOCOL = "https"
 TOML
