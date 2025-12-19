@@ -16,7 +16,7 @@ Any content file with a `.erb` extension (e.g., `about.erb`) will automatically 
 
 ## Frontmatter
 
-You can enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter (like [this markdown file you are looking at](<%= edit_on_github_url(@resource) %>)).
+You can enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter (like [this markdown file you are looking at](<%= view_on_github_url(@resource) %>)).
 ```markdown
 ---
 title: Embed Ruby
