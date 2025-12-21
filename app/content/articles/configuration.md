@@ -25,7 +25,6 @@ Below are available settings:
 
 - **site_name**; your site's name, used as fallback for meta tags
 - **site_description**; your site's description; used as fallback for meta tags
-- **site_email**; your site's email
 - **output**; defaults to `output`
 - **mode**; defaults to `standalone`
 - **include_root**; in `integrated` mode, root route is excluded by default, override here

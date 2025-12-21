@@ -67,6 +67,8 @@ published: false
 
 ## Preview
 
+[!label v0.15.0+]
+
 Set `preview: true` frontmatter to allow draft or scheduled content to be built with a secret token appended to the slug.
 
 Examples:

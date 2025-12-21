@@ -55,3 +55,62 @@ class Content::Post < Perron::Resource
   end
 end
 ```
+
+
+## Author
+
+[!label v0.16.0+]
+
+Feeds can include optional author information. Set a default author for the collection:
+```ruby
+class Content::Post < Perron::Resource
+  configure do |config|
+    config.feeds.author = {
+      name: "Rails Designer",
+      email: "support@railsdesigner.com"
+    }
+  end
+end
+```
+
+Individual resources can override this using a [`belongs_to :author` relationship](/docs/resources/#associations):
+```ruby
+class Content::Post < Perron::Resource
+  belongs_to :author
+end
+```
+
+```markdown
+---
+title: My Post
+author_id: kendall
+---
+```
+
+> [!NOTE]
+> RSS feeds require an email address. JSON feeds only require a name. Both support optional `url` and `avatar` fields.
+
+
+### Using a data file
+
+If you prefer to manage authors in a data file instead of individual content resources, you can create a YAML file in `app/content/data/` (e.g., `app/content/data/authors.yml` or `app/content/data/team.yml`):
+```yaml
+kendall:
+  name: Kendall
+  email: kendall@railsdesigner.com
+  url: https://example.com
+  avatar: /images/kendall.jpg
+  bio: Software developer and writer
+  myspace: kendall-rd
+```
+
+For feeds to work, your data must include at least `name` and `email` keys (or just `name` for JSON feeds). You can add any additional keys for your own use.
+
+Then override the `author` method in your resource model:
+```ruby
+class Content::Post < Perron::Resource
+  def author
+    super || Perron::Site.data.authors[metadata.author_id]
+  end
+end
+```
