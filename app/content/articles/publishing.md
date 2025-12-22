@@ -77,9 +77,9 @@ preview: true # → "my-post-a1b2c3d4e5f6"
 preview: custom-token # → "my-post-custom-token"
 ```
 
-Note that anyone with the “secret link” can view the content, including (search) bots. To skip indexing, by search engines, of previewable resources add this to the `<head>`:
+Note that anyone with the “secret link” can view the content, including (search) bots. To skip indexing, by search engines, of “previewable resources” add this to the `<head>`:
 ```erb
-<%% if @resource.previewable? %>
+<%% if @resource.preview? %>
   <meta name="robots" content="nofollow, noindex" />
 <%% end %>
 ```
@@ -94,7 +94,7 @@ The publishing logic adds several helpful methods to your resource objects.
 | `published?`       | Returns `true` if the resource is currently visible to the public
 | `scheduled?`       | Returns `true` if the resource's publication date is in the future
 | `draft?`           | Returns `true` if the resource's frontmatter has `draft: true` or `published: false`
-| `previewable?`     | Returns `true` if the resource's frontmatter has `preview: true`
+| `preview?`         | Returns `true` if the resource's frontmatter has `preview: true`. Aliased as `previewable?`
 | `publication_date` | Returns the `Time` object for when the resource is/was published. Aliased as `published_at`
 | `scheduled_at`     | Returns the publication date, but only if the resource is scheduled (otherwise returns `nil`)
 

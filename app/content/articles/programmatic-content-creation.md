@@ -7,7 +7,7 @@ description: Generate hundreds of pages from data sources for programmatic SEO a
 
 [!label v0.14.0+]
 
-Generate content programmatically from data sources instead of creating files manually. Define a template once and Perron creates resources for every combination of your data. Perfect for programmatic SEO where you need similar pages with different data.
+Generate content programmatically from [data sources](/docs/data/) instead of creating files manually. Define a template once and Perron creates resources for every combination of your data. Perfect for programmatic SEO where you need similar pages with different data.
 
 
 ## Basic Usage
