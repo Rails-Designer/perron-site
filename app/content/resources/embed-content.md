@@ -2,7 +2,7 @@
 type: snippet
 title: Auto-embed URLs from YouTube, Vimeo, Gists and more
 description: This snippet adds a processor that transforms links to platforms, like YouTube, GitHub Gist and Loom to embeddable iframes.
-category: styling
+category: processor
 ---
 
 This processor automatically converts plain text URLs in paragraphs to embedded content. Simply paste a URL to a supported platform and it will be transformed into an interactive embed.

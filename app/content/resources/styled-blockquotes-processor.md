@@ -2,7 +2,7 @@
 type: snippet
 title: Processor for styled blockquotes
 description: This snippet adds a processor to transform GitHub-style alert syntax ([!NOTE], [!TIP], etc.) into styled blockquotes with optional icons.
-category: styling
+category: processor
 ---
 
 This snippet adds a processor to transform blockquotes into styled HTML elements, like seen on GitHub. It supports the types: *note*, *tip*, *important*, *warning* and *caution*.
