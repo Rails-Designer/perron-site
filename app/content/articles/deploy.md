@@ -2,11 +2,11 @@
 section: getting_started
 order: 3
 title: Deploy to production
-description: Perron can be deployed as a static site (to platforms like Netlify) or within your production Rails app.
+description: Perron can be deployed as a static site (to platforms like Netlify and statichost.eu) or within your production Rails app.
 toc: false
 ---
 
-Perron can be deployed to any build-based platform, like Netlify. It can operate in two modes, configured via `config.mode`. This allows a build to be either a full static site or be integrated pages in a dynamic Rails application.
+Perron can be deployed to any build-based platform, like [Netlify](/library/netlify/) and [statichost.eu](/library/statichost/). It can operate in two modes, configured via `config.mode`. This allows a build to be either a full static site or be integrated pages in a dynamic Rails application.
 
 | **Mode** | `:standalone` (default) | `:integrated` |
 | :--- | :--- | :--- |
