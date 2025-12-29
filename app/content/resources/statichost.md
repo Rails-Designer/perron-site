@@ -8,7 +8,7 @@ category: deployment
 order: 1
 ---
 
-This snippet adds a configuration file for [Statichost](https://statichost.eu/) deployments. The `statichost.yml` file defines how your site should be built and deployed on Statichost. It specifies the Ruby container image, a custom build command, and sets the output directory.
+This snippet adds a configuration file for [Statichost](https://statichost.eu/) deployments. The `statichost.yml` file defines how your site should be built and deployed on Statichost. It specifies the Ruby container image, a custom build command and sets the output directory.
 
 > [!TIP]
 > Use `PERRONSITE` on check out to get 50% off for three months

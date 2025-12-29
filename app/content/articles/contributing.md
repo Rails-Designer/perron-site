@@ -12,6 +12,6 @@ This project uses [Standard](https://github.com/testdouble/standard) for formatt
 
 Get set up by running `bin/setup`.
 
-`rake` runs both `rails test` and `bundle exec standardrb`. `bin/ci` runs various steps to ensure code quality, security, and test coverage before deployment.
+`rake` runs both `rails test` and `bundle exec standardrb`. `bin/ci` runs various steps to ensure code quality, security and test coverage before deployment.
 
 [View GitHub repo](https://github.com/rails-designer/perron).

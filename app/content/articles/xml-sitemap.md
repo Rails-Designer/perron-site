@@ -6,7 +6,7 @@ description: For bigger sites, a XML sitemap can help to get quicker indexed.
 ---
 
 
-A sitemap is a XML file that lists all the pages of a website to help search engines discover and index content more efficiently, typically containing URLs, last modification dates, change frequency, and priority values.
+A sitemap is a XML file that lists all the pages of a website to help search engines discover and index content more efficiently, typically containing URLs, last modification dates, change frequency and priority values.
 
 Enable it with the following line in the Perron configuration:
 ```ruby

@@ -165,7 +165,7 @@ end
 ```
 
 > [!note]
-> The `@html` instance variable is a `Nokogiri::HTML::DocumentFragment` object, giving you access to methods like `css()`, `xpath()`, and DOM manipulation. See the [Nokogiri docs](https://nokogiri.org/) for more.
+> The `@html` instance variable is a `Nokogiri::HTML::DocumentFragment` object, giving you access to methods like `css()`, `xpath()` and DOM manipulation. See the [Nokogiri docs](https://nokogiri.org/) for more.
 
 Then, pass the class constant directly in the `process` array.
 ```erb

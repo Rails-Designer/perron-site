@@ -24,7 +24,7 @@ If you want to render a list of resources, use `Content::Post.all`. You can also
 This expects a partial `app/views/content/posts/_post.html.erb`.
 
 
-Or set a partial, and pass the collection:
+Or set a partial and pass the collection:
 ```erb
 <%= render partial: "content/posts/custom", collection: Content::Post.all %
 ```
