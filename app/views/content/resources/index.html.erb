@@ -16,7 +16,7 @@
         <ul class="grid gap-4 mt-3.5">
           <% resources.sort_by(&:category).group_by(&:category).each do |category, resources| %>
             <li>
-              <%= tag.h3 category.to_s.humanize, class: "ml-2 text-sm font-semibold text-slate-800" %>
+              <%= tag.h3 category.to_s.humanize, id: category.to_s.parameterize, class: "ml-2 text-sm font-semibold text-slate-800" %>
 
               <ul class="grid grid-cols-12 gap-4 mt-0.75 px-2">
                 <%= render resources.sort_by(&:order) %>

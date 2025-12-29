@@ -69,7 +69,7 @@ published: false
 
 [!label v0.15.0+]
 
-Set `preview: true` frontmatter to allow draft or scheduled content to be built with a secret token appended to the slug.
+Set `preview: true` frontmatter to allow draft or scheduled content to be built in production with a secret token appended to the slug.
 
 Examples:
 ```yml
@@ -77,7 +77,9 @@ preview: true # → "my-post-a1b2c3d4e5f6"
 preview: custom-token # → "my-post-custom-token"
 ```
 
-Note that anyone with the “secret link” can view the content, including (search) bots. To skip indexing, by search engines, of “previewable resources” add this to the `<head>`:
+The generated token is built off the content's file path. So if you change the file path, the generated token will change too.
+
+Note that anyone with the “secret link” can view the content, including (search) bots. To skip indexing, by decent bots, of “previewable resources” add this to the `<head>`:
 ```erb
 <%% if @resource.preview? %>
   <meta name="robots" content="nofollow, noindex" />
@@ -94,11 +96,11 @@ The publishing logic adds several helpful methods to your resource objects.
 | `published?`       | Returns `true` if the resource is currently visible to the public
 | `scheduled?`       | Returns `true` if the resource's publication date is in the future
 | `draft?`           | Returns `true` if the resource's frontmatter has `draft: true` or `published: false`
-| `preview?`         | Returns `true` if the resource's frontmatter has `preview: true`. Aliased as `previewable?`
+| `preview?`         | Returns `true` if the resource's frontmatter has `preview: true` and is not `published?`. Aliased as `previewable?`
 | `publication_date` | Returns the `Time` object for when the resource is/was published. Aliased as `published_at`
 | `scheduled_at`     | Returns the publication date, but only if the resource is scheduled (otherwise returns `nil`)
 
 
 ## Viewing Unpublished Content
 
-For development or preview environments, you can globally override the publishing rules to make all content visible, including drafts and scheduled posts. This is done by setting `Perron.configuration.view_unpublished = true` (defaults to `Rails.env.development?`, so you can always preview your content in development) in your configuration.
+For development or preview/staging environments, you can globally override the publishing rules to make all content visible, including drafts and scheduled posts. This is done by setting `Perron.configuration.view_unpublished = true` (defaults to `Rails.env.development?`, so you can always preview your content in development) in your configuration.

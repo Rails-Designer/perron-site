@@ -16,7 +16,7 @@ Any content file with a `.erb` extension (e.g., `about.erb`) will automatically 
 
 ## Frontmatter
 
-You can enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter (like [this markdown file you are looking at](<%= view_on_github_url(@resource) %>)).
+You can enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter (like [this markdown file you are looking at](<%= view_on_github_url("app/content/articles/embed-ruby.md") %>)).
 ```markdown
 ---
 title: Embed Ruby
@@ -33,7 +33,7 @@ The current date (upon building this site) is: <%= Time.current.strftime("%d %B 
 
 For the most granular control, the `erbify` helper allows to process specific sections of a file as ERB. This is ideal for generating dynamic content like lists or tables from your resource's metadata, without needing to enable ERB for the entire file.
 
-**Example:** Generating a list from frontmatter data in a standard `.md` file.
+**Example:** generating a list from frontmatter data in a standard `.md` file.
 ```markdown
 ---
 title: Features

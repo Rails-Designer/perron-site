@@ -10,7 +10,7 @@ Perron can be deployed to any build-based platform, like [Netlify](/library/netl
 
 | **Mode** | `:standalone` (default) | `:integrated` |
 | :--- | :--- | :--- |
-| **Use Case** | Full static site for hosts like Netlify, Render, etc. | Add static pages to a live Rails app |
+| **Use Case** | Full static site for hosts like [Netlify](/library/netlify/), [statichost.eu](/library/statichost/), etc. | Add static pages to a live Rails app |
 | **Output** | `output/` directory | `public/` directory |
 | **Asset Handling** | Via Perron | Via Asset Pipeline |
 
@@ -21,7 +21,7 @@ RAILS_ENV=production rails perron:build
 
 This will create your static site in the configured output directory (`output` by default).
 
-View the [Library](/library/) for deploy scripts to various platforms.
+View the [Library](/library/#deployment) for deploy scripts to various platforms.
 
 
 ## Local preview
