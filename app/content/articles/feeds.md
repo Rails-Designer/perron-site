@@ -106,11 +106,9 @@ kendall:
 
 For feeds to work, your data must include at least `name` and `email` keys (or just `name` for JSON feeds). You can add any additional keys for your own use.
 
-Then override the `author` method in your resource model:
+Then add the `class_name` option to the `belongs_to` association:
 ```ruby
 class Content::Post < Perron::Resource
-  def author
-    super || Perron::Site.data.authors[metadata.author_id]
-  end
+  belongs_to :author, class_name: "Content::Data::Authors"
 end
 ```
