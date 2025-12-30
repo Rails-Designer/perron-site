@@ -61,6 +61,10 @@
           color: var(--color-slate-500);
           opacity: 0;
         }
+
+        &:focus-visible {
+          outline: 0;
+        }
       }
 
       @media (hover: hover) and (min-width: 1024px) {

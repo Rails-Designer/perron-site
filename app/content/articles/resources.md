@@ -98,7 +98,7 @@ post.author # => Content::Author instance
 
 [!label v0.16.0+]
 
-You can associate resources with data files using the `class_name` option:
+You can associate resources with [data files](/docs/data/) using the `class_name` option:
 ```ruby
 # app/models/content/post.rb
 class Content::Post < Perron::Resource
