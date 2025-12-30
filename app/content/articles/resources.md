@@ -73,6 +73,7 @@ Define a `belongs_to` association when a resource references another resource:
 # app/models/content/post.rb
 class Content::Post < Perron::Resource
   belongs_to :author
+  belongs_to :editor, class_name: "Content::Author"
 end
 ```
 
@@ -82,6 +83,7 @@ In your content's frontmatter, add the foreign key with `_id` suffix:
 ---
 title: My First Post
 author_id: rails-designer
+editor_id: cam
 ---
 
 Post content here…
@@ -91,6 +93,7 @@ Access the associated resource:
 ```ruby
 post = Content::Post.find("my-first-post")
 post.author # => Content::Author instance
+post.editor # => Content::Author instance
 ```
 
 
@@ -98,32 +101,69 @@ post.author # => Content::Author instance
 
 [!label v0.16.0+]
 
-You can associate resources with [data files](/docs/data/) using the `class_name` option:
+You can associate resources with data files using the `class_name` option. This works for both `belongs_to` and `has_many` associations.
+
+
+#### belongs_to with Data
+
 ```ruby
 # app/models/content/post.rb
 class Content::Post < Perron::Resource
-  belongs_to :author, class_name: "Content::Data::Authors"
+  belongs_to :editor, class_name: "Content::Data::Editors"
 end
 ```
 
 ```yaml
-# app/content/data/authors.yml
-- id: rails-designer
-  name: Rails Designer
-  bio: Creator of Perron
+# app/content/data/editors.yml
+- id: kendall
+  name: Kendall
+  bio: Master of the edit
+
+- id: chris
+  name: Chris
+  bio: Editor Overlord
 ```
 
 ```markdown
 <!-- app/content/posts/my-first-post.md -->
 ---
 title: My First Post
-author_id: rails-designer
+editor_id: kendall
 ---
 
 Post content here…
 ```
 
-The association works the same way, but pulls data from the structured data file instead of another resource collection.
+The association works the same way as with Content resources, but pulls data from the structured data file.
+
+
+#### has_many with Data
+
+For multiple associations, use an array of IDs in your frontmatter. This pattern mimics Rails' `has_and_belongs_to_many` associations, where the relationship is defined by a list of IDs:
+```ruby
+# app/models/content/post.rb
+class Content::Post < Perron::Resource
+  has_many :editors, class_name: "Content::Data::Editors"
+end
+```
+
+```markdown
+<!-- app/content/posts/my-first-post.md -->
+---
+title: My First Post
+editor_ids: [kendall, chris]
+---
+
+Post content here…
+```
+
+Access the collection:
+```ruby
+post = Content::Post.find("my-first-post")
+post.editors # => Array of Content::Data::Editor instances where id matches editor_id
+```
+
+When `{association_name}_ids` is present in the frontmatter, Perron uses those IDs to find the associated records. If not present, it falls back to foreign key matching (e.g., looking for `post_id` in the data records).
 
 
 ## Validations
