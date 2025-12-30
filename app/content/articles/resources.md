@@ -94,6 +94,38 @@ post.author # => Content::Author instance
 ```
 
 
+### Associations with Data files
+
+[!label v0.16.0+]
+
+You can associate resources with data files using the `class_name` option:
+```ruby
+# app/models/content/post.rb
+class Content::Post < Perron::Resource
+  belongs_to :author, class_name: "Content::Data::Authors"
+end
+```
+
+```yaml
+# app/content/data/authors.yml
+- id: rails-designer
+  name: Rails Designer
+  bio: Creator of Perron
+```
+
+```markdown
+<!-- app/content/posts/my-first-post.md -->
+---
+title: My First Post
+author_id: rails-designer
+---
+
+Post content here…
+```
+
+The association works the same way, but pulls data from the structured data file instead of another resource collection.
+
+
 ## Validations
 
 Just like Rails' ActiveModel classes, you can validate values from your resource class, for example your frontmatter.

@@ -5,18 +5,20 @@ title: Data files
 description: Perron can consume data files like yaml, json and CSV.
 ---
 
-Perron can consume structured data from YML, JSON, or CSV files, making them available within your templates. This is useful for populating features, team members, or any other repeated data structure.
+Perron can consume structured data from YML, JSON, or CSV files, making them available within your templates. This is useful for populating features, team members or any other repeated data structure.
 
 
 ## Usage
 
-To use a data file, instantiate `Perron::Site.data` with the basename of the file and iterate over the result.
+Access data files using the `Content::Data` namespace with the class name matching your file's basename:
 ```erb
-<% Perron::Site.data.features.each do |feature| %>
+<% Content::Data::Features.all.each do |feature| %>
   <h4><%= feature.name %></h4>
   <p><%= feature.description %></p>
 <% end %>
 ```
+
+Look up one `record` with `Content::Data::Features.find("feature-id")`.
 
 
 ## File location and formats
@@ -37,7 +39,7 @@ feature[:name]
 
 You can render data collections directly using Rails-like partial rendering. When you call `render` on a data collection, Perron will automatically render a partial for each item.
 ```erb
-<%= render Perron::Site.data.features %>
+<%= render Content::Data::Features.all %>
 ```
 
 This expects a partial at `app/views/content/features/_feature.html.erb` that will be rendered once for each feature in your data file. The individual record is made available as a local variable matching the singular form of the collection name.
@@ -47,4 +49,19 @@ This expects a partial at `app/views/content/features/_feature.html.erb` that wi
   <h4><%= feature.name %></h4>
   <p><%= feature.description %></p>
 </div>
+```
+
+
+## Data structure
+
+Data files must contain an array of objects. Each record should include an `id` field if you plan to use it in [associations](/docs/resources/#associations):
+```yaml
+# app/content/data/authors.yml
+- id: rails-designer
+  name: Rails Designer
+  bio: Creator of Perron
+
+- id: cam
+  name: Cam
+  bio: Contributing author
 ```
