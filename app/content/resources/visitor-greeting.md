@@ -41,4 +41,4 @@ You can use any HTML in your templates:
 </visitor-greeting>
 ```
 
-Style the element with CSS to make it a banner, dialog, or anything else you need.
+Style the element with CSS to make it a banner, dialog or anything else you need.

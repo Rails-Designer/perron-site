@@ -1,7 +1,7 @@
 # Data
 
-Perron can consume structured data from YML, JSON, or CSV files, making them available within your templates.
-This is useful for populating features, team members, or any other repeated data structure.
+Perron can consume structured data from YML, JSON or CSV files, making them available within your templates.
+This is useful for populating features, team members or any other repeated data structure.
 
 
 ## Usage
@@ -27,8 +27,8 @@ This is a convenient shorthand for `Perron::Data.new("features")`, which can als
 
 ## File Location and Formats
 
-By default, Perron looks up `app/content/data/` for files with a `.yml`, `.json`, or `.csv` extension.
-For a `new("features")` call, it would find `features.yml`, `features.json`, or `features.csv`. You can also provide a full, absolute path to any data file, like `Perron::Data.new("path-to-some-data-file")`.
+By default, Perron looks up `app/content/data/` for files with a `.yml`, `.json` or `.csv` extension.
+For a `new("features")` call, it would find `features.yml`, `features.json` or `features.csv`. You can also provide a full, absolute path to any data file, like `Perron::Data.new("path-to-some-data-file")`.
 
 
 ## Accessing Data

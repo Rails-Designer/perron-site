@@ -2,7 +2,7 @@
 section: content
 order: 3.7
 title: Publishing
-description: Control the visibility of your content by marking it as published, scheduled, or draft.
+description: Control the visibility of your content by marking it as published, scheduled or draft.
 erb: true
 ---
 

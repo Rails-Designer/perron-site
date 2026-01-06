@@ -5,7 +5,7 @@ title: Data files
 description: Perron can consume data files like yaml, json and CSV.
 ---
 
-Perron can consume structured data from YML, JSON, or CSV files, making them available within your templates. This is useful for populating features, team members or any other repeated data structure.
+Perron can consume structured data from YML, JSON or CSV files, making them available within your templates. This is useful for populating features, team members or any other repeated data structure.
 
 
 ## Usage
