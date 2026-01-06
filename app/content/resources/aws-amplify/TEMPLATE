@@ -1,0 +1,18 @@
+create_file "amplify.yml", <<~YAML
+  version: 1
+  frontend:
+    phases:
+      preBuild:
+        commands:
+          - bundle install
+      build:
+        commands:
+          - RAILS_ENV=production bin/rails perron:build
+    artifacts:
+      baseDirectory: output
+      files:
+        - '**/*'
+    cache:
+      paths:
+        - vendor/bundle/**/*
+YAML
