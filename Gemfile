@@ -13,6 +13,3 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "rubocop-rails-omakase", require: false
 end
-
-# https://github.com/rails/importmap-rails/issues/316
-gem "openssl", "~> 3.3"

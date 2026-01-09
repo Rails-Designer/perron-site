@@ -164,7 +164,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.0-x86_64-linux-musl)
       racc (~> 1.4)
-    openssl (3.3.2)
     parallel (1.27.0)
     parser (3.3.10.0)
       ast (~> 2.4.1)
@@ -309,7 +308,6 @@ DEPENDENCIES
   commonmarker (~> 2.6)
   debug
   importmap-rails (~> 2.2.2)
-  openssl (~> 3.3)
   perron!
   propshaft
   puma (>= 5.0)
