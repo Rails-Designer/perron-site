@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :blas, module: :content, only: %w[show]
   resources :resources, module: :content, path: "library", only: %w[index show] do
     resource :template, path: "template.rb", module: :resources, only: %w[show]
   end
