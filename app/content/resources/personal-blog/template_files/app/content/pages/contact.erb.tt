@@ -10,7 +10,7 @@ description: description
   </h1>
 
   <p class="mt-5 text-lg text-gray-800 md:text-2xl max-w-prose md:mt-8">
-    Want to say? Have a question? <%= mail_to "me@example.com", "Send me an email" %> or find me on a platform below.
+    Want to say “hi”? Have a question? <%= mail_to "me@example.com", "Send me an email" %> or find me on a platform below.
   </p>
 
   <ul class="flex flex-col gap-y-1 mt-5 text-lg">

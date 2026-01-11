@@ -1,3 +1,4 @@
+gem "perron"
 gem "tailwindcss-rails"
 
 after_bundle do
@@ -5,7 +6,7 @@ after_bundle do
   rails_command "generate content page show"
 
 <% template_files.each do |path, file| %>
-file "<%= path %>" do
+file "<%= path %>", force: true do
 <<~"_"
 <%= File.read(file) %>
 _
