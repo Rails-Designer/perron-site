@@ -2,6 +2,10 @@ gem "perron"
 gem "tailwindcss-rails"
 
 after_bundle do
+  unless File.exist?("config/initializers/perron.rb")
+    rails_command "generate perron:install"
+  end
+
   rails_command "tailwindcss:install"
   rails_command "generate content page show"
   rails_command "generate content post"

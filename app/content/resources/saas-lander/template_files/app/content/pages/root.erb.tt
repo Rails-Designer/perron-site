@@ -17,6 +17,6 @@ dscription: Because great things happen when you have the right tools to bring y
   <img src="https://placehold.co/1280x720/dbeafe/172554?text=Screenshot" alt="Preview of my great new SaaS" class="w-full max-w-5xl mx-auto rounded-2xl border-10 border-white/40 ring ring-offset-0 ring-white/60 animate-zoom-in delay-300" />
 </div>
 
-<%= render partial: "shared/features", locals: { features: Perron::Site.data("features") } %>
+<%= render partial: "shared/features", locals: { features: Content::Data::Features.all } %>
 
 <%= render partial: "shared/email_form" %>

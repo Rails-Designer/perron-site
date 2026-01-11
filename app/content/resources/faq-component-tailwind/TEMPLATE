@@ -19,4 +19,4 @@ create_file "app/views/shared/_faq.html.erb", <<~ERB
 </dl>
 ERB
 
-say "Usage: `render \"shared/faq\", collection: Perron::Site.data.faq` (replace with your data file)"
+say "Usage: `render \"shared/faq\", collection: Content::Data::Faq.all` (replace with your data file)"

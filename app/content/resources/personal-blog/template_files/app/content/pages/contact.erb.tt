@@ -14,6 +14,6 @@ description: description
   </p>
 
   <ul class="flex flex-col gap-y-1 mt-5 text-lg">
-    <%= render Perron::Site.data.social_links %>
+    <%= render Content::Data::SocialLinks.all %>
   </ul>
 </article>
