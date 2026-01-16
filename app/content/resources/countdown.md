@@ -14,7 +14,7 @@ Provide a `to-time` attribute with an ISO 8601 datetime string:
 <count-down to-time="2026-12-31T23:59:59Z"></count-down>
 ```
 
-This will display the countdown in the format: `*d **h **m **s`
+This will display the countdown in the format: `*d *h *m *s`
 
 
 ### Timezones

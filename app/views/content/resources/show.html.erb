@@ -1,13 +1,19 @@
-<article class="mt-4 px-2 max-w-prose mt:mt-6 lg:mt-5">
-  <h1 class="text-2xl font-bold text-slate-800 tracking-tight sm:text-3xl">
-    <%= @resource.name %>
-  </h1>
+<article class="mt-4 px-2 mt:mt-6 lg:mt-5">
+  <hgroup class="grid md:grid-cols-[auto_min-content_1fr] gap-x-0.5 text-2xl font-bold tracking-tight sm:text-3xl">
+    <%= link_to "Library", resources_url, class: "text-xl text-slate-600 md:text-3xl hover:underline" %>
+
+    <span class="hidden font-medium text-slate-300 md:block">/</span>
+
+    <h1 class="text-slate-800">
+      <%= @resource.name %>
+    </h1>
+  </hgroup>
 
   <%= render "content/resources/template", resource: @resource %>
 
   <%= render "image_gallery" %>
 
-  <div class="content my-6 text-lg text-slate-800">
+  <div class="content max-w-prose my-6 text-lg text-slate-800">
     <%= markdownify @resource.content, process: [NofollowProcessor, StyledBlockquoteProcessor] %>
   </div>
 </article>
