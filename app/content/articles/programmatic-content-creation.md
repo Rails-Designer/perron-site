@@ -12,7 +12,7 @@ Generate content programmatically from [data sources](/docs/data/) instead of cr
 
 ## Basic Usage
 
-First create your data files:
+First create your data resources:
 ```csv
 # app/content/data/products.csv
 id,name,price

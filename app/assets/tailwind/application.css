@@ -21,7 +21,7 @@
 
     @apply [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:text-slate-800;
     @apply [&_h3]:font-semibold [&_h3]:text-xl [&_h3]:text-slate-800;
-    @apply [&_h4]:font-semibold [&_h4]:text-base [&_h4]:text-slate-800;
+    @apply [&_h4]:font-semibold [&_h4]:text-lg [&_h4]:text-slate-800;
 
     @apply [&>p,&_li]:text-lg [&>p]:text-slate-800;
     @apply [&_ul,&_ol]:mt-2 [&_ul]:list-disc [&_ul,&_ol]:list-outside [&_ul]:ml-4.5 [&_ol]:ml-5;

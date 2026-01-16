@@ -77,7 +77,7 @@ class Content::Post < Perron::Resource
 end
 ```
 
-In your content's frontmatter, add the foreign key with `_id` suffix:
+In your content's frontmatter, add the association name with `_id` suffix:
 ```markdown
 <!-- app/content/posts/my-first-post.md -->
 ---
@@ -97,11 +97,11 @@ post.editor # => Content::Author instance
 ```
 
 
-### Associations with Data files
+### Associations with Data sources
 
 [!label v0.16.0+]
 
-You can associate resources with data files using the `class_name` option. This works for both `belongs_to` and `has_many` associations.
+You can associate resources with [data sources](/docs/data/) using the `class_name` option. This works for both `belongs_to` and `has_many` associations.
 
 
 #### belongs_to with Data
@@ -134,7 +134,7 @@ editor_id: kendall
 Post content here…
 ```
 
-The association works the same way as with Content resources, but pulls data from the structured data file.
+The association works the same way as with Content resources, but pulls data from the structured data resource.
 
 
 #### has_many with Data

@@ -91,9 +91,9 @@ author_id: kendall
 > RSS feeds require an email address. JSON feeds only require a name. Both support optional `url` and `avatar` fields.
 
 
-### Using a data file
+### Using a data resource
 
-If you prefer to manage authors in a data file instead of individual content resources, you can create a YAML file in `app/content/data/` (e.g., `app/content/data/authors.yml` or `app/content/data/team.yml`):
+If you prefer to manage authors in a [data resource](/docs/data/) instead of individual content resources, you can create a YAML file in `app/content/data/` (e.g., `app/content/data/authors.yml` or `app/content/data/team.yml`):
 ```yaml
 kendall:
   id: kendall
