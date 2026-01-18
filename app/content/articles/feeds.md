@@ -65,7 +65,13 @@ Feeds can include optional author information. Set a default author for the coll
 ```ruby
 class Content::Post < Perron::Resource
   configure do |config|
-    config.feeds.author = {
+    config.feeds.rss.author = {
+      name: "Rails Designer",
+      email: "support@railsdesigner.com"
+    }
+
+    # or, for JSON feeds:
+    config.feeds.json.author = {
       name: "Rails Designer",
       email: "support@railsdesigner.com"
     }
