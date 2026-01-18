@@ -61,35 +61,18 @@ You can also pass a block:
 
 To pass options to the parser, set `markdown_options` in `config/initializers/perron.rb`. The options hash is passed directly to the chosen library.
 
-**Commonmarker**
 ```ruby
 Perron.configure do |config|
   # …
-
+  # Commonmarker
   # Options are passed as keyword arguments.
   config.markdown_options = { options: [:HARDBREAKS], extensions: [:table] }
 
-  # …
-end
-```
-
-**Kramdown**
-```ruby
-Perron.configure do |config|
-  # …
-
+  # Kramdown
   # Options are passed as a standard hash.
   config.markdown_options = { input: "GFM", smart_quotes: "apos,quot" }
 
-  # …
-end
-```
-
-**Redcarpet**
-```ruby
-Perron.configure do |config|
-  # …
-
+  # Redcarpet
   # Options are nested under :renderer_options and :markdown_options.
   config.markdown_options = {
     renderer_options: { hard_wrap: true },
