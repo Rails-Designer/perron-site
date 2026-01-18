@@ -7,4 +7,4 @@ category: deployment
 order: 6
 ---
 
-This snippet adds a configuration file for [AWS Amplify](https://docs.aws.amazon.com/amplify/) deployments. The `amplify.yml` file defines build phases, output directory, and cache paths for your static site. Environment variables are typically configured in the Amplify console.
+This snippet adds a configuration file for [AWS Amplify](https://docs.aws.amazon.com/amplify/) deployments. The `amplify.yml` file defines build phases, output directory and cache paths for your static site. Environment variables are typically configured in the Amplify console.

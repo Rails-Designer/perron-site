@@ -44,14 +44,6 @@ recent_posts = Content::Post.all.select { (it.published_at.after? 1.month.ago }
 ```
 
 
-### Transformation
-
-```ruby
-titles = Content::Post.all.map(&:title)
-slugs_with_titles = Content::Post.all.map { [it.slug, it.title] }.to_h
-```
-
-
 ### Sorting
 
 ```ruby
@@ -72,7 +64,7 @@ most_recent = Content::Post.all.sort_by(&:publication_date).reverse.first(5)
 ### Finding
 
 ```ruby
-ruby_tutorial = Content::Post.all.find { it.metadatatitle.include?("Ruby Tutorial") }
+ruby_tutorial = Content::Post.all.find { it.metadata.title.include?("Ruby Tutorial") }
 posts_with_images = Content::Post.all.select { it.content.include?("![") } # assuming markdown usage
 ```
 

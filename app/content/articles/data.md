@@ -18,7 +18,7 @@ Access data sources using the `Content::Data` namespace with the class name matc
 <% end %>
 ```
 
-Look up one `record` with `Content::Data::Features.find("feature-id")`.
+Look up a single entry with `Content::Data::Features.find("advanced-search")`, where `"advanced-search"` matches the value of the entry's `id` field.
 
 
 ## File location and formats
@@ -54,7 +54,7 @@ This expects a partial at `app/views/content/features/_feature.html.erb` that wi
 
 ## Data structure
 
-Data resources must contain an array of objects. Each record should include an `id` field if you plan to use it in [associations](/docs/resources/#associations):
+Data resources must contain an array of objects. Each record should include an `id` field if you plan to use it in [associations](/docs/resources/#associations) or need to use the `find` method:
 ```yaml
 # app/content/data/authors.yml
 - id: rails-designer
@@ -65,3 +65,10 @@ Data resources must contain an array of objects. Each record should include an `
   name: Cam
   bio: Contributing author
 ```
+
+
+## Enumerable methods
+
+[!label v0.17.0+]
+
+All data objects support enumerable methods like `select`, `sort_by`, `first` and `count`. See [Enumerable methods](/docs/rendering/#enumerable-methods) for the full list of available methods.

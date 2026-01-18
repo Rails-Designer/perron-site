@@ -10,7 +10,7 @@ Perron.configure do |config|
     options: {
       render: {
         unsafe: true
-      },
+      }
     },
 
     plugins: {
