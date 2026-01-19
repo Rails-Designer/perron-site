@@ -211,12 +211,31 @@ class Content::PostsController < ApplicationController
 end
 ```
 
-> [!note]
-> Currently various features from Perron rely on this instance variable being explicitly set as `@resource`. This is a known limitation and I hope to change it in a future version.
+> [!important]
+> Various features from Perron rely on @resource being explicitly set.
 
 
 ## Setting a root page
 
-To set a root page, include `Perron::Root` in your `Content::PagesController` and add a `app/content/pages/root.{md,erb,*}` file. Then add `root to: "content/pages#root"` add the bottom of your `config/routes.rb`.
+To set a root page, create a `root.{md,erb,*}` file in your pages content directory (`app/content/pages/root.erb`) and add a `root` action to your `Content::PagesController`:
 
-This is automatically added for you when you [create a `Page` collection](/docs/generator/).
+```ruby
+# app/controllers/content/pages_controller.rb
+class Content::PagesController < ApplicationController
+  def root
+    @resource = Content::Page.root
+
+    render :show
+  end
+end
+```
+
+Then add the root route to your `config/routes.rb`:
+```ruby
+root to: "content/pages#root"
+```
+
+This is automatically generated when you create a `Page` collection using the [content generator](/docs/generator/). You can opt out by passing `--no-include-root`:
+```bash
+rails generate content Page --no-include-root
+```

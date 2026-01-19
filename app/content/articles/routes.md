@@ -28,7 +28,7 @@ Perron.configure do |config|
 end
 ```
 
-For a typical “clean slug”, the filename without extensions serves as the `id` parameter.
+For a typical “clean slug”, the filename without extension serves as the `id` parameter.
 ```ruby
 <%# For app/content/posts/announcement.md %>
 <%= link_to "Announcement", post_path("announcement") %>
