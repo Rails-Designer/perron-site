@@ -1,6 +1,5 @@
 class Content::PagesController < ApplicationController
   def root
-    # Setting `@resource` is required for the the metadata/meta tags generation
     @resource = Content::Page.root
 
     render html: @resource.content, layout: "application"
