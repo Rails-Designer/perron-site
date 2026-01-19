@@ -101,8 +101,7 @@ author_id: kendall
 
 If you prefer to manage authors in a [data resource](/docs/data/) instead of individual content resources, you can create a YAML file in `app/content/data/` (e.g., `app/content/data/authors.yml` or `app/content/data/team.yml`):
 ```yaml
-kendall:
-  id: kendall
+- id: kendall
   name: Kendall
   email: kendall@railsdesigner.com
   url: https://example.com
