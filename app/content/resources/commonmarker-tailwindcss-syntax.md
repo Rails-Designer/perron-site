@@ -1,6 +1,6 @@
 ---
 type: snippet
-title: Commonmarker syntax highlight theme using Tailwind CSS colors
+title: Commonmarker syntax highlight theme (using Tailwind CSS colors)
 description: A snippet to add a syntax highlight theme for Commonmarker. Comes in both a dark and light version.
 category: styling
 ---
