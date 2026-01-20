@@ -2,10 +2,6 @@ class Content::PagesController < ApplicationController
   def root
     @resource = Content::Page.root
 
-    render :show
-  end
-
-  def show
-    @resource = Content::Page.find(params[:id])
+    render @resource.inline
   end
 end
