@@ -1,5 +1,5 @@
-gem "perron"
-gem "tailwindcss-rails"
+gem "perron" unless File.read("Gemfile").include?("perron")
+gem "tailwindcss-rails" unless File.read("Gemfile").include?("tailwindcss-rails")
 
 after_bundle do
   unless File.exist?("config/initializers/perron.rb")
