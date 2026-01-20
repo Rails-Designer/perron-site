@@ -4,6 +4,7 @@
     <%= meta_tags %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <%= feeds only: %w[posts] %>
     <%= yield :head %>
 
     <%= stylesheet_link_tag :app %>
