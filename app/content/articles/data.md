@@ -23,7 +23,7 @@ Look up a single entry with `Content::Data::Features.find("advanced-search")`, w
 
 ## File location and formats
 
-By default, Perron looks up `app/content/data/` for files with a `.yml`, `.json` or `.csv` extension. For a `features` call, it would find `features.yml`, `features.json` or `features.csv`. You can also provide a path to any data resource, via `Perron::Data.new("path/to/data.json")`.
+By default, Perron looks up `app/content/data/` for files with a `.yml`, `.json` or `.csv` extension. For a `features` call, it would find `features.yml`, `features.json` or `features.csv`. You can also provide a path to any data resource in `/app/content/data/`, via `Content::Data.new("path/to/data-resource")`.
 
 
 ## Accessing data
