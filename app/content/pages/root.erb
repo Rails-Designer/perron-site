@@ -1,6 +1,13 @@
 ---
 title: Static Site Generator for Ruby on Rails
 description: Perron is a static site generator for Ruby on Rails. Build your static sites with Rails. Deploy them anywhere.
+buttons:
+  - label: Documentation
+    href: /docs/
+    icon: book-open
+  - label: View on GitHub
+    href: https://github.com/rails-designer/perron
+    icon: github-logo
 ---
 
 <div class="md:sticky top-0 left-0 w-full">
@@ -13,13 +20,12 @@ description: Perron is a static site generator for Ruby on Rails. Build your sta
       Build with Rails. Deploy static sites. <%= render "shared/hearts" %>
     </p>
 
-    <div class="flex items-center justify-center gap-x-8 mt-8 [&_a]:flex [&_a]:px-4 [&_a]:py-1.5 [&_a]:text-sm [&_a]:font-normal [&_a]:rounded-lg [&_a]:transition [&_a]:hover:scale-105 md:mt-12 [&_a]:md:text-lg [&_a]:md:px-6 [&_a]:md:py-2">
-      <%= link_to "Documentation", articles_path, class: "text-slate-50 bg-slate-900" %>
-
-      <%= link_to "View on GitHub", "https://github.com/rails-designer/perron", target: :blank, class: "text-slate-700 bg-slate-200" %>
+    <div class="flex items-center justify-center gap-x-8 mt-8 md:mt-12">
+      <% @resource.metadata.buttons.each do |button| %>
+        <%= link_to safe_join([icon(button.icon, variant: :duotone, class: "flex size-4"), button.label]), button.href, class: class_names("flex items-center gap-x-1.5 px-4 py-1 text-sm font-normal rounded-lg transition hover:scale-103 md:text-lg md:px-5 md:py-1.5", {"text-slate-700 bg-slate-200": button.href.starts_with?("http"), "text-slate-50 bg-slate-900": button.href.starts_with?("/")}) %>
+      <% end %>
     </div>
   </section>
-
 
   <section class="grid grid-cols-12 gap-8 px-2 md:gap-16 md:overflow-x-clip pt-12">
     <%= render Content::Data::CodePreviews.all %>
@@ -29,12 +35,12 @@ description: Perron is a static site generator for Ruby on Rails. Build your sta
 
 <article
   class="
-  content
-  relative w-full max-w-3xl mt-12 mx-auto px-2 py-16
-  bg-white border border-slate-100
-  shadow-xl rounded-md
-  md:px-8 lg:px-16 lg:py-28 lg:-rotate-1
-  before:content-[''] before:hidden md:before:block before:absolute before:inset-0 before:rotate-3 before:-z-10 before:bg-white before:border before:border-slate-100 before:rounded-md before:shadow-md
+    content
+    relative w-full max-w-3xl mt-12 mx-auto px-2 py-16
+    bg-white border border-slate-100
+    shadow-xl rounded-md
+    md:px-8 lg:px-16 lg:py-28 lg:-rotate-1
+    before:content-[''] before:hidden md:before:block before:absolute before:inset-0 before:rotate-3 before:-z-10 before:bg-white before:border before:border-slate-100 before:rounded-md before:shadow-md
   "
 >
   <%= markdownify do %>

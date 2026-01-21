@@ -14,27 +14,27 @@ class StyledBlockquoteProcessor < Perron::HtmlProcessor::Base
     {
       "note" => {
         class: class_names(base_classes, "ring-blue-200/60 bg-blue-50 text-blue-900"),
-        icon: "information-circle"
+        icon: "info"
       },
 
       "tip" => {
         class: class_names(base_classes, "ring-green-200/60 bg-green-50 text-green-900"),
-        icon: "light-bulb"
+        icon: "lightbulb"
       },
 
       "important" => {
         class: class_names(base_classes, "ring-purple-200/60 bg-purple-50 text-purple-900"),
-        icon: "exclamation-circle"
+        icon: "warning-circle"
       },
 
       "warning" => {
         class: class_names(base_classes, "ring-yellow-200/60 bg-yellow-50 text-yellow-900"),
-        icon: "exclamation-triangle"
+        icon: "warning"
       },
 
       "caution" => {
         class: class_names(base_classes, "ring-red-200/60 bg-red-50 text-red-900"),
-        icon: "shield-exclamation"
+        icon: "shield-warning"
       }
     }
   end
