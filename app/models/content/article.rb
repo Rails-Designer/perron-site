@@ -14,7 +14,7 @@ class Content::Article < Perron::Resource
   delegate :section, :order, :title, :description, to: :metadata
 
   validates :title, :description, presence: true
-  validates :section, inclusion: { in: SECTIONS }
+  validates :section, inclusion: { in: SECTIONS.keys }
   validates :order, numericality: { greater_than_or_equal_to: 1 }
 
   def article_section
