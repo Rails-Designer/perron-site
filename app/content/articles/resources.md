@@ -21,7 +21,7 @@ class Content::Post < Perron::Resource
 end
 ```
 
-This gives each class its base behavior. It is just a regular Ruby class so you can use common features:
+This gives each class its base behavior. It is just a regular Ruby class, so all common methods are available:
 ```ruby
 # app/models/content/post.rb
 class Content::Post < Perron::Resource
@@ -77,7 +77,7 @@ class Content::Post < Perron::Resource
 end
 ```
 
-In your content's frontmatter, add the association name with `_id` suffix:
+In the content's frontmatter, add the association name with `_id` suffix:
 ```markdown
 <!-- app/content/posts/my-first-post.md -->
 ---
@@ -101,7 +101,7 @@ post.editor # => Content::Author instance
 
 [!label v0.16.0+]
 
-You can associate resources with [data sources](/docs/data/) using the `class_name` option. This works for both `belongs_to` and `has_many` associations.
+Associate resources with [data sources](/docs/data/) using the `class_name` option. This works for both `belongs_to` and `has_many` associations.
 
 
 #### belongs_to with Data
@@ -139,7 +139,7 @@ The association works the same way as with Content resources, but pulls data fro
 
 #### has_many with Data
 
-For multiple associations, use an array of IDs in your frontmatter. This pattern mimics Rails' `has_and_belongs_to_many` associations, where the relationship is defined by a list of IDs:
+For multiple associations, use an array of IDs in the frontmatter. This pattern mimics Rails' `has_and_belongs_to_many` associations, where the relationship is defined by a list of IDs:
 ```ruby
 # app/models/content/post.rb
 class Content::Post < Perron::Resource
@@ -168,9 +168,7 @@ When `{association_name}_ids` is present in the frontmatter, Perron uses those I
 
 ## Validations
 
-Just like Rails' ActiveModel classes, you can validate values from your resource class, for example your frontmatter.
-
-Perron offers a `bin/rails perron:validate` task that runs all validations and outputs any failures. Useful to check if your title or meta description is within the correct range for SERP's or to make sure you added the correct category.
+Validate values from resource classes, the frontmatter for example:
 ```ruby
 class Content::Post < Perron::Resource
   CATEGORIES = %w[rails ruby hotwire javascript updates]
@@ -184,9 +182,9 @@ class Content::Post < Perron::Resource
 end
 ```
 
-If you want to validate your frontmatter, make them callable in the class, as seen above using `delegate`.
+Perron offers a `bin/rails perron:validate` task that runs all validations and outputs any failures. Useful to check if the title or meta description is within the correct range for SERP's or to make sure the correct category is added. To validate frontmatter, make them callable in the class, as seen above using `delegate`.
 
-When you run the task, output could look like this:
+Validation output could look something like this:
 ```console
 rails perron:validate
 ..........................F.....
@@ -197,7 +195,7 @@ Validation finished with 1 failure.
 ```
 
 > [!tip]
-> When using Rails 8.1, you can make Perron's validate task part of your `bin/ci` script. Simply add `step "Perron: validate", "bin/rails perron:validate"` within the `CI.run do` block.
+> When using Rails 8.1, make Perron's validate task part of the `bin/ci` script. Simply add `step "Perron: validate", "bin/rails perron:validate"` within the `CI.run do` block.
 
 
 ## `@resource` instance
@@ -217,8 +215,7 @@ end
 
 ## Setting a root page
 
-To set a root page, create a `root.{md,erb,*}` file in your pages content directory (`app/content/pages/root.erb`) and add a `root` action to your `Content::PagesController`:
-
+To set a root page, create a `root.{md,erb,*}` file in the pages content directory (`app/content/pages/root.erb`) and add a `root` action in `Content::PagesController`:
 ```ruby
 # app/controllers/content/pages_controller.rb
 class Content::PagesController < ApplicationController
@@ -230,12 +227,14 @@ class Content::PagesController < ApplicationController
 end
 ```
 
-Then add the root route to your `config/routes.rb`:
+Then add the root route to `config/routes.rb`:
 ```ruby
 root to: "content/pages#root"
 ```
 
-This is automatically generated when you create a `Page` collection using the [content generator](/docs/generator/). You can opt out by passing `--no-include-root`:
+This is automatically generated when generating a `Page` collection using the [content generator](/docs/generator/). Opt out by passing `--no-include-root`:
 ```bash
 rails generate content Page --no-include-root
 ```
+
+see `rails generate content --help` for all options.

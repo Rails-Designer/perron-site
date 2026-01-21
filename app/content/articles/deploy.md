@@ -2,7 +2,7 @@
 section: getting_started
 order: 3
 title: Deploy to production
-description: Perron can be deployed as a static site (to platforms like Netlify and statichost.eu) or within your Rails app.
+description: Perron can be deployed as a static site (to platforms like Netlify and statichost.eu) or used within your Rails app.
 toc: false
 ---
 
@@ -19,12 +19,12 @@ Perron can operate in two modes, configured via `config.mode`. This allows a bui
 | **Output** | `output/` directory | `public/` directory |
 | **Asset Handling** | Via Perron | Via Asset Pipeline |
 
-When in `standalone` mode and you're ready to generate your static site, run:
+When in `standalone` mode and ready to generate your static site, run:
 ```bash
 RAILS_ENV=production rails perron:build
 ```
 
-This will create your static site in the configured output directory (`output` by default).
+This will create static HTML files in the configured output directory (`output` by default).
 
 View the [Library](/library/#deployment) for deploy scripts to various platforms.
 
@@ -33,11 +33,11 @@ View the [Library](/library/#deployment) for deploy scripts to various platforms
 
 [!label v0.16.0+]
 
-During development, Perron can serve pre-built static files from your output directory. This allows you to preview exactly what will be deployed.
+Perron can serve pre-built static files from the output directory. This allows to preview exactly what will be deployed.
 
 When an output directory exists (created by running `rails perron:build`), requests are automatically served from the static files. If a static file doesn't exist for a given path, the request passes through to Rails normally.
 
-To preview your built site locally:
+To preview the built site locally:
 ```bash
 rails perron:build
 bin/dev

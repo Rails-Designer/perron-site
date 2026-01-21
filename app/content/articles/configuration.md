@@ -6,9 +6,9 @@ description: Perron's global configuraton is set in an Initializer.
 toc: false
 ---
 
-You can set Perron's global configuration in `config/initializers/perron.rb`.
+Set Perron's global configuration in `config/initializers/perron.rb`.
 
-This file is automatically created when you run `rails generate perron:install`.
+This file is automatically created with `bin/rails generate perron:install`.
 
 It looks something like this:
 ```ruby
@@ -23,8 +23,8 @@ end
 
 Below are available settings:
 
-- **site_name**; your site's name, used as fallback for meta tags
-- **site_description**; your site's description; used as fallback for meta tags
+- **site_name**; used as fallback for meta tags
+- **site_description**; used as fallback for meta tags
 - **output**; location for site build, defaults to `/output/`
 - **mode**; `:standalone` or `:integrated`, defaults to `standalone`
 - **additional_routes**: array of route helper names to include in the build beyond collections (e.g., `%w[root_path robots_path]`). Defaults to `%w[root_path]` in `:standalone` mode and `[]` in `:integrated` mode
@@ -34,7 +34,7 @@ Below are available settings:
 - **view_unpublished**; option to show [unpublished content](/docs/publishing/) content, defaults to `Rails.env.development?`
 - **default_url_options**; set options for route helpers
 - **markdown_parser**; specifiy custom markdown parser
-- **markdown_options**; pass options for your markdown gem
+- **markdown_options**; pass options to the installed markdown gem
 - **sitemap.enabled**; enable creation of the [sitemap.xml](/docs/xml-sitemap/), defaults to `false`
 - **sitemap.priority**; default priority for sitemap items, defaults to `0.5`
 - **sitemap.change_frequency**;  defaults to `:monthly`

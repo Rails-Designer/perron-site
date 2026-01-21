@@ -19,7 +19,7 @@ end
 
 ## Route configuraton
 
-In `config/initializers/perron.rb` you can change your site's route configuraton:
+Change the site's route configuration in `config/initializers/perron.rb`:
 ```ruby
 Perron.configure do |config|
   # …

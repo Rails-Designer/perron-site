@@ -6,7 +6,7 @@ description: Frontmatter is supported for markdown files.
 toc: false
 ---
 
-Perron supports frontmatter to be used with your markdown files. Frontmatter is a way to set metadata for that content. It is using yaml—a key-value system.
+Perron supports frontmatter. It is a way to set metadata for that content, using yaml—a key-value system.
 
 It is added at the beginning of the markdown file and set between three dashes (`---`). Something like this:
 ```yaml

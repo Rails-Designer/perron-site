@@ -2,17 +2,17 @@
 section: metadata
 order: 9
 title: Feeds (RSS and JSON)
-description: Perron can create RSS and JSON feeds from your collections.
+description: Perron can create RSS and JSON feeds from collections.
 ---
 
-Perron can create RSS and JSON feeds of your collections.
+Perron can create RSS and JSON feeds of collections.
 
-The `feeds` helper automatically generates HTML `<link>` tags for your site's RSS and JSON feeds.
+The `feeds` helper automatically generates HTML `<link>` tags for generated RSS and JSON feeds.
 
 
 ## Usage
 
-In your layout (e.g., `app/views/layouts/application.html.erb`), add the helper to the `<head>` section:
+In the layout (e.g., `app/views/layouts/application.html.erb`), add the helper to the `<head>` section:
 ```erb
 <head>
   …
@@ -26,7 +26,7 @@ To render feeds for specific collections, such as `posts`:
 <%= feeds only: %w[posts] %>
 ```
 
-Similarly, you can exclude collections:
+Similarly, exclude collections with:
 ```erb
 <%= feeds except: %w[pages] %>
 ```
@@ -99,7 +99,7 @@ author_id: kendall
 
 ### Using a data resource
 
-If you prefer to manage authors in a [data resource](/docs/data/) instead of individual content resources, you can create a YAML file in `app/content/data/` (e.g., `app/content/data/authors.yml` or `app/content/data/team.yml`):
+Prefer to manage authors in a [data resource](/docs/data/) instead of individual content resources, create a YAML file in `app/content/data/`, e.g., `app/content/data/authors.yml` or `app/content/data/team.yml`:
 ```yaml
 - id: kendall
   name: Kendall
@@ -110,9 +110,7 @@ If you prefer to manage authors in a [data resource](/docs/data/) instead of ind
   myspace: kendall-rd
 ```
 
-For feeds to work, your data must include at least `name` and `email` keys (or just `name` for JSON feeds). You can add any additional keys for your own use.
-
-Then add the `class_name` option to the `belongs_to` association:
+For feeds to work, data must include at least `name` and `email` keys (or just `name` for JSON feeds). Then add the `class_name` option to the `belongs_to` association:
 ```ruby
 class Content::Post < Perron::Resource
   belongs_to :author, class_name: "Content::Data::Authors"

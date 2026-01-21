@@ -15,8 +15,7 @@ To render a resource's content, use `@resource.content`.
 
 ## Rendering resources
 
-If you want to render a list of resources, use `Content::Post.all`. You can also pass the array to `render`, just like with ActiveRecord models.
-
+Render a list of resources with: `Content::Post.all`. Pass the array to `render`, just like with ActiveRecord models:
 ```erb
 <%= render Content::Post.all %>
 ```

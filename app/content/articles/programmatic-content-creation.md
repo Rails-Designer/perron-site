@@ -7,12 +7,12 @@ description: Generate hundreds of pages from data sources for programmatic SEO a
 
 [!label v0.14.0+]
 
-Generate content programmatically from [data sources](/docs/data/) instead of creating files manually. Define a template once and Perron creates resources for every combination of your data. Perfect for programmatic SEO where you need similar pages with different data.
+Generate content programmatically from [data sources](/docs/data/) instead of creating files manually. Define a template once and Perron creates resources for every combination of the data. Perfect for programmatic SEO where similar pages with different data are needed.
 
 
 ## Basic Usage
 
-First create your data resources:
+First create data resources:
 ```csv
 # app/content/data/products.csv
 id,name,price
@@ -28,7 +28,7 @@ id,name,price
 ]
 ```
 
-Then define data sources in your resource class:
+Then define data sources in the content resource class:
 ```ruby
 # app/models/content/product.rb
 class Content::Product < Perron::Resource
@@ -120,9 +120,9 @@ bin/rails "perron:sync_sources[products]"
 > [!tip]
 > In zsh, quote the task name: `bin/rails "perron:sync_sources[products]"`
 
-Integrate with your build process:
+Integrate with in the build process:
 ```bash
 bin/rails perron:sync_sources && bin/rails perron:build
 ```
 
-Run the sync task whenever your data changes to regenerate affected resources.
+Run the sync task whenever data changes to regenerate affected resources.

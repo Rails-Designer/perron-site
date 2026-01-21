@@ -2,11 +2,11 @@
 section: content
 order: 3.7
 title: Publishing
-description: Control the visibility of your content by marking it as published, scheduled or draft.
+description: Control the visibility of content by marking it as published, scheduled or draft.
 erb: true
 ---
 
-Perron includes a system for managing the publication status of your resources. This allows you to create drafts, publish content immediately or schedule it to be published in the future.
+Perron includes a system for managing the publication status of content resources. This allows creating drafts, publish content immediately or schedule it to be published in the future.
 
 This status is determined by looking at the resource's frontmatter or, as a fallback, the date in its filename.
 
@@ -18,7 +18,7 @@ There are two ways to define when a piece of content should be considered publis
 
 ### Frontmatter (Recommended)
 
-You can set a `published_at` key in the resource's frontmatter. This gives you precise control over the publication time. The value should be a valid date or datetime string. Examples:
+Set a `published_at` key in the resource's frontmatter. This gives precise control over the publication time. The value should be a valid date or datetime string. Examples:
 * Date only: `<%= Time.current.yesterday.to_date %>`
 * Date with time: `<%= Time.current.yesterday.beginning_of_day.strftime("%Y-%m-%d %H:%M:%S") %>`
 * ISO 8601 with timezone: `<%= Time.current.yesterday.beginning_of_day.iso8601 %>`
@@ -43,8 +43,7 @@ For a file named `<%= Time.current.yesterday.strftime("%Y-%m-%d") %>-my-first-po
 
 ## Drafts
 
-To prevent a resource from being published, you can mark it as a draft. This is useful for content that is not yet ready. There are two ways to do this in the frontmatter:
-
+To prevent a resource from being published, mark it as draft. This is useful for content that is not yet ready. There are two ways to do this in the frontmatter:
 ```yaml
 ---
 title: This is a Work in Progress
@@ -52,8 +51,7 @@ draft: true
 ---
 ```
 
-Alternatively, you can use `published: false`:
-
+Alternatively, use `published: false`:
 ```yaml
 ---
 title: Another Work in Progress
@@ -77,7 +75,7 @@ preview: true # → "my-post-a1b2c3d4e5f6"
 preview: custom-token # → "my-post-custom-token"
 ```
 
-The generated token is built off the content's file path. So if you change the file path, the generated token will change too.
+The generated token is built off the content's file path. So file path changes, the generated token will change too.
 
 Note that anyone with the “secret link” can view the content, including (search) bots. To skip indexing, by decent bots, of “previewable resources” add this to the `<head>`:
 ```erb
@@ -89,7 +87,7 @@ Note that anyone with the “secret link” can view the content, including (sea
 
 ## Available Methods
 
-The publishing logic adds several helpful methods to your resource objects.
+The publishing logic adds several helpful methods to content resource objects.
 
 | Method             | Description
 | :----------------- | :----------
@@ -103,4 +101,4 @@ The publishing logic adds several helpful methods to your resource objects.
 
 ## Viewing Unpublished Content
 
-For development or preview/staging environments, you can globally override the publishing rules to make all content visible, including drafts and scheduled posts. This is done by setting `Perron.configuration.view_unpublished = true` (defaults to `Rails.env.development?`, so you can always preview your content in development) in your configuration.
+For development or preview/staging environments, globally override the publishing rules to make all content visible, including drafts and scheduled posts. This is done by setting `Perron.configuration.view_unpublished = true` (defaults to `Rails.env.development?`, so content can always be previewed in development).

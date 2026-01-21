@@ -6,7 +6,7 @@ description: Perron has flexible support for rendering Ruby.
 erb: true
 ---
 
-Perron provides flexible options for embedding dynamic Ruby code in your content using ERB.
+Perron provides flexible options for embedding Ruby code using ERB.
 
 
 ## File extension
@@ -16,7 +16,7 @@ Any content file with a `.erb` extension (e.g., `about.erb`) will automatically 
 
 ## Frontmatter
 
-You can enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter (like [this markdown file you are looking at](<%= view_on_github_url("app/content/articles/embed-ruby.md") %>)).
+Enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter (like [this article's markdown file](<%= view_on_github_url("app/content/articles/embed-ruby.md") %>)).
 ```markdown
 ---
 title: Embed Ruby
@@ -31,7 +31,7 @@ The current date (upon building this site) is: <%= Time.current.strftime("%d %B 
 
 ## `erbify` helper
 
-For the most granular control, the `erbify` helper allows to process specific sections of a file as ERB. This is ideal for generating dynamic content like lists or tables from your resource's metadata, without needing to enable ERB for the entire file.
+For the most granular control, the `erbify` helper allows to process specific sections of a file as ERB. This is ideal for generating dynamic content like lists or tables from the resource's frontmatter, without needing to enable ERB for the entire file.
 
 **Example:** generating a list from frontmatter data in a standard `.md` file.
 ```markdown

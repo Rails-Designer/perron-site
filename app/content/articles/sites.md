@@ -6,7 +6,7 @@ description: An overview of sites that are built with Perron.
 toc: false
 ---
 
-Sites that use Perron. Want to list your site here too? Open a PR.
+Sites that use Perron. Want to see your site here too? Open a PR.
 
 ## Standalone (as a SSG)
 

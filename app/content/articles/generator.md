@@ -27,7 +27,7 @@ And adds a route: `resources :posts, module: :content, only: %w[index show]`
 
 [!label v0.15.0+]
 
-Once a collection is created, you can quickly generate new content files:
+Once a collection is created, quickly generate new content files:
 ```bash
 bin/rails generate content Post --new
 bin/rails generate content Post --new "My First Post"
@@ -38,12 +38,12 @@ This creates a new file in `app/content/posts/` based on a template (if one exis
 
 ### Using templates
 
-Drop a template file in your content directory to define the structure for new files:
+Drop a template file in then content directory to define the structure for new files:
 
 * `template.md.tt` generates respectively `untitled.md` and `my-first-post.md`
 * `YYYY-MM-DD-template.md.tt` generates respectively `2025-12-18-untitled.md` and `2025-12-18-my-first-post.md`
 
-Templates support ERB, so you can add dynamic content:
+Templates support ERB:
 ```erb
 ---
 title: <%= @title %>

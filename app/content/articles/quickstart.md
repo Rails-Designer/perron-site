@@ -7,7 +7,7 @@ description: Learn how to get started quickly with Perron.
 
 Get started quickly with Perron by adding it to your existing Rails app or start a new static site.
 
-## An existing app
+## Already have a Rails app?
 
 Start by adding Perron:
 ```bash
@@ -30,10 +30,9 @@ end
 ```
 
 
-## A new site
+## Start from scratch?
 
 Start a new Perron-based site by running this command:
-
 ```bash
 rails new MyNewSite --minimal -T -O -m https://perron.railsdesigner.com/library/new/template.rb
 ```
