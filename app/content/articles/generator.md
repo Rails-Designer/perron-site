@@ -38,7 +38,7 @@ This creates a new file in `app/content/posts/` based on a template (if one exis
 
 ### Using templates
 
-Drop a template file in then content directory to define the structure for new files:
+Drop a template file in the content directory to define the structure for new files:
 
 * `template.md.tt` generates respectively `untitled.md` and `my-first-post.md`
 * `YYYY-MM-DD-template.md.tt` generates respectively `2025-12-18-untitled.md` and `2025-12-18-my-first-post.md`
