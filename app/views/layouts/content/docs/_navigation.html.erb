@@ -1,0 +1,26 @@
+<nav class="sticky top-0 grid grid-cols-[1fr_min-content] gap-4 place-content-between items-center w-full h-10 px-2 py-1 bg-white border-b border-gray-100 z-5 isolate lg:grid-cols-[var(--nav-width)_1fr_auto] lg:px-4">
+  <%= link_to "Perron", root_path, class: "hidden text-sm font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-red-600 to-orange-200 lg:block lg:ml-8" %>
+
+  <search-form
+    endpoint="<%= search_path format: :json %>"
+    config='{"fields": ["title", "headings", "body", "collection_name", "category", "description"], "storeFields": ["title", "body", "href", "slug", "collection_name"], "searchOptions": {"boost": {"title": 30, "category": 25, "description": 20, "headings": 15}}}'
+    empty-message="No results"
+    group-by="collection_name"
+    shortcut-key="$mod+k"
+    class="block relative w-full text-gray-400 focus-within:text-gray-800 sm:max-w-md"
+  >
+    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2">
+      <%= icon "magnifying-glass", class: "size-3.5 transition" %>
+    </div>
+
+    <input
+      type="search"
+      placeholder="Search for help…"
+      class="block w-full pl-7 pr-2 py-1 text-sm text-gray-800 bg-gray-50/50 rounded-lg ring ring-gray-200 transition-colors duration-200 hover:bg-gray-100 focus:bg-gray-100 focus:outline-0"
+    />
+
+    <ul data-slot="results" class="absolute left-0 w-full grid gap-y-2.5 max-h-96 mt-1 bg-white border border-gray-100 rounded-md shadow-xl/5 overflow-y-auto opacity-0 translate-y-[-8px] transition-discrete transition-all duration-200 [&[open]]:opacity-100 [&[open]]:translate-y-0"></ul>
+  </search-form>
+
+  <%= link_to svg("github_logo", class: "size-full"), "https://github.com/rails-designer/perron", target: "_blank", class: "block end-0 size-5 rounded-full text-gray-500 transition hover:text-gray-800" %>
+</nav>

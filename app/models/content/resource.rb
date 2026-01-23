@@ -1,6 +1,8 @@
 class Content::Resource < Perron::Resource
   include Templates
 
+  search_fields :description, :category, :collection_name
+
   TYPES = {
     template: "Templates",
     snippet: "Snippets",
@@ -35,6 +37,8 @@ class Content::Resource < Perron::Resource
   end
 
   def order = metadata.order || 5
+
+  def collection_name = "Library"
 
   private
 

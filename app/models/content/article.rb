@@ -1,6 +1,8 @@
 class Content::Article < Perron::Resource
   include Adjacency
 
+  search_fields :description, :collection_name
+
   SECTIONS = {
     getting_started: "Getting started",
     content: "Content",
@@ -20,6 +22,8 @@ class Content::Article < Perron::Resource
   def article_section
     Section.new(key: metadata.section, name: SECTIONS[metadata.section], resources: Content::Article.all.select { it.metadata.section == metadata.section }.sort_by(&:order))
   end
+
+  def collection_name = "Docs"
 
   private
 
