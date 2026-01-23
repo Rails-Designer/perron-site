@@ -13,19 +13,19 @@ Generate content programmatically from [data sources](/docs/data/) instead of cr
 ## Basic Usage
 
 First create data resources:
-```csv
-# app/content/data/products.csv
-id,name,price
-1,iPhone,999
-2,iPad,799
-```
-
 ```json
 // app/content/data/countries.json
 [
   {"id": "de", "name": "Germany"},
   {"id": "nl", "name": "The Netherlands"}
 ]
+```
+
+```csv
+# app/content/data/products.csv
+id,name,price
+1,iPhone,999
+2,iPad,799
 ```
 
 Then define data sources in the content resource class:
@@ -50,16 +50,19 @@ class Content::Product < Perron::Resource
 end
 ```
 
+> [!note]
+> Use the generator `bin/rails generate content Product --data countries.json products.csv`
+
 Generate resources:
 ```bash
 bin/rails perron:sync_sources
 ```
 
 This creates four files in `app/content/products/`:
-- `1-de.erb`
-- `1-nl.erb`
-- `2-de.erb`
-- `2-nl.erb`
+- `de-1.erb`
+- `nl-1.erb`
+- `de-2.erb`
+- `nl-2.erb`
 
 Each file is processed like any regular resource with full access to layouts, helpers and routing.
 

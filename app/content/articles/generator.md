@@ -22,6 +22,9 @@ This will create the following files:
 
 And adds a route: `resources :posts, module: :content, only: %w[index show]`
 
+> [!note]
+> View all available commands with `bin/rails generate content --help`
+
 
 ## Creating new content files
 
