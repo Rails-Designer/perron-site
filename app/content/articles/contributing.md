@@ -5,7 +5,6 @@ title: Contributing
 description: For bigger sites, a XML sitemap can help to get quicker indexed.
 ---
 
-
 Bugfixes, improvements and new features are much appreciated. For big(ger), new features, do reach out by creating an issue on the GitHub repo first.
 
 This project uses [Standard](https://github.com/testdouble/standard) for formatting Ruby code. Please run `be standardrb` before submitting pull requests. Run tests with `rails test`.

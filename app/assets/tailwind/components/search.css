@@ -1,0 +1,45 @@
+@layer components {
+  search-form {
+    li {
+      ul {
+        @apply grid gap-y-1;
+      }
+
+      h6 {
+        @apply sticky top-0 px-2 py-1;
+        @apply text-xs tracking-tight font-medium text-gray-900;
+        @apply bg-white/90 backdrop-blur-sm;
+        @apply border-b border-gray-100;
+      }
+
+      a {
+        @apply block px-2 py-1 no-underline;
+
+        [data-selected] &,
+        &:hover {
+          @apply bg-gray-100/60;
+        }
+
+        h5 {
+          @apply text-sm font-medium text-gray-950;
+        }
+
+        p {
+          @apply mt-0.5 text-sm font-normal text-gray-500;
+        }
+      }
+
+      mark {
+        @apply inline-block px-0.5 py-0.25;
+        @apply text-orange-900/90 leading-none;
+        @apply bg-transparent bg-gradient-to-br from-red-300/50 to-orange-200/50;
+        @apply rounded-sm rounded-br-xl rounded-tl-xl;
+      }
+    }
+
+    [data-slot="empty-message"] {
+      @apply px-2 py-1.5;
+      @apply text-sm font-medium text-gray-600;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 Perron.configure do |config|
   config.site_name = "Perron"
 
+  config.search_scope = %w[articles resources]
+
   # Set meta title suffix
   config.metadata.title_suffix = "Perron"
   config.metadata.title_separator = " | "
