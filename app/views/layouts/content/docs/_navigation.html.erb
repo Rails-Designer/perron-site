@@ -2,7 +2,7 @@
   <%= link_to "Perron", root_path, class: "hidden text-sm font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-red-600 to-orange-200 lg:block lg:ml-8" %>
 
   <search-form
-    endpoint="<%= search_path format: :json %>"
+    endpoint="<%= search_path trailing_slash: false %>"
     config='{"fields": ["title", "headings", "body", "collection_name", "category", "description"], "storeFields": ["title", "body", "href", "slug", "collection_name"], "searchOptions": {"boost": {"title": 30, "category": 25, "description": 20, "headings": 15}}}'
     empty-message="No results"
     group-by="collection_name"

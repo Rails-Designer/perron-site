@@ -2,6 +2,7 @@ Perron.configure do |config|
   config.site_name = "Perron"
 
   config.search_scope = %w[articles resources]
+  config.additional_routes = %w[root_path search_path]
 
   # Set meta title suffix
   config.metadata.title_suffix = "Perron"
