@@ -1,4 +1,4 @@
-create_file "app/helpers/svg_helper.rb", <<~RUBY
+create_file "app/helpers/svg_helper.rb", <<~'RUBY'
 module SvgHelper
   def svg(name, options = {})
     SvgRenderer.new(name, options).render
