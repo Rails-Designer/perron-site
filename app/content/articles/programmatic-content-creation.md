@@ -50,7 +50,7 @@ class Content::Product < Perron::Resource
 end
 ```
 
-> [!note]
+> [!tip]
 > Use the generator `bin/rails generate content Product --data countries.json products.csv`
 
 Generate resources:

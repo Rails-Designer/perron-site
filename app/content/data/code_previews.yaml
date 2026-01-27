@@ -3,34 +3,15 @@
     ```ruby
 <%= File.read("config/initializers/perron.rb").indent(4) %>
     ```
-  previewable?: true
 
 - path: app/views/layouts/content/docs.html.erb
   content: |
     ```ruby
 <%= File.read("app/views/layouts/content/docs.html.erb").indent(4) %>
     ```
-  previewable?: true
 
 - path: app/models/content/article.rb
   content: |
     ```ruby
 <%= File.read("app/models/content/article.rb").indent(4) %>
     ```
-  previewable?: true
-
-- path: ~/site/perron/docs/
-  content: |
-    ```bash
-    ~/perron/ ➜ rails perron:build
-    🧹 Cleaning previous build…
-    📦 Precompiling and copying assets…
-       Copied assets to `output/assets`
-       Pruning excluded assets…
-    📂 Copying public files…
-    ............
-    📝 Generating collections…
-    ........................................................................
-    ✅ Build complete
-    ```
-  previewable?: false

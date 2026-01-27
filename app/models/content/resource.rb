@@ -1,6 +1,8 @@
 class Content::Resource < Perron::Resource
   include Templates
 
+  def self.nested_routes = [ :template ]
+
   search_fields :description, :category, :collection_name
 
   TYPES = {
@@ -14,8 +16,6 @@ class Content::Resource < Perron::Resource
     snippet: "Code snippets to inject functionality into your site",
     component: "Static site specific UI components"
   }.with_indifferent_access
-
-  def self.nested_routes = [ :template ]
 
   delegate :type, :title, :description, :category, :command, to: :metadata
   alias_method :name, :title

@@ -16,21 +16,21 @@
 
     @apply [&_strong]:font-semibold;
 
-    @apply [&_table]:w-full [&_table]:text-left [&_table]:text-base;
+    @apply [&_table]:w-full [&_table]:text-left [&_table]:text-sm;
     @apply [&_thead]:border-b [&_thead]:border-slate-200;
     @apply [&_th]:px-2 [&_th]:py-1.5 [&_th]:font-semibold [&_th]:text-slate-800;
     @apply [&_tbody_tr]:border-b [&_tbody_tr]:border-slate-100;
     @apply [&_tbody_tr:last-child]:border-0;
-    @apply [&_td]:px-2 [&_td]:py-1.5 [&_td]:text-base [&_td]:sm:text-lg [&_td]:text-slate-800;
+    @apply [&_td]:px-2 [&_td]:py-1.5 [&_td]:align-top [&_td]:text-sm [&_td]:sm:text-base [&_td]:text-slate-800;
 
-    @apply marker:text-red-500;
+    @apply marker:text-orange-500;
 
     :is(h2, h3, h4, h5, h6) {
       @apply relative flex items-center gap-x-1;
       justify-content: start;
 
       .anchor {
-        scroll-margin-top: 3rem;
+        @apply scroll-mt-24 md:scroll-mt-12;
 
         &::before {
           content: "#";

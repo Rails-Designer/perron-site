@@ -236,5 +236,3 @@ This is automatically generated when generating a `Page` collection using the [c
 ```bash
 rails generate content Page --no-include-root
 ```
-
-see `rails generate content --help` for all options.
