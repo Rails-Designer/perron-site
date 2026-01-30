@@ -71,7 +71,7 @@ Your content here…
 Set collection defaults in the resource model:
 ```ruby
 class Content::Post < Perron::Resource
-  Perron.configure do |config|
+  configure do |config|
     # …
 
     config.metadata.description = "Add forms to any static site. Display responses anywhere."
