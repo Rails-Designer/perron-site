@@ -1,12 +1,12 @@
 source "https://rubygems.org"
 
-gem "commonmarker", "~> 2.6.1"
+gem "commonmarker", "~> 2.6.3"
 gem "importmap-rails", "~> 2.2.3"
 gem "perron", github: "rails-designer/perron"
-gem "propshaft"
-gem "puma", ">= 5.0"
+gem "propshaft", "~> 1.3.1"
+gem "puma", "~> 7.2.0"
 gem "rails", "~> 8.1.2"
-gem "rails_icons", "~> 1.5.1"
+gem "rails_icons", "~> 1.6.1"
 gem "tailwindcss-rails", "~> 4.4.0"
 
 group :development, :test do
