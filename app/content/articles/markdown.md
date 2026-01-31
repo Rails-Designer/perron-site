@@ -118,7 +118,7 @@ Perron can post-process the markdownified content.
 
 Apply transformations by passing an array of processor names or classes to the `markdownify` helper via the `process` option.
 ```erb
-<%= markdownify @resource.content, process: %w[lazy_load_images syntax_highlight target_blank] %>
+<%= markdownify @resource.content, process: %w[lazy_load_images target_blank] %>
 ```
 
 
@@ -128,7 +128,6 @@ The following processors are built-in and can be activated by passing their stri
 
 - `target_blank`: Adds `target="_blank"` to all external links;
 - `lazy_load_images`: Adds `loading="lazy"` to all `<img>` tags;
-- `syntax_highlight`: Applies syntax highlighting to fenced code blocks (e.g., \`\`\`ruby).
 
 > [!note]
 > Processors are included as _first-party_ options only when they require no setup or configuration. Otherwise, they are added to the [library](/library/).
@@ -152,23 +151,4 @@ end
 Then, pass the class constant directly in the `process` array.
 ```erb
 <%= markdownify @resource.content, process: ["target_blank", AddNofollowProcessor] %>
-```
-
-
-## Syntax highlighting
-
-For the markdown gems that do not have syntax highlighting support out-of-the-box, enable the `syntax_highlight` processor as described above. This also requires adding the `rouge` gem to the Gemfile (`bundle add rouge`).
-
-For the `syntax_highlight` processor to render colors, add a CSS theme from the `rouge` gem to the application's assets.
-
-1. **Generate the Stylesheet:** Use the `rougify` command-line tool that comes with the gem to create a CSS file. Run the following command in the terminal, replacing `github` with your preferred theme.
-```shell
-bundle exec rougify style github > app/assets/stylesheets/rouge-theme.css
-```
-
-This command takes the `github` theme and saves it as a standard CSS file that Propshaft can serve directly *(to see a list of all available themes, run `bundle exec rougify help style`)*.
-
-2. **Include the Stylesheet:** Add the generated file to the application's layout (e.g., `app/views/layouts/application.html.erb`). The standard Rails helper works perfectly.
-```erb
-<%= stylesheet_link_tag "rouge-theme", media: "all" %>
 ```
