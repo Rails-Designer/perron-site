@@ -1,10 +1,10 @@
 <article class="mt-4 px-2 mt:mt-6 lg:mt-5">
   <hgroup class="grid md:grid-cols-[auto_min-content_1fr] gap-x-0.5 text-2xl font-bold tracking-tight sm:text-3xl">
-    <%= link_to "Library", resources_url, class: "text-xl text-slate-600 md:text-3xl hover:underline" %>
+    <%= link_to "Library", resources_url, class: "text-xl text-gray-600 md:text-3xl hover:underline" %>
 
-    <span class="hidden font-medium text-slate-300 md:block">/</span>
+    <span class="hidden font-medium text-gray-300 md:block">/</span>
 
-    <h1 class="text-slate-800">
+    <h1 class="text-gray-800">
       <%= @resource.name %>
     </h1>
   </hgroup>
@@ -13,7 +13,7 @@
 
   <%= render "image_gallery" %>
 
-  <div class="content max-w-prose my-6 text-lg text-slate-800">
+  <div class="content max-w-prose my-6 text-lg text-gray-800">
     <%= markdownify @resource.content, process: [NofollowProcessor, StyledBlockquoteProcessor] %>
   </div>
 </article>

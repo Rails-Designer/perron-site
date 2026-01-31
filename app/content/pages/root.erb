@@ -12,17 +12,17 @@ buttons:
 
 <div class="top-0 left-0 w-full md:sticky">
   <section class="px-2 py-12 text-center md:py-20 lg:py-48">
-    <h1 class="text-3xl font-black tracking-tight text-slate-900 md:[text-shadow:0_60px_180px_rgba(0,0,0,0.5)] md:text-4xl lg:text-6xl">
+    <h1 class="text-3xl font-black tracking-tight text-gray-900 md:[text-shadow:0_60px_180px_rgba(0,0,0,0.5)] md:text-4xl lg:text-6xl">
       Static Site Generator for Ruby on Rails
     </h1>
 
-    <p class="mt-1 text-xl font-light text-slate-900 md:text-3xl lg:text-4xl md:mt-4">
+    <p class="mt-1 text-xl font-light text-gray-900 md:text-3xl lg:text-4xl md:mt-4">
       Build with Rails. Deploy static sites. <%= render "shared/hearts" %>
     </p>
 
     <div class="flex items-center justify-center gap-x-8 mt-8 md:mt-12">
       <% @resource.metadata.buttons.each do |button| %>
-        <%= link_to safe_join([(button.icon.present? ? icon(button.icon, variant: :duotone, class: "size-3.5 fill-orange-100") : svg(button.svg, class: "size-3.5")), button.label]), button.href, class: class_names("flex items-center gap-x-1.5 px-4 py-1 text-sm tracking-tight font-medium rounded-lg transition hover:scale-103 md:text-base md:px-5 md:py-1.5", {"text-slate-700 bg-slate-200/60": button.href.starts_with?("http"), "text-white bg-orange-500": button.href.starts_with?("/")}) %>
+        <%= link_to safe_join([(button.icon.present? ? icon(button.icon, variant: :duotone, class: "size-3.5 fill-orange-100") : svg(button.svg, class: "size-3.5")), button.label]), button.href, class: class_names("flex items-center gap-x-1.5 px-4 py-1 text-sm tracking-tight font-medium rounded-lg transition hover:scale-103 md:text-base md:px-5 md:py-1.5", {"text-gray-700 bg-gray-200/60": button.href.starts_with?("http"), "text-white bg-orange-500": button.href.starts_with?("/")}) %>
       <% end %>
     </div>
   </section>
@@ -37,10 +37,10 @@ buttons:
   class="
     content
     relative w-full max-w-3xl mt-12 mx-auto px-2 py-16
-    bg-white border border-slate-100
+    bg-white border border-gray-100
     shadow-xl rounded-md
     md:px-8 lg:px-16 lg:py-28 lg:-rotate-1
-    before:content-[''] before:hidden md:before:block before:absolute before:inset-0 before:rotate-3 before:-z-10 before:bg-white before:border before:border-slate-100 before:rounded-md before:shadow-md
+    before:content-[''] before:hidden md:before:block before:absolute before:inset-0 before:rotate-3 before:-z-10 before:bg-white before:border before:border-gray-100 before:rounded-md before:shadow-md
   "
 >
   <%= markdownify do %>

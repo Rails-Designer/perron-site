@@ -1,10 +1,10 @@
 <article class="my-4 px-2 sm:my-4 lg:mb-7">
   <hgroup>
     <p>
-      <%= link_to @resource.article_section.name, @resource.article_section.resources.first, class: "text-xs text-slate-600 hover:text-slate-800 sm:text-sm" %>
+      <%= link_to @resource.article_section.name, @resource.article_section.resources.first, class: "text-xs text-gray-600 hover:text-gray-800 sm:text-sm" %>
     </p>
 
-    <h1 class="mt-1 text-2xl font-bold text-slate-800 tracking-tight sm:text-3xl">
+    <h1 class="mt-1 text-2xl font-bold text-gray-800 tracking-tight sm:text-3xl">
       <%= @resource.title %>
     </h1>
   </hgroup>
@@ -14,10 +14,10 @@
       <%= markdownify @resource.content, process: [LabelProcessor, NofollowProcessor, StyledBlockquoteProcessor, CopyableCodeProcessor] %>
     </div>
 
-    <table-of-content items="<%= @resource.table_of_content(levels: %w[h2 h3]).to_json %>" id="toc" active-classes="bg-white lg:bg-slate-100" open class="hidden top-0 col-span-3 lg:flex lg:sticky">
+    <table-of-content items="<%= @resource.table_of_content(levels: %w[h2 h3]).to_json %>" id="toc" active-classes="bg-white lg:bg-gray-100" open class="hidden top-0 col-span-3 lg:flex lg:sticky">
       <template type="title">
-        <p class="hidden items-center gap-x-2 text-xs text-slate-600 font-medium lg:flex">
-          <%= icon "list-dashes", class: "size-3 text-xs text-slate-600" %>
+        <p class="hidden items-center gap-x-2 text-xs text-gray-600 font-medium lg:flex">
+          <%= icon "list-dashes", class: "size-3 text-xs text-gray-600" %>
 
           On this page
         </p>

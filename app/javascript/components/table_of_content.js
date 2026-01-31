@@ -27,7 +27,7 @@ class TableOfContentElement extends HTMLElement {
   get #template() {
     return `
       <nav class="
-        flex fixed top-20 right-0 flex-col gap-y-2.5 w-full max-w-[16rem] bg-white/85 border-slate-200/50 rounded-bl-md backdrop-blur-md lg:right-auto lg:top-15
+        flex fixed top-20 right-0 flex-col gap-y-2.5 w-full max-w-[16rem] bg-white/85 border-gray-200/50 rounded-bl-md backdrop-blur-md lg:right-auto lg:top-15
         max-lg:p-2 max-lg:border-b max-lg:border-l max-lg:shadow-lg
       ">
         ${this.#leader}
@@ -42,7 +42,7 @@ class TableOfContentElement extends HTMLElement {
 
     const listItems = items.map(item => `
       <li>
-        <a href="#${item.id}" class="block px-3 py-1 w-full text-sm font-normal text-slate-900/80 rounded-md [ul>li>ul_&]:text-slate-600/70 hover:text-slate-900">
+        <a href="#${item.id}" class="block px-3 py-1 w-full text-sm font-normal text-gray-900/80 rounded-md [ul>li>ul_&]:text-gray-600/70 hover:text-gray-900">
           ${item.text}
         </a>
 
