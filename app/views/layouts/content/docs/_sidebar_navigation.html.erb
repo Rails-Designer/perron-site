@@ -10,7 +10,11 @@
     <%= render partial: "content/articles/navigation/section", collection: sections, as: :section %>
   </ul>
 
-  <%= link_to "By Rails Designer", "https://railsdesigner.com", rel: :nofollow, class: "block mt-12 py-12 text-xs text-center font-medium text-slate-400 transition border-t border-slate-100 hover:text-slate-800" %>
+  <div class="relative block mt-12 py-12 border-t border-slate-100 overflow-clip isolate">
+    <%= link_to "by Rails Designer", "https://railsdesigner.com", rel: :nofollow, class: "relative block text-xs text-center font-medium text-slate-400 z-1 transition hover:text-slate-800" %>
+
+    <%= svg "icon", class: "size-48 text-slate-100/60 absolute -top-12 z-0 -rotate-12" %>
+  </div>
 </nav>
 
 <button

@@ -1,5 +1,9 @@
-<nav class="sticky top-0 grid grid-cols-[1fr_min-content] gap-4 place-content-between items-center w-full h-10 px-2 py-1 bg-white border-b border-gray-100 z-5 isolate lg:grid-cols-[var(--nav-width)_1fr_auto] lg:px-4">
-  <%= link_to "Perron", root_path, class: "hidden text-sm font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-red-600 to-orange-200 lg:block lg:ml-8" %>
+<nav class="sticky top-0 grid grid-cols-[min-content_1fr_min-content] gap-2 place-content-between items-center w-full h-10 px-2 py-1 bg-white border-b border-gray-100 z-5 isolate lg:grid-cols-[var(--nav-width)_1fr_auto] lg:px-4">
+  <%= link_to root_path, class: "group/icon flex items-center gap-x-2 lg:ml-9.5" do %>
+    <%= svg "icon", class: "size-4.5 shrink-0 text-orange-500 transition duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] group-hover/icon:scale-80 group-hover/icon:rotate-359" %>
+
+    <%= tag.span "Perron", class: "hidden text-sm font-extrabold tracking-tight text-gray-950 lg:block" %>
+  <% end %>
 
   <search-form
     endpoint="<%= search_path trailing_slash: false %>"
