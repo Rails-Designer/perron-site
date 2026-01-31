@@ -1,6 +1,6 @@
 ---
 section: content
-order: 4
+order: 4.5
 title: Markdown
 description: Perron can render markdown with a flexible helper that has support for multiple markdown gems.
 ---

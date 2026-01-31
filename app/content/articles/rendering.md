@@ -11,6 +11,9 @@ Perron's resources are just Ruby objects so it is straight-forward to render, fi
 ## Resource content
 
 To render a resource's content, use `@resource.content`.
+```erb
+<%= @resource.content %>
+```
 
 
 ## Rendering resources
@@ -25,7 +28,7 @@ This expects a partial `app/views/content/posts/_post.html.erb`.
 
 Or set a partial and pass the collection:
 ```erb
-<%= render partial: "content/posts/custom", collection: Content::Post.all %
+<%= render partial: "content/posts/snippet", collection: Content::Post.all %
 ```
 
 
