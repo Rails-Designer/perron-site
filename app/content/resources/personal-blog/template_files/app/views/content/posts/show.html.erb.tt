@@ -15,3 +15,64 @@
     <%= markdownify @resource.content %>
   </div>
 </article>
+
+<section id="comments" class="mt-8 max-w-4xl mx-auto">
+  <chirp-form form-id="ADD_YOUR_CHIRP_FORM_ID_HERE" button-text="Add comment" class="grid gap-y-4 p-2">
+    <header slot="header">
+      <h2 class="text-lg font-bold tracking-tight text-slate-800 md:text-xl">
+        Comments
+      </h2>
+
+      <p class="mt-0.5 text-base text-slate-600">
+        What do you think? Got ideas or suggestions? Let me know below.
+      </p>
+    </header>
+  </chirp-form>
+
+  <p class="mt-2 px-2 text-xs text-slate-500">
+    Comments are powered by <a href="https://chirpform.com/?ref=<%= Rails.application.name %>" rel="nofollow">Chirp Form</a></p>
+  </p>
+
+  <chirp-feed form-id="ADD_YOUR_CHIRP_FORM_ID_HERE" filter-url="current" class="grid gap-y-4 mt-4 py-4 border-t border-slate-100">
+    <template type="style">
+      .content + .content {
+        padding-block-start: .875rem;
+        border-top: 1px solid #f1f5f9;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .name {
+        font-size: .875rem;
+        font-weight: 500;
+        color: #64748b;
+      }
+
+      .time {
+        font-size: .75rem;
+        color: #94a3b8
+      }
+
+      .comment {
+        margin: 0;
+        font-size: 1rem;
+        color: #0f172a
+      }
+    </template>
+
+    <template type="submission">
+      <article class="content">
+        <header class="header">
+          <strong class="name">{{name}}</strong>
+
+          <time class="time">{{created_at}}</time>
+        </header>
+
+        <p class="comment">{{comment}}</p>
+      </article>
+    </template>
+  </chirp-feed>
+</section>
