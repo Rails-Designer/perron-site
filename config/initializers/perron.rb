@@ -1,6 +1,7 @@
 Perron.configure do |config|
   config.site_name = "Perron"
 
+  config.live_reload = true
   config.search_scope = %w[articles resources]
   config.additional_routes = %w[root_path search_path]
 
