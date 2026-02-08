@@ -9,6 +9,6 @@ class Content::ArticlesController < Content::DocsController
   end
 
   def show
-    @resource = Content::Article.find(params[:id])
+    @resource = Content::Article.find!(params[:id])
   end
 end

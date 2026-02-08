@@ -21,7 +21,7 @@ Perron can operate in two modes, configured via `config.mode`. This allows a bui
 
 When in `standalone` mode and ready to generate your static site, run:
 ```bash
-RAILS_ENV=production rails perron:build
+RAILS_ENV=production bundle install && rails perron:build
 ```
 
 This will create static HTML files in the configured output directory (`output` by default).
