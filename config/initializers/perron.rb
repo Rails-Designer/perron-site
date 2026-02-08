@@ -19,7 +19,7 @@ Perron.configure do |config|
 
     plugins: {
       syntax_highlighter: {
-        theme: "tailwind-slate-dark",
+        theme: "perron-syntax-theme",
         path: Rails.root.join("app", "themes").to_s
       }
     }

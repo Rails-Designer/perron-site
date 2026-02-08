@@ -12,7 +12,7 @@
 
     @apply [&_pre]:mt-1.25 [&_pre]:px-1.5 [&_pre]:py-2 [&_pre]:sm:px-3 [&_pre]:sm:py-4 [&_pre]:rounded-md [&_pre]:overflow-auto;
     @apply [&_code]:p-0.5 [&_code]:text-[0.8em] [&_code]:font-medium [&_code]:bg-gray-200/70 [&_code]:rounded-sm;
-    @apply [&_pre>code]:text-base [&_pre>code]:font-normal [&_pre>code]:text-gray-700 [&_pre>code]:bg-transparent;
+    @apply [&_pre>code]:text-base [&_pre>code]:font-normal [&_pre>code]:bg-transparent [&_pre>code]:[text-shadow:0px_0px_5px_oklch(from_currentColor_l_c_h/.9)];
 
     @apply [&_strong]:font-semibold;
 

@@ -15,6 +15,9 @@ It looks something like this:
 Perron.configure do |config|
   config.site_name = "Perron"
 
+  # Enable Live Reload with DOM Morphing in development
+  # config.live_reload = true
+
   config.default_url_options = {host: "perron.railsdesigner.com", protocol: "https", trailing_slash: true}
 end
 ```
