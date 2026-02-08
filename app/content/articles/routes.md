@@ -34,23 +34,3 @@ For a typical “clean slug”, the filename without extension serves as the `id
 <%= link_to "Announcement", post_path("announcement") %>
 ```
 This would render `<a href="/posts/announcement/">Announcement</a>`.
-
-
-## Include extension
-
-By default Perron creates clean slugs, like `/about/`. To create pages with specific extensions directly (e.g., `pricing.html`), the route must first be configured to treat the entire filename as the ID. In `config/routes.rb`, modify the generated `resources` line by adding a `constraints` option:
-
-```ruby
-# Change from…
-resources :pages, module: :content, only: %w[show]
-
-# …to…
-resources :pages, module: :content, only: %w[show], constraints: { id: /[^\/]+/ }
-```
-
-With this change, a content file named `app/content/pages/pricing.html.erb` can be linked like so:
-```ruby
-<%= link_to "View Pricing", page_path("pricing", format: :html) %> # => <a href="/pricing.html">View Pricing</a>
-```
-
-Perron will then create `pricing.html` upon build.
