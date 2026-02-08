@@ -10,7 +10,13 @@ class Content::Article < Perron::Resource
   }.with_indifferent_access
 
   def self.sections
-    SECTIONS.map { |section_data| Section.new(key: section_data.first, name: section_data.second, resources: Content::Article.all.select { it.metadata.section == section_data.first }.sort_by(&:order)) }
+    SECTIONS.map do |key, name|
+      Section.new(
+        key: key,
+        name: name,
+        resources: where(section: key).order(:order)
+      )
+    end
   end
 
   delegate :section, :order, :title, :description, to: :metadata
@@ -20,7 +26,11 @@ class Content::Article < Perron::Resource
   validates :order, numericality: { greater_than_or_equal_to: 1 }
 
   def article_section
-    Section.new(key: metadata.section, name: SECTIONS[metadata.section], resources: Content::Article.all.select { it.metadata.section == metadata.section }.sort_by(&:order))
+    Section.new(
+      key: metadata.section,
+      name: SECTIONS[metadata.section],
+      resources: self.class.where(section: metadata.section).order(:order)
+    )
   end
 
   def collection_name = "Docs"
