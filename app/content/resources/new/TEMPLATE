@@ -34,6 +34,8 @@ create_file "app/views/layouts/application.html.erb", <<~ERB
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%%= stylesheet_link_tag :app %>
+    <!-- Learn more on https://attractivejs.railsdesigner.com/ -->
+    <script defer src="https://cdn.jsdelivr.net/npm/attractivejs@latest"></script>
   </head>
   <body>
     <%%= yield %>
