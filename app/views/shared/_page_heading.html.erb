@@ -1,0 +1,10 @@
+<%# locals: (content:, breadcrumbs: []) %>
+<hgroup>
+  <ul>
+    <%= safe_join breadcrumbs.map { tag.li link_to(it[:label], it[:href], class: "text-xs text-gray-600 hover:text-gray-800 sm:text-sm") } %>
+  </ul>
+
+  <h1 class="mt-1 text-2xl font-bold text-gray-800 tracking-tight sm:text-3xl">
+    <%= content %>
+  </h1>
+</hgroup>

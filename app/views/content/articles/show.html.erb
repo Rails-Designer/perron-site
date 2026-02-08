@@ -1,13 +1,5 @@
 <article class="my-4 px-2 sm:my-4 lg:mb-7">
-  <hgroup>
-    <p>
-      <%= link_to @resource.article_section.name, @resource.article_section.resources.first, class: "text-xs text-gray-600 hover:text-gray-800 sm:text-sm" %>
-    </p>
-
-    <h1 class="mt-1 text-2xl font-bold text-gray-800 tracking-tight sm:text-3xl">
-      <%= @resource.title %>
-    </h1>
-  </hgroup>
+  <%= render "shared/page_heading", content: @resource.title, breadcrumbs: [{label: @resource.article_section.name, href: @resource.article_section.resources.first}] %>
 
   <div class="grid grid-cols-12 gap-4">
     <div class="col-span-12 mt-4 pb-12 content max-w-prose lg:col-span-9">
