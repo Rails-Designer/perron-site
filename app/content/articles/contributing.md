@@ -1,6 +1,6 @@
 ---
 section: getting_started
-order: 4
+position: 4
 title: Contributing
 description: For bigger sites, a XML sitemap can help to get quicker indexed.
 ---

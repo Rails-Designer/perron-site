@@ -1,6 +1,6 @@
 ---
 section: content
-order: 3
+position: 3
 title: Routes
 description: Perron uses Rails' routing mechanism, keeping things simple and easy.
 ---

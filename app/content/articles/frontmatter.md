@@ -1,6 +1,6 @@
 ---
 section: content
-order: 3.5
+position: 3.5
 title: Frontmatter
 description: Frontmatter is supported for markdown files.
 toc: false

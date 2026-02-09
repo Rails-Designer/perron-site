@@ -1,6 +1,6 @@
 ---
 section: getting_started
-order: 2
+position: 2
 title: Configuration
 description: Perron's global configuraton is set in an Initializer.
 toc: false

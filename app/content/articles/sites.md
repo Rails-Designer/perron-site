@@ -1,6 +1,6 @@
 ---
 section: getting_started
-order: 5
+position: 5
 title: Sites built with Perron
 description: An overview of sites that are built with Perron.
 toc: false

@@ -14,22 +14,22 @@ class Content::Article < Perron::Resource
       Section.new(
         key: key,
         name: name,
-        resources: where(section: key).order(:order)
+        resources: where(section: key).order(:position)
       )
     end
   end
 
-  delegate :section, :order, :title, :description, to: :metadata
+  delegate :section, :position, :title, :description, to: :metadata
 
   validates :title, :description, presence: true
   validates :section, inclusion: { in: SECTIONS.keys }
-  validates :order, numericality: { greater_than_or_equal_to: 1 }
+  validates :position, numericality: { greater_than_or_equal_to: 1 }
 
   def article_section
     Section.new(
       key: metadata.section,
       name: SECTIONS[metadata.section],
-      resources: self.class.where(section: metadata.section).order(:order)
+      resources: self.class.where(section: metadata.section).order(:position)
     )
   end
 

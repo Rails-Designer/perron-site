@@ -1,6 +1,6 @@
 ---
 section: content
-order: 6.5
+position: 6.5
 title: Programmatic content
 description: Generate hundreds of pages from data sources for programmatic SEO and scalable content creation.
 ---

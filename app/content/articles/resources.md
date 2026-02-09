@@ -1,6 +1,6 @@
 ---
 section: content
-order: 1
+position: 1
 title: Resources
 description: Resources are a collection of similar content and resources, like posts, articles or people.
 ---

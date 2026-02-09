@@ -18,6 +18,6 @@ module Content::Article::Adjacency
   def current_position = ordered_articles.find_index { it.id == id }
 
   def ordered_articles
-    Content::Article.all.sort_by { [ Content::Article::SECTIONS.keys.index(it.section), it.order ] }
+    Content::Article.all.sort_by { [ Content::Article::SECTIONS.keys.index(it.section), it.position ] }
   end
 end

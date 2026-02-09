@@ -1,6 +1,6 @@
 ---
 section: getting_started
-order: 3
+position: 3
 title: Deploy to production
 description: Perron can be deployed as a static site (to platforms like Netlify and statichost.eu) or used within your Rails app.
 toc: false

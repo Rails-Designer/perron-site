@@ -1,6 +1,6 @@
 ---
 section: content
-order: 7
+position: 7
 title: Data sources
 description: Perron can consume data files like yaml, json and CSV.
 ---

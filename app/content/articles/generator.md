@@ -1,6 +1,6 @@
 ---
 section: content
-order: 2
+position: 2
 title: Generator
 description: Use Perron's generator to easily create new collections and content files.
 ---

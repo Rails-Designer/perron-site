@@ -1,6 +1,6 @@
 ---
 section: getting_started
-order: 1
+position: 1
 title: Quick-start guide
 description: Learn how to get started quickly with Perron.
 ---

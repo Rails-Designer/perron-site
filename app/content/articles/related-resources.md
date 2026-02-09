@@ -1,6 +1,6 @@
 ---
 section: metadata
-order: 10
+position: 10
 title: Related resources
 description: Perron's related resources features returns similar resources as the current one using the TF-IDF algorithm.
 toc: false

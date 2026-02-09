@@ -36,7 +36,7 @@ class Content::Resource < Perron::Resource
       .map { it.delete_prefix("#{base_path}/") }
   end
 
-  def order = metadata.order || 5
+  def position = metadata.position || 5
 
   def collection_name = "Library"
 
