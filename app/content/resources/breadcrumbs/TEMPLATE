@@ -1,0 +1,11 @@
+<% template_files.each do |path, file| %>
+file "<%= path %>" do
+<<~"_"
+<%= File.read(file) %>
+_
+end
+<% end %>
+
+inject_into_class "app/controllers/application_controller.rb", "ApplicationController" do
+  "  include Breadcrumbs\n"
+end
