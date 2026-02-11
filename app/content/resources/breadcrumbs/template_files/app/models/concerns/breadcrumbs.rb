@@ -10,8 +10,8 @@ module Breadcrumbs
   def set_breadcrumbs(*crumbs)
     @breadcrumbs = crumbs.map do |crumb|
       case crumb
-      in [String => name, path] then Breadcrumb.new(name, path)
-      in [String => name] then Breadcrumb.new(name)
+      in [ String => name, path ] then Breadcrumb.new(name, path)
+      in [ String => name ] then Breadcrumb.new(name)
       in Breadcrumb then crumb
       end
     end
