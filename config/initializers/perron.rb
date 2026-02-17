@@ -3,7 +3,7 @@ Perron.configure do |config|
 
   config.live_reload = true
   config.search_scope = %w[articles resources]
-  config.additional_routes = %w[root_path search_path]
+  config.additional_routes += %w[search_path]
 
   # Set meta title suffix
   config.metadata.title_suffix = "Perron"

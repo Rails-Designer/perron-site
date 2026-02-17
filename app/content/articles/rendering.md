@@ -15,7 +15,6 @@ To render a resource's content, use `@resource.content`.
 <%= @resource.content %>
 ```
 
-
 ## Rendering resources
 
 Render a list of resources with: `Content::Post.all`. Pass the array to `render`, just like with ActiveRecord models:
@@ -25,84 +24,85 @@ Render a list of resources with: `Content::Post.all`. Pass the array to `render`
 
 This expects a partial `app/views/content/posts/_post.html.erb`.
 
-
 Or set a partial and pass the collection:
 ```erb
-<%= render partial: "content/posts/snippet", collection: Content::Post.all %
+<%= render partial: "content/posts/snippet", collection: Content::Post.all %>
+```
+
+## ActiveRecord-style queries
+
+[!label v0.18.0+]
+
+Perron supports familiar ActiveRecord-style query methods for cleaner, more readable code.
+
+
+### Where
+
+Filter resources using hash syntax:
+```ruby
+Content::Post.where(category: "ruby")
+Content::Post.where(published: true)
+Content::Post.where(section: [:content, :metadata])
+```
+
+
+### Order
+
+Sort resources by attributes:
+```ruby
+Content::Post.order(:title)
+Content::Post.order(:publication_date, :desc)
+Content::Post.order(title: :desc)
+```
+
+
+### Limit
+
+Limit the number of results:
+```ruby
+Content::Post.limit(5)
+Content::Post.order(:publication_date, :desc).limit(3)
+```
+
+### Offset
+
+Offset the number of results:
+```ruby
+Content::Post.offset(2)
+Content::Post.offset(2).limit(5)
+```
+
+
+### Scopes
+
+Define reusable query scopes:
+```ruby
+class Content::Post < Perron::Resource
+  scope :getting_started, -> { where(section: :getting_started) }
+  scope :recent, -> { order(:publication_date, :desc).limit(10) }
+end
+
+Content::Post.getting_started.order(:title).limit(5)
+```
+
+
+### Chaining
+
+Chain methods together for complex queries:
+```ruby
+Content::Post
+  .where(published: true)
+  .order(:publication_date, :desc)
+  .limit(5)
 ```
 
 
 ## Enumerable methods
 
-All typical enumerable methods are available on Perron's resources. Here are some examples:
-
-
-### Filtering
+All standard Ruby enumerable methods are available: `select`, `reject`, `map`, `find`, `group_by`, `sort_by`, `count`, `any?`, `all?`, `first`, `last` and more.
 
 ```ruby
-published_posts = Content::Post.all.select { it.published? }
-ruby_posts = Content::Post.all.select { it.metadata.category == "ruby" }
-recent_posts = Content::Post.all.select { (it.published_at.after? 1.month.ago }
-```
-
-
-### Sorting
-
-```ruby
-sorted_by_date = Content::Post.all.sort_by(&:publication_date)
-sorted_by_title = Content::Post.all.sort_by(&:title)
-newest_first = Content::Post.all.sort_by(&:publication_date).reverse
-```
-
-
-### Limiting
-
-```ruby
-first_three = Content::Post.all.first(3)
-most_recent = Content::Post.all.sort_by(&:publication_date).reverse.first(5)
-```
-
-
-### Finding
-
-```ruby
-ruby_tutorial = Content::Post.all.find { it.metadata.title.include?("Ruby Tutorial") }
-posts_with_images = Content::Post.all.select { it.content.include?("![") } # assuming markdown usage
-```
-
-
-### Grouping
-
-```ruby
-posts_by_category = Content::Post.all.group_by(&:category)
-posts_by_year = Content::Post.all.group_by { it.published_at.year }
-```
-
-
-### Counting
-
-```ruby
-total_posts = Content::Post.all.count
-published_count = Content::Post.all.count { it.published? }
-category_counts = Content::Post.all.group_by(&:category).transform_values(&:count)
-```
-
-
-### Checking conditions
-
-```ruby
-has_ruby_posts = Content::Post.all.any? { it.metadata.category == "ruby" }
-all_published = Content::Post.all.all? { it.published? }
-```
-
-
-### Group published posts by category
-
-Sorted by date within each category.
-
-```ruby
-categorized_posts = Content::Post.all
-  .select { it.published? }
-  .group_by(&:category)
-  .transform_values { it.sort_by(&:publication_date).reverse }
+Content::Post.all.select { it.published? }
+Content::Post.all.group_by(&:category)
+Content::Post.all.sort_by(&:publication_date).reverse
 ```

@@ -30,6 +30,7 @@ Below are available settings:
 - **site_description**; used as fallback for meta tags
 - **output**; location for site build, defaults to `/output/`
 - **mode**; `:standalone` or `:integrated`, defaults to `standalone`
+- **live_reload**; automatically reload the page on changes (uses the [Mata](https://github.com/Rails-Designer/mata) gem)
 - **additional_routes**: array of route helper names to include in the build beyond collections (e.g., `%w[root_path robots_path]`). Defaults to `%w[root_path]` in `:standalone` mode and `[]` in `:integrated` mode
 - **allowed_extensions**; set which extensions for content files are allowed, defaults to `%w[erb md]`
 - **exclude_from_public**; exclude directories with compiled files should be excluded from `public`, defaults to `%w[assets storage]`
