@@ -1,5 +1,6 @@
-PATH
-  remote: ../perron
+GIT
+  remote: https://github.com/rails-designer/perron.git
+  revision: 6eef121a9be0e881d7f14fa857e89062cbac5c58
   specs:
     perron (0.18.0)
       csv
@@ -304,7 +305,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.7.4)
+    zeitwerk (2.7.5)
 
 PLATFORMS
   aarch64-linux
