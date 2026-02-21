@@ -1,4 +1,4 @@
-create_file "app/processors/styled_blockquote_processor.rb", <<~RUBY
+create_file "app/processors/styled_blockquote_processor.rb", <<-'RUBY'
   class StyledBlockquoteProcessor < Perron::HtmlProcessor::Base
     # uncomment if you use Rails Icons, see: https://github.com/Rails-Designer/rails_icons/
     # include RailsIcons::Helpers::IconHelper
@@ -11,27 +11,29 @@ create_file "app/processors/styled_blockquote_processor.rb", <<~RUBY
 
     # Add an `icon` key with a Rails Icons name to include an icon
     # Example: "note" => { class: "alert alert-note", icon: "information-circle" }
-    STYLES = {
-      "note" => {
-        class: "alert alert-note"
-      },
+    def styles
+      {
+        "note" => {
+          class: "alert alert-note"
+        },
 
-      "tip" => {
-        class: "alert alert-tip"
-      },
+        "tip" => {
+          class: "alert alert-tip"
+        },
 
-      "important" => {
-        class: "alert alert-important"
-      },
+        "important" => {
+          class: "alert alert-important"
+        },
 
-      "warning" => {
-        class: "alert alert-warning"
-      },
+        "warning" => {
+          class: "alert alert-warning"
+        },
 
-      "caution" => {
-        class: "alert alert-caution"
+        "caution" => {
+          class: "alert alert-caution"
+        }
       }
-    }
+    end
 
     def transform_to_styled(blockquote)
       paragraph = blockquote.at_css("p")
@@ -41,7 +43,7 @@ create_file "app/processors/styled_blockquote_processor.rb", <<~RUBY
       return unless marker
 
       type = marker[1].downcase
-      style = STYLES[type]
+      style = styles[type]
 
       paragraph.inner_html = paragraph.inner_html.sub(/^\[!#{type}\]\s*/i, "").sub(/^(<br>\s*)+/, "")
       blockquote["class"] = style[:class]
