@@ -66,7 +66,7 @@ Perron.configure do |config|
   # …
   # Commonmarker
   # Options are passed as keyword arguments.
-  config.markdown_options = { options: [:HARDBREAKS], extensions: [:table] }
+  config.markdown_options = { options: { parse: { smart: true }, render: { unsafe: true } }
 
   # Kramdown
   # Options are passed as a standard hash.
