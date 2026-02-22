@@ -15,3 +15,4 @@ Sites that use Perron. Want to see your site here too? Open a PR.
 - [Feedstrum](https://feedstrum.com/) — Precise SaaS customer feedback
 - [Helptail](https://helptail.com) — Put your routine tasks on autopilot
 - [Perron Docs](https://perron.railsdesigner.com) — This site
+- [La Fée des Jolies](https://lafeedesjolies.fr/?utm_source=perron-site) - Lash expert institute offering professional trainings and beauty services
