@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails-designer/perron.git
-  revision: 6eef121a9be0e881d7f14fa857e89062cbac5c58
+  revision: e57231b208a274d129c3f80e91c0e12db194409b
   specs:
     perron (0.18.0)
       csv
@@ -105,7 +105,7 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     drb (2.2.3)
-    erb (6.0.1)
+    erb (6.0.2)
     erubi (1.13.1)
     ffi (1.17.3-aarch64-linux-gnu)
     ffi (1.17.3-aarch64-linux-musl)
@@ -151,7 +151,8 @@ GEM
       listen (~> 3.0)
       rack (>= 3.0)
     mini_mime (1.1.5)
-    minitest (6.0.1)
+    minitest (6.0.2)
+      drb (~> 2.0)
       prism (~> 1.5)
     net-imap (0.6.3)
       date
