@@ -7,23 +7,14 @@
     A growing collection of snippets, templates and UI components for your Perron-powered site.
   </p>
 
-  <ul class="grid gap-6 mt-8 mb-12">
-    <% @resources.each do |type, resources| %>
+  <ul class="grid grid-col-1 gap-6 mt-8 mb-12 sm:grid-cols-2 md:grid-cols-3">
+    <% Content::Resource::TYPES.each do |key, value| %>
       <li>
-        <%= tag.h2 type.name, id: type.slug, class: "ml-2 text-lg font-bold text-gray-800" %>
-        <%= tag.p type.description, class: "ml-2 text-base text-gray-600" %>
+        <%= link_to category_path(key), class: "grid px-4 py-3 border border-gray-200 rounded-md transition hover:bg-gray-50 hover:border-gray-300" do %>
+          <%= tag.h2 value, class: "text-base font-semibold text-gray-800" %>
 
-        <ul class="grid gap-4 mt-3.5">
-          <% resources.sort_by(&:category).group_by(&:category).each do |category, resources| %>
-            <li>
-              <%= tag.h3 category.to_s.humanize, id: category.to_s.parameterize, class: "ml-2 text-sm font-semibold text-gray-800" %>
-
-              <ul class="grid grid-cols-12 gap-4 mt-0.75 px-2">
-                <%= render resources.sort_by(&:position) %>
-              </ul>
-            </li>
-          <% end %>
-        </ul>
+          <%= tag.p Content::Resource::DESCRIPTIONS[key], class: "text-sm text-gray-600" %>
+        <% end %>
       </li>
     <% end %>
   </ul>

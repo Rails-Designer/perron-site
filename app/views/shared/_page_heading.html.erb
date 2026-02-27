@@ -1,6 +1,6 @@
 <%# locals: (content:, breadcrumbs: []) %>
 <hgroup>
-  <ul>
+  <ul class="flex items-center gap-x-2 [&_li:not(:last-child)]:after:content-['/'] [&_li:not(:last-child)]:after:ml-1.5 [&_li:not(:last-child)]:after:text-gray-400">
     <%= safe_join breadcrumbs.map { tag.li link_to(it[:label], it[:href], class: "text-xs text-gray-600 hover:text-gray-800 sm:text-sm") } %>
   </ul>
 

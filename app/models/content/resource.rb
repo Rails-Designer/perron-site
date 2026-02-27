@@ -6,9 +6,9 @@ class Content::Resource < Perron::Resource
   search_fields :description, :category, :collection_name
 
   TYPES = {
-    template: "Templates",
+    component: "Components",
     snippet: "Snippets",
-    component: "Components"
+    template: "Templates"
   }.with_indifferent_access
 
   DESCRIPTIONS = {
@@ -19,6 +19,8 @@ class Content::Resource < Perron::Resource
 
   delegate :type, :title, :description, :category, :command, to: :metadata
   alias_method :name, :title
+
+  scope :by_type, ->(type) { where(type: type) }
 
   validates :title, :description, presence: true
   validates :type, inclusion: { in: TYPES.keys }
@@ -36,7 +38,7 @@ class Content::Resource < Perron::Resource
       .map { it.delete_prefix("#{base_path}/") }
   end
 
-  def position = metadata.position || 5
+  def position = metadata.position || Float::INFINITY
 
   def collection_name = "Library"
 
