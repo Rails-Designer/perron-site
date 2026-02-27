@@ -7,7 +7,7 @@
 
   <%= tag.div class: "absolute bottom-4 flex justify-center items-center gap-x-3" do %>
     <% @resource.images.each_with_index do |_, index| %>
-      <%= tag.button type: "button", data: { action: "addDataAttribute#slideshowNumber=#{index + 1}", target: "#dialog" }, class: "block size-3 bg-gray-500/50 border border-gray-500/50 ring-2 ring-offset-0 ring-white/90 rounded-full transition cursor-pointer hover:bg-gray-600" %>
+      <%= tag.button type: "button", data: { action: "addDataAttribute#slideshowNumber=#{index + 1}", target: "dialog" }, class: "block size-3 bg-gray-500/50 border border-gray-500/50 ring-2 ring-offset-0 ring-white/90 rounded-full transition cursor-pointer hover:bg-gray-600" %>
     <% end %>
   <% end unless @resource.images.one? %>
 
