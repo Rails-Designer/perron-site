@@ -9,7 +9,7 @@ class CopyableCodeProcessor < Perron::HtmlProcessor::Base
       button = Nokogiri::XML::Node.new("button", @html)
       button["type"] = "button"
       button["data-action"] = "copy"
-      button["data-target"] = "##{id}"
+      button["data-target"] = id
       button.content = "Copy"
 
       pre["id"] = id
