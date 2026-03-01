@@ -5,7 +5,7 @@
     <%= @description %>
   </p>
 
-  <ul class="grid gap-6 mt-8 mb-12">
+  <ul class="grid gap-8 mt-8 mb-12">
     <% @resources.each do |category, resources| %>
       <li>
         <%= tag.h2 category.to_s.humanize, id: category.to_s.parameterize, class: "ml-2 text-lg font-bold text-gray-800" %>

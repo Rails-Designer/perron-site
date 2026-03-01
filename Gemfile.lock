@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/Rails-Designer/rails_icons
-  revision: 07325b95f1ada4e233538583f0fa8f4707e1ee81
+  revision: a1e94d654907e1398e7dac716fc45de9b5aabbad
   specs:
     rails_icons (1.6.1)
       icons (~> 0.7.0)

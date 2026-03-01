@@ -5,6 +5,12 @@ class Content::Resource < Perron::Resource
 
   search_fields :description, :category, :collection_name
 
+  ICONS = {
+    component: "puzzle-piece",
+    snippet: "code-simple",
+    template: "browser"
+  }.with_indifferent_access
+
   TYPES = {
     component: "Components",
     snippet: "Snippets",
