@@ -340,4 +340,4 @@ DEPENDENCIES
   tailwindcss-rails (~> 4.4.0)
 
 BUNDLED WITH
-   2.7.0
+   4.0.7
