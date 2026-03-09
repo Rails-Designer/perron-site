@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Rails-Designer/perron
-  revision: 90ea8c1267b76fc6e981842df8bbfdaa5e099f1c
+  revision: 65e4d7cd4bef39fbd0c2e81857f78cad2948df02
   specs:
     perron (0.18.0)
       csv
@@ -139,7 +139,7 @@ GEM
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.18.1)
+    json (2.19.1)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     listen (3.10.0)
@@ -340,4 +340,4 @@ DEPENDENCIES
   tailwindcss-rails (~> 4.4.0)
 
 BUNDLED WITH
-   4.0.7
+  4.0.7
