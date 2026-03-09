@@ -57,22 +57,37 @@ class TableOfContentElement extends HTMLElement {
     if (!this.#activeClasses) return;
 
     const selector = "a[href^='#']";
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(({ isIntersecting, target }) => {
-        if (!isIntersecting) return;
-
-        this.querySelectorAll(selector).forEach(link => link.classList.remove(...this.#activeClasses));
-        this.querySelector(`a[href="#${target.id}"]`)?.classList.add(...this.#activeClasses);
-      });
-    }, { rootMargin: "0px 0px -80% 0px", threshold: 0 });
+    const sections = [];
 
     this.querySelectorAll(selector).forEach(({ hash }) => {
       const element = document.getElementById(hash.slice(1));
 
-      if (element) observer.observe(element);
+      if (element) sections.push({ element, link: this.querySelector(`a[href="#${element.id}"]`) });
     });
 
-    this.querySelector(selector)?.classList.add(...this.#activeClasses);
+    const updateActive = () => {
+      let activeSection = null;
+
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+        activeSection = sections[sections.length - 1];
+      } else {
+        for (const section of sections) {
+          const rect = section.element.getBoundingClientRect();
+
+          if (rect.top <= 100) {
+            activeSection = section;
+          }
+        }
+      }
+
+      this.querySelectorAll(selector).forEach(link => link.classList.remove(...this.#activeClasses));
+
+      activeSection?.link?.classList.add(...this.#activeClasses);
+    };
+
+    window.addEventListener('scroll', updateActive);
+
+    updateActive();
   }
 
   get #leader() {
