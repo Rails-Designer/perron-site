@@ -1,8 +1,6 @@
 class Content::Resource < Perron::Resource
   include Templates
 
-  def self.nested_routes = [ :template ]
-
   search_fields :description, :category, :collection_name
 
   ICONS = {
