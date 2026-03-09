@@ -1,7 +1,7 @@
 <%# locals: (resource:, highlight: resource.metadata.highlight) %>
 <li class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
   <%= link_to resource, class: class_names("group/resource relative block border rounded-md overflow-clip", {"border-gray-200 hover:bg-gray-50 hover:border-gray-300": highlight.blank?, "bg-gradient-to-b from-white to-amber-50 border-amber-200 hover:to-amber-100 hover:border-amber-300": highlight.present?}) do %>
-    <%= image_tag resource.images.first, class: "rounded-sm transition ease-in-out delay-75 group-hover/resource:scale-95" if resource.images.any? %>
+    <%= image_tag resource.images.first, class: "rounded-sm transition ease-in-out delay-75 group-hover/resource:scale-95" if resource.type.template? && resource.images.any? %>
 
     <%= tag.h3 safe_join([resource.name, (icon("star", variant: :duotone, class: "size-4 text-amber-500 fill-amber-300") if highlight.present?)]), class: class_names("flex items-center gap-x-1 px-3 py-2 text-sm font-semibold text-gray-900", {"text-gray-800": highlight.blank?, "text-amber-950": highlight.present?}) %>
   <% end %>

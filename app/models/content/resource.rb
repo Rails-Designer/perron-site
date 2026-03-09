@@ -21,7 +21,7 @@ class Content::Resource < Perron::Resource
     component: "Static site specific UI components"
   }.with_indifferent_access
 
-  delegate :type, :title, :description, :category, :command, to: :metadata
+  delegate :title, :description, :category, :command, to: :metadata
   alias_method :name, :title
 
   scope :by_type, ->(type) { where(type: type) }
@@ -45,6 +45,8 @@ class Content::Resource < Perron::Resource
   def position = metadata.position || Float::INFINITY
 
   def collection_name = "Library"
+
+  def type = metadata.type.inquiry
 
   private
 
