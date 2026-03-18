@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Rails-Designer/perron
-  revision: 8ab8b257fd5ef78c977c190a1a10ea6f91fa498e
+  revision: a66561287aff13b378691e9696bf4acac988afca
   specs:
     perron (0.18.0)
       csv
@@ -20,7 +20,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    action_text-trix (2.1.16)
+    action_text-trix (2.1.17)
       railties
     actioncable (8.1.2)
       actionpack (= 8.1.2)
@@ -147,7 +147,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
-    loofah (2.25.0)
+    loofah (2.25.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.9.0)
