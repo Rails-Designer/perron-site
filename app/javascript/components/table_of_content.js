@@ -24,6 +24,17 @@ class TableOfContentElement extends HTMLElement {
 
   #items;
 
+<<<<<<< Updated upstream
+=======
+  #closeOnClickOutside(event) {
+    if (event.target.closest(`[data-target="${this.id}"]`)) return;
+
+    if (!this.hasAttribute("hidden") && !this.contains(event.target)) {
+      this.setAttribute("hidden", "");
+    }
+  }
+
+>>>>>>> Stashed changes
   get #template() {
     return `
       <nav class="

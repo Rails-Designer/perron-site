@@ -14,7 +14,7 @@
     <%= tag.p "Documentation", class: tail_css if @resource.blank? %>
   </button>
 
-  <%= tag.button data: { action: "toggleClass#hidden", target: "toc" }, class: "flex items-center shrink-0 gap-x-2 px-3 py-1 text-xs/3 text-gray-800 font-medium bg-gray-50 ring ring-offset-0 ring-gray-200 rounded-md transition active:scale-98" do %>
+  <%= tag.button data: { action: "toggleAttribute#hidden", target: "toc" }, class: "flex items-center shrink-0 gap-x-2 px-3 py-1 text-xs/3 text-gray-800 font-medium bg-gray-50 ring ring-offset-0 ring-gray-200 rounded-md transition active:scale-98" do %>
     <%= icon "list-dashes", class: "size-3 text-xs text-gray-600" %>
 
     <%= tag.span "On this page", class: "hidden sm:block" %>
