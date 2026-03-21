@@ -1,4 +1,4 @@
-<nav class="sticky top-0 grid grid-cols-[min-content_1fr_min-content] gap-2 place-content-between items-center w-full h-10 px-2 py-1 bg-white border-b border-gray-100 z-5 isolate lg:grid-cols-[var(--nav-width)_1fr_auto] lg:px-4">
+<nav class="sticky top-0 grid grid-cols-[min-content_1fr_min-content] gap-3 place-content-between items-center w-full h-10 px-2 py-1 bg-white border-b border-gray-100 z-5 isolate lg:grid-cols-[var(--nav-width)_1fr_auto] lg:px-4">
   <%= link_to root_path, class: "group/icon flex items-center gap-x-2 lg:ml-9.5" do %>
     <%= svg "icon", class: "size-4.5 shrink-0 text-orange-500 transition duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] group-hover/icon:scale-80 group-hover/icon:rotate-359" %>
 
@@ -6,18 +6,18 @@
   <% end %>
 
   <search-form
-    endpoint="<%= search_path trailing_slash: false %>"
-    config='{"fields": ["title", "headings", "body", "collection_name", "category", "description"], "storeFields": ["title", "body", "href", "slug", "collection_name"], "searchOptions": {"boost": {"title": 30, "category": 25, "description": 20, "headings": 15}}}'
-    empty-message="No results"
-    group-by="collection_name"
-    shortcut-key="$mod+k"
+    data-endpoint="<%= search_path trailing_slash: false %>"
+    data-config='{"fields": ["title", "headings", "body", "collection_name", "category", "description"], "storeFields": ["title", "body", "href", "slug", "collection_name"], "searchOptions": {"boost": {"title": 30, "category": 25, "description": 20, "headings": 15}}}'
+    data-empty="No results"
+    data-group-by="collection_name"
+    data-shortcut="$mod+k"
     class="group/form block relative w-full text-gray-400 focus-within:text-gray-800 sm:max-w-md"
   >
     <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2">
       <%= icon "magnifying-glass", class: "size-3.5 transition" %>
     </div>
 
-    <kbd class="hidden absolute right-1 top-[0.3em] items-center gap-x-0.25 px-1 py-0.5 text-[0.625rem] text-gray-500 bg-gradient-to-b from-white to-gray-100 border border-white ring ring-gray-200/80 shadow-sm rounded-md transition ease-in-out group-hover/form:inline-flex">
+    <kbd class="hidden absolute right-1 top-[0.3em] items-center gap-x-0.25 px-1 py-0.5 text-[0.625rem] text-gray-500 bg-white ring ring-gray-200/80 shadow-xs/10 rounded-md group-hover/form:inline-flex">
       <kbd class="text-xs">⌘</kbd><kbd>K</kbd>
     </kbd>
 
@@ -27,7 +27,7 @@
       class="block w-full pl-7 pr-2 py-1 text-sm text-gray-800 bg-gray-50/50 rounded-lg ring ring-gray-200 transition-colors duration-200 hover:bg-gray-100 focus:bg-gray-100 focus:outline-0"
     />
 
-    <ul data-slot="results" class="absolute left-0 w-full grid gap-y-2.5 max-h-96 mt-1 bg-white border border-gray-100 rounded-md shadow-xl/5 overflow-y-auto opacity-0 translate-y-[-8px] transition-discrete transition-all duration-200 [&[open]]:opacity-100 [&[open]]:translate-y-0"></ul>
+    <ul data-slot="results"></ul>
   </search-form>
 
   <%= link_to svg("github_logo", class: "size-full"), "https://github.com/rails-designer/perron", target: "_blank", class: "block size-5 rounded-full text-gray-500 transition hover:text-gray-800" %>

@@ -2,13 +2,25 @@ import MiniSearch from "minisearch"
 import { excerpt, highlight } from "helpers/search"
 
 export default class SearchForm extends HTMLElement {
+  #clickOutside = null
+  #unsubscribe = null
+
   connectedCallback() {
     this.debounceTimeout = null
     this.selectedIndex = -1
 
-    this.#resultsContainer.setAttribute("hidden", "")
+    this.#input.addEventListener("focus", () => {
+      this.setAttribute("data-focused", "")
 
-    this.#input.addEventListener("focus", () => this.#initialize())
+      this.#initialize()
+    })
+
+    this.#input.addEventListener("blur", () => {
+      this.removeAttribute("data-focused")
+    })
+
+    this.#setupClickOutside()
+
     if (!this.#submitButton) {
       this.#input.addEventListener("input", (event) => this.#debounce(event.target.value))
     } else {
@@ -18,47 +30,56 @@ export default class SearchForm extends HTMLElement {
         this.#search(this.#input.value)
       })
     }
+
     this.#input.addEventListener("keydown", (event) => this.#navigate(event))
 
-    document.addEventListener("click", (event) => this.#closeOnClickOutside(event))
-
-    if (this.hasAttribute("shortcut-key")) this.#setupShortcut()
+    if (this.hasAttribute("data-shortcut")) this.#setupShortcut()
   }
 
   disconnectedCallback() {
-    document.removeEventListener("click", (event) => this.#closeOnClickOutside(event))
-
     if (this.debounceTimeout) clearTimeout(this.debounceTimeout)
+    if (this.#unsubscribe) this.#unsubscribe()
+
+    document.removeEventListener("mousedown", this.#clickOutside)
   }
 
   // private
 
-  async #initialize() {
-    if (this.index) return
-
-    this.setAttribute("aria-busy", "true")
-
-    try {
-      const response = await fetch(this.#searchEndpoint)
-      this.index = await response.json()
-      this.miniSearch = new MiniSearch(this.#config)
-
-      this.miniSearch.addAll(this.index)
-    } catch (error) {
-      console.error("Failed to load search index:", error)
-    } finally {
-      this.removeAttribute("aria-busy")
+  #setupClickOutside() {
+    this.#clickOutside = (event) => {
+      if (!this.contains(event.target)) {
+        this.#close()
+      }
     }
+
+    document.addEventListener("mousedown", this.#clickOutside)
   }
 
-  #debounce(query) {
-    if (this.debounceTimeout) clearTimeout(this.debounceTimeout)
+  async #setupShortcut() {
+    try {
+      const imported = await import("tinykeys")
+      const tinykeys = imported.default || imported.tinykeys || imported
 
-    this.debounceTimeout = setTimeout(() => this.#search(query), 150)
+      this.#unsubscribe = tinykeys(window, {
+        [this.getAttribute("data-shortcut")]: (event) => {
+          event.preventDefault()
+
+          this.#input.focus()
+        }
+      })
+    } catch {}
   }
 
   #navigate(event) {
-    if (!this.#resultsContainer.hasAttribute("open")) return
+    if (event.key === "Escape") {
+      event.preventDefault()
+
+      this.#close()
+
+      return
+    }
+
+    if (!this.hasAttribute("data-open")) return
 
     const results = this.#resultsContainer.querySelectorAll("li a")
     if (results.length === 0) return
@@ -84,32 +105,32 @@ export default class SearchForm extends HTMLElement {
         if (this.selectedIndex >= 0) results[this.selectedIndex].click()
 
         break
-      case "Escape":
-        event.preventDefault()
-
-        this.#close()
-
-        break
     }
   }
 
-  #closeOnClickOutside(event) {
-    if (!this.contains(event.target)) this.#close()
+  #debounce(query) {
+    if (this.debounceTimeout) clearTimeout(this.debounceTimeout)
+
+    this.debounceTimeout = setTimeout(() => this.#search(query), 150)
   }
 
-  async #setupShortcut() {
+  async #initialize() {
+    if (this.index) return
+
+    this.setAttribute("aria-busy", "true")
+
     try {
-      const imported = await import("tinykeys")
-      const tinykeys = imported.default || imported.tinykeys || imported
+      const response = await fetch(this.#searchEndpoint)
 
-      this.unsubscribe = tinykeys(window, {
-        [this.getAttribute("shortcut-key")]: (event) => {
-          event.preventDefault()
+      this.index = await response.json()
+      this.miniSearch = new MiniSearch(this.#config)
 
-          this.#input.focus()
-        }
-      })
-    } catch {}
+      this.miniSearch.addAll(this.index)
+    } catch (error) {
+      console.error("Failed to load search index:", error)
+    } finally {
+      this.removeAttribute("aria-busy")
+    }
   }
 
   #search(query) {
@@ -124,10 +145,13 @@ export default class SearchForm extends HTMLElement {
   }
 
   #close() {
-    this.#resultsContainer.innerHTML = ""
-
-    this.#hide();
+    this.removeAttribute("data-open")
+    this.removeAttribute("data-focused")
+    this.removeAttribute("data-results")
+    this.removeAttribute("data-empty")
     this.removeAttribute("data-results-count")
+
+    this.#resultsContainer.innerHTML = ""
   }
 
   #render(results, query = "") {
@@ -139,7 +163,7 @@ export default class SearchForm extends HTMLElement {
       return
     }
 
-    const groupBy = this.getAttribute("group-by")
+    const groupBy = this.getAttribute("data-group-by")
     const html = groupBy ? this.#renderGrouped(results, groupBy, query) : results.map(result => this.#renderItem(result, query)).join("")
 
     this.#resultsContainer.innerHTML = html
@@ -152,15 +176,24 @@ export default class SearchForm extends HTMLElement {
       })
     })
 
+    this.removeAttribute("data-empty")
+
     this.setAttribute("data-results-count", results.length)
-    this.#show()
+    this.setAttribute("data-results", "")
+    this.setAttribute("data-open", "")
   }
 
   #renderEmpty() {
-    this.#resultsContainer.innerHTML = `<p data-slot="empty-message">${this.#emptyMessage}</p>`
+    const emptyContainer = this.querySelector("[data-slot='empty']")
+
+    if (emptyContainer) {
+      emptyContainer.innerHTML = this.#emptyMessage
+      emptyContainer.removeAttribute("hidden")
+    }
 
     this.setAttribute("data-results-count", "0")
-    this.#show()
+    this.setAttribute("data-empty", "")
+    this.setAttribute("data-open", "")
   }
 
   #renderGrouped(results, groupBy, query) {
@@ -190,10 +223,10 @@ export default class SearchForm extends HTMLElement {
   #renderItem(result, query) {
     return `
       <li data-slot="item">
-        <a href="${result.href}">
-          <h5>${highlight(result.title, query)}</h5>
+        <a href="${result.href}" data-result-link>
+          <h5 data-result-title>${highlight(result.title, query)}</h5>
 
-          <p>${highlight(excerpt(result.body, query), query)}</p>
+          <p data-result-excerpt>${highlight(excerpt(result.body, query), query)}</p>
         </a>
       </li>
     `
@@ -212,16 +245,6 @@ export default class SearchForm extends HTMLElement {
     })
   }
 
-  #show() {
-    this.#resultsContainer.removeAttribute("hidden")
-    this.#resultsContainer.setAttribute("open", "")
-  }
-
-  #hide() {
-    this.#resultsContainer.removeAttribute("open")
-    this.#resultsContainer.setAttribute("hidden", "")
-  }
-
   get #config() {
     const defaults = {
       fields: ["title", "headings", "body"],
@@ -235,7 +258,7 @@ export default class SearchForm extends HTMLElement {
       }
     }
 
-    const customConfig = this.getAttribute("config")
+    const customConfig = this.getAttribute("data-config")
     if (!customConfig) return defaults
 
     const parsed = JSON.parse(customConfig)
@@ -269,11 +292,11 @@ export default class SearchForm extends HTMLElement {
   }
 
   get #searchEndpoint() {
-    return this.getAttribute("endpoint")
+    return this.getAttribute("data-endpoint")
   }
 
   get #emptyMessage() {
-    return this.getAttribute("empty-message") || "No results found"
+    return this.getAttribute("data-empty") || "No results found"
   }
 }
 

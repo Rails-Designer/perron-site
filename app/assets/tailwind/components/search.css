@@ -1,45 +1,86 @@
 @layer components {
   search-form {
-    li {
-      ul {
-        @apply grid gap-y-1;
-      }
+    [data-slot="results"],
+    [data-slot="empty"] {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      margin-top: .125rem;
+      background-color: white;
+      border: 1px solid rgb(226 232 240);
+      border-radius: .375rem;
+    }
 
-      h6 {
-        @apply sticky top-0 px-2 py-1;
-        @apply text-xs tracking-tight font-medium text-gray-900;
-        @apply bg-white/90 backdrop-blur-sm;
-        @apply border-b border-gray-100;
-      }
+    [data-slot="results"] {
+      display: grid;
+      gap: .5rem;
+      max-height: 24rem;
+      overflow-y: auto;
 
-      a {
-        @apply block px-2 py-1 no-underline;
-
-        [data-selected] &,
-        &:hover {
-          @apply bg-gray-100/60;
-        }
-
-        h5 {
-          @apply text-sm font-medium text-gray-950;
-        }
-
-        p {
-          @apply mt-0.5 text-sm font-normal text-gray-500;
-        }
-      }
-
-      mark {
-        @apply inline-block px-0.5 py-0.25;
-        @apply text-orange-900/90 leading-none;
-        @apply bg-transparent bg-gradient-to-br from-red-300/50 to-orange-200/50;
-        @apply rounded-sm rounded-br-xl rounded-tl-xl;
+      &:empty {
+        display: none;
       }
     }
 
-    [data-slot="empty-message"] {
-      @apply px-2 py-1.5;
-      @apply text-sm font-medium text-gray-600;
+    [data-slot="empty"] {
+      padding: .375rem .5rem;
+      font-size: .875rem;
+      font-weight: 500;
+      line-height: 1.25rem;
+      color: rgb(75 85 99);
+    }
+
+    [data-group-label] {
+      position: sticky;
+      top: 0;
+      padding: .25rem .5rem;
+      font-size: .75rem;
+      font-weight: 500;
+      line-height: 1rem;
+      letter-spacing: -0.025em;
+      color: rgb(17 24 39);
+      background-color: rgb(255 255 255 / .9);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgb(241 245 249);
+    }
+
+    [data-result-link] {
+      display: block;
+      padding: .25rem .5rem;
+      text-decoration: none;
+
+      &:hover,
+      [data-selected] & {
+        background-color: rgb(243 244 246 / .6);
+      }
+    }
+
+    [data-result-title] {
+      font-size: .875rem;
+      font-weight: 500;
+      line-height: 1.25rem;
+      color: rgb(3 7 18);
+    }
+
+    [data-result-excerpt] {
+      margin-top: .125rem;
+      font-size: .875rem;
+      font-weight: 400;
+      line-height: 1.25rem;
+      color: rgb(107 114 128);
+    }
+
+    mark {
+      display: inline-block;
+      padding: .0625rem .125rem;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: 1;
+      color: rgb(69 26 3 / .9);
+      text-decoration: none;
+      background-color: transparent;
+      background-image: linear-gradient(to bottom right, rgb(252 165 165 / .5), rgb(254 215 170 / .5));
+      border-radius: .125rem .5rem .5rem .125rem;
     }
   }
 }
