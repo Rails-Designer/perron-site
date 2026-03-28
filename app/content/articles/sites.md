@@ -17,3 +17,4 @@ Sites that use Perron. Want to see your site here too? Open a PR.
 - [Perron Docs](https://perron.railsdesigner.com) — This site
 - [La Fée des Jolies](https://lafeedesjolies.fr/?utm_source=perron-site) — Lash expert institute offering professional trainings and beauty services
 - [Rails Designer](https://railsdesigner.com) — Where Rails developers come to learn and build beautiful Rails apps. Rails UI consultancy, SaaS expertise & development and Rails UI component library
+- [Pinturax](https://pinturax.com) — A free tool to create icons, social media images, banners and other web imagery
