@@ -5,12 +5,12 @@
     <%= @description %>
   </p>
 
-  <ul class="grid gap-8 mt-8 mb-12">
+  <ul class="grid gap-8 mt-4 mb-12 max-w-xl">
     <% @resources.each do |category, resources| %>
       <li>
         <%= tag.h2 category.to_s.humanize, id: category.to_s.parameterize, class: "ml-2 text-lg font-bold text-gray-800" %>
 
-        <ul class="grid grid-cols-12 gap-4 mt-1.5 px-2">
+        <ul class="grid gap-2 mt-1.5 pl-0 px-2">
           <%= render resources.sort_by(&:position) %>
         </ul>
       </li>
