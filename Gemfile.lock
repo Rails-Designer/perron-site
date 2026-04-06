@@ -11,10 +11,10 @@ GIT
 
 GIT
   remote: https://github.com/Rails-Designer/rails_icons
-  revision: a1e94d654907e1398e7dac716fc45de9b5aabbad
+  revision: 0984f1a2952fcdae9d93128cb04033f04bb58d0b
   specs:
-    rails_icons (1.6.1)
-      icons (~> 0.7.0)
+    rails_icons (1.8.0)
+      icons (~> 0.8.1)
       rails (>= 7.0)
 
 GEM
@@ -98,12 +98,13 @@ GEM
     base64 (0.3.0)
     bigdecimal (4.1.1)
     builder (3.3.0)
-    commonmarker (2.6.3-aarch64-linux)
-    commonmarker (2.6.3-arm-linux)
-    commonmarker (2.6.3-arm64-darwin)
-    commonmarker (2.6.3-x86_64-darwin)
-    commonmarker (2.6.3-x86_64-linux)
-    commonmarker (2.6.3-x86_64-linux-musl)
+    commonmarker (2.7.0-aarch64-linux)
+    commonmarker (2.7.0-aarch64-linux-musl)
+    commonmarker (2.7.0-arm-linux)
+    commonmarker (2.7.0-arm64-darwin)
+    commonmarker (2.7.0-x86_64-darwin)
+    commonmarker (2.7.0-x86_64-linux)
+    commonmarker (2.7.0-x86_64-linux-musl)
     concurrent-ruby (1.3.6)
     connection_pool (3.0.2)
     crass (1.0.6)
@@ -127,7 +128,7 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
-    icons (0.7.0)
+    icons (0.8.1)
       nokogiri (~> 1.16, >= 1.16.4)
     importmap-rails (2.2.3)
       actionpack (>= 6.0.0)
@@ -328,7 +329,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  commonmarker (~> 2.6.3)
+  commonmarker (~> 2.7.0)
   debug
   importmap-rails (~> 2.2.3)
   perron!
