@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Rails-Designer/perron
-  revision: e9cf74226c4093065a8ff8ccd290a84c748212d1
+  revision: c630ff45ee4a789ac1356d330adb4d62f5b91722
   specs:
     perron (0.18.0)
       csv
@@ -210,7 +210,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.6)
-    rack-session (2.1.1)
+    rack-session (2.1.2)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
     rack-test (2.2.0)
