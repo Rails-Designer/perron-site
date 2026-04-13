@@ -1,0 +1,21 @@
+<h1>
+  What are people building with Perron?
+</h1>
+
+<ul class="grid grid-cols-1 gap-6 max-w-7xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8 lg:gap-10">
+  <% Content::Showcase.all.each do |resource| %>
+    <li>
+      <%= link_to resource.url, class: "grid gap-y-3 p-2 transition rounded-xl hover:bg-gray-50" do %>
+        <scrollable-screenshot class="block w-full max-w-[64rem] aspect-video rounded-lg ring ring-gray-100 overflow-hidden" style="--scroll-duration:7s;">
+          <%= image_tag resource.image, class: "w-full" %>
+        </scrollable-screenshot>
+
+        <div class="px-1">
+          <h4 class="text-sm font-medium text-gray-800"><%= resource.title %></h4>
+
+          <p class="text-sm text-gray-500"><%= resource.description %></p>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
