@@ -1,21 +1,27 @@
-<h1>
-  What are people building with Perron?
-</h1>
+<main class="max-w-8xl mx-auto px-2 py-4 lg:px-4 lg:py-12">
+  <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 text-balance sm:text-3xl lg:text-4xl">
+    Made with Perron
+  </h1>
 
-<ul class="grid grid-cols-1 gap-6 max-w-7xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8 lg:gap-10">
-  <% Content::Showcase.all.each do |resource| %>
-    <li>
-      <%= link_to resource.url, class: "grid gap-y-3 p-2 transition rounded-xl hover:bg-gray-50" do %>
-        <scrollable-screenshot class="block w-full max-w-[64rem] aspect-video rounded-lg ring ring-gray-100 overflow-hidden" style="--scroll-duration:7s;">
-          <%= image_tag resource.image, class: "w-full" %>
-        </scrollable-screenshot>
+  <p class="mt-2 text-base text-gray-800 lg:text-lg">
+    SaaS pages that convert. Business sites with character. Engaging documentation. All of these are built with Perron.
+  </p>
 
-        <div class="px-1">
-          <h4 class="text-sm font-medium text-gray-800"><%= resource.title %></h4>
+  <ul class="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8 lg:gap-10">
+    <% Content::Showcase.all.each do |resource| %>
+      <li>
+        <%= link_to resource.url, class: "grid gap-y-3 p-2 transition rounded-xl hover:bg-gray-50" do %>
+          <scrollable-screenshot class="block w-full max-w-[64rem] aspect-video rounded-lg ring ring-gray-100 overflow-hidden" style="--scroll-duration:7s;">
+            <%= image_tag resource.image, class: "w-full" %>
+          </scrollable-screenshot>
 
-          <p class="text-sm text-gray-500"><%= resource.description %></p>
-        </div>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+          <div class="px-1">
+            <h4 class="text-sm font-medium text-gray-800"><%= resource.title %></h4>
+
+            <p class="text-sm text-gray-500"><%= resource.description %></p>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</main>

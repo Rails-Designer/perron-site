@@ -30,5 +30,13 @@
     <ul data-slot="results"></ul>
   </search-form>
 
-  <%= link_to svg("github_logo", class: "size-full"), "https://github.com/rails-designer/perron", target: "_blank", class: "block size-5 rounded-full text-gray-500 transition hover:text-gray-800" %>
+  <ul class="flex items-center gap-x-3 lg:gap-x-6">
+    <li>
+      <%= link_to "Showcase", showcases_path, class: "text-sm/6 text-gray-950" %>
+    </li>
+
+    <li>
+      <%= link_to svg("github_logo", class: "size-full"), "https://github.com/rails-designer/perron", target: "_blank", class: "block size-5 rounded-full text-gray-500 transition hover:text-gray-800" %>
+    </li>
+  </ul>
 </nav>
