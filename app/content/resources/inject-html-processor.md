@@ -4,7 +4,6 @@ title: Inject HTML snippets
 description: This snippet adds a processor to inject custom HTML (like newsletter signups, ads or CTAs) into long-form content at a natural breaking point.
 category: processor
 ---
-
 This snippet adds a processor to inject custom HTML snippets into long-form content at a natural breaking point in the reading flow.
 
 

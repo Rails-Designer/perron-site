@@ -1,5 +1,0 @@
-create_file "statichost.yml", <<~YAML
-image: ruby:3.4
-command: bundle install && RAILS_ENV=production bin/rails perron:build
-public: output
-YAML

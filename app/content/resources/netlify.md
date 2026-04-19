@@ -6,5 +6,4 @@ about: "Netlify is a cloud platform for deploying and hosting modern web applica
 category: deployment
 position: 2
 ---
-
 This snippet adds a configuration file for [Netlify](https://netlify.com/) deployments. The `netlify.toml` file defines how your site should be built and deployed on Netlify. It specifies a custom build command, sets the output directory and configures environment variables including the Ruby version and Rails environment.

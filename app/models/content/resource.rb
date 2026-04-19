@@ -2,6 +2,12 @@ class Content::Resource < Perron::Resource
   include Templates
   include Types
 
+  source resource: { class: Content::Resource::Library, primary_key: :name }
+
+  def self.source_template(source)
+    source.resource.content
+  end
+
   search_fields :description, :category, :collection_name
 
   delegate :title, :description, :category, :command, to: :metadata

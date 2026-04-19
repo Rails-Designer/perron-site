@@ -3,7 +3,6 @@ type: component
 title: Countdown (using custom element)
 description: A custom element for countdown timers.
 ---
-
 This (headless) component gives you a `<count-down />` custom element. It displays a countdown timer to a specific date and time, updating every second.
 
 

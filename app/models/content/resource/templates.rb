@@ -13,5 +13,5 @@ module Content::Resource::Templates
 
   private
 
-  def template_path = Rails.root.join("app", "content", "resources", slug, "TEMPLATE")
+  def template_path = Rails.root.join("app", "content", "resources", slug, "template.rb")
 end

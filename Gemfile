@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 git_source(:rd) { "https://github.com/Rails-Designer/#{it}" }
 
+gem "activeresource", "~> 6.2"
 gem "commonmarker", "~> 2.7.0"
 gem "importmap-rails", "~> 2.2.3"
 gem "perron", rd: "perron"
