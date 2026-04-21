@@ -56,9 +56,9 @@ If `updated_at` is not set, the file's modification time is used as a fallback.
 
 ## Explanation of priority
 
-- **1.0 – 0.8: High priority**: homepage, product information, landing pages, category pages;
-- **0.7 – 0.4: Mid-range priority**: news articles, weather services, blog posts, pages that no site would be complete without;
-- **0.3 – 0.0: Low priority**: FAQs, old news stories, old press releases, completely static pages that are still relevant.
+- **1.0 – 0.8: high priority**; homepage, product information, landing pages, category pages
+- **0.7 – 0.4: mid-range priority**; news articles, weather services, blog posts, pages that no site would be complete without
+- **0.3 – 0.0: low priority**; FAQs, old news stories, old press releases, completely static pages that are still relevant
 
 
 ## Do you need a XML sitemap?

@@ -42,8 +42,8 @@ This changes the lookup from filename to the custom slug. For example, a file na
 
 Several frontmatter keys are used in various features in Perron:
 
-- `updated_at` - Last modification date (used in sitemaps and feeds)
-- `sitemap_priority` - Override sitemap priority for this resource
-- `sitemap_change_frequency` - Override change frequency for this resource
-- `exclude_from_sitemap` - Exclude this resource from the sitemap
-- `exclude_from_feed` - Exclude this resource from feeds
+- `updated_at`; last modification date (used in sitemaps and feeds)
+- `sitemap_priority`; override sitemap priority for this resource
+- `sitemap_change_frequency`; override change frequency for this resource
+- `exclude_from_sitemap`; exclude this resource from the sitemap
+- `exclude_from_feed`; exclude this resource from feeds

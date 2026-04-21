@@ -139,9 +139,10 @@ Override the default feed templates by creating custom views. Place them in `app
 - `json.erb`
 
 The builder provides access to:
-- `collection`: resource items for the feed;
-- `resources`: the resource class configuration;
-- `configuration`: configured default URL options.
+
+- `collection`; resource items for the feed
+- `resources`; the resource class configuration
+- `configuration`; configured default URL options
 
 Example `app/views/content/posts/json.erb`:
 ```erb

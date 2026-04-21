@@ -124,9 +124,9 @@ Apply transformations by passing an array of processor names or classes to the `
 
 The following processors are built-in and can be activated by passing their string name:
 
-- `absolute_image_urls` converts relative image URLs to absolute using configured `default_url_options`;
-- `lazy_load_images` adds `loading="lazy"` to all `<img>` tags;
-- `target_blank: adds `target="_blank"` to all external links.
+- `absolute_image_urls`; converts relative image URLs to absolute using configured `default_url_options`
+- `lazy_load_images`; adds `loading="lazy"` to all `<img>` tags
+- `target_blank`; adds `target="_blank"` to all external links
 
 > [!note]
 > Processors are included as _first-party_ options only when they require no setup or configuration. Otherwise, they are added to the [library](/library/).

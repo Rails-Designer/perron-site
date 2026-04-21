@@ -47,8 +47,8 @@ bin/rails generate content Post
 ```
 
 This creates:
-- `app/content/posts/` - content files go here
-- `app/models/content/post.rb` - resource class
+- `app/content/posts/`; content files go here
+- `app/models/content/post.rb`; resource class
 - `app/controllers/content/posts_controller.rb`
 - `app/views/content/posts/`
 

@@ -204,8 +204,8 @@ This will generate individual project pages for each repository (tagged "Ruby") 
 
 Classes used with the `class` option must:
 
-- implement an `.all` method that returns an enumerable collection;
-- return objects that respond to the specified primary_key method.
+- implement an `.all` method that returns an enumerable collection
+- return objects that respond to the specified primary_key method
 
 
 ### Use cases for API integration
@@ -213,12 +213,12 @@ Classes used with the `class` option must:
 Ideas for pulling from APIs are infinite. Here are some ideas:
 
 **Content Generation:**
-- product catalogs - Pull from Shopify, WooCommerce APIs;
-- real estate listings - Generate property pages from MLS data;
-- job boards - Create job posting pages from recruitment APIs;
-- event listings - Pull from Eventbrite, Meetup APIs.
+- product catalogs; pull from Shopify, WooCommerce APIs
+- real estate listings; generate property pages from MLS data
+- job boards; create job posting pages from recruitment APIs
+- event listings; pull from Eventbrite, Meetup APIs
 
 **Programmatic SEO:**
-- location pages - "Service in [City]";
-- comparison pages - "[Product] vs [Competitor]";
-- industry pages - "[Tool] for [Industry]".
+- location pages; "Service in [City]"
+- comparison pages; "[Product] vs [Competitor]"
+- industry pages; "[Tool] for [Industry]"

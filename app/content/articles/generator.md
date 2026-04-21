@@ -70,5 +70,5 @@ If no template exists, an empty file with frontmatter dashes is created.
 
 Template filenames support `strftime` parameters for dynamic naming, when respectively a title (eg. `My First Post`) and no title is passed:
 
-- `template.md.tt` generates `my-first-post.md` and `untitled.md`
-- `%Y-%m-%d-template.md.tt` generates `2026-01-01-my-first-post.md` and `2026-01-01-untitled.md`
+- `template.md.tt`; generates `my-first-post.md` and `untitled.md`
+- `%Y-%m-%d-template.md.tt`; generates `2026-01-01-my-first-post.md` and `2026-01-01-untitled.md`
