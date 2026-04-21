@@ -1,6 +1,6 @@
 ---
-section: content
-position: 4
+section: render
+position: 3
 title: Rendering & filtering
 description: Perron's resources are just Ruby objects so it is straight-forward to select, filter and order resources.
 ---
@@ -30,8 +30,6 @@ Or set a partial and pass the collection:
 ```
 
 ## ActiveRecord-style queries
-
-[!label v0.18.0+]
 
 Perron supports familiar ActiveRecord-style query methods for cleaner, more readable code.
 

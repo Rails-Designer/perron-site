@@ -12,6 +12,10 @@ Perron.configure do |config|
 
   config.markdown_options = {
     options: {
+      parse: {
+        smart: true
+      },
+
       render: {
         unsafe: true
       }

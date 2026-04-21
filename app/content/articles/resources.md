@@ -33,9 +33,8 @@ class Content::Post < Perron::Resource
 end
 ```
 
-## Associations
 
-[!label v0.14.0+]
+## Associations
 
 Resources can be associated with each other using `has_many` and `belongs_to`, similar to ActiveRecord associations.
 
@@ -98,8 +97,6 @@ post.editor # => Content::Author instance
 
 
 ### Associations with Data sources
-
-[!label v0.16.0+]
 
 Associate resources with [data sources](/docs/data/) using the `class_name` option. This works for both `belongs_to` and `has_many` associations.
 
@@ -166,6 +163,41 @@ post.editors # => Array of Content::Data::Editor instances where id matches edit
 When `{association_name}_ids` is present in the frontmatter, Perron uses those IDs to find the associated records. If not present, it falls back to foreign key matching (e.g., looking for `post_id` in the data records).
 
 
+## Adjacency (next/previous)
+
+Resources can navigate to adjacent resources (next/previous) in the collection:
+
+```erb
+<%= link_to "Previous", @resource.previous, rel: "prev" if @resource.previous %>
+
+<%= link_to "Next", @resource.next, rel: "next" if @resource.next %>
+```
+
+By default, adjacency uses the collection's default order (id). Configure your preferred ordering:
+```ruby
+# app/models/content/post.rb
+class Content::Post < Perron::Resource
+  adjacent_by :position
+end
+```
+
+You can also traverse cross-group by passing `within`:
+```ruby
+class Content::Post < Perron::Resource
+  adjacent_by :position, within: :category
+end
+```
+
+This assumes resources are grouped/connected through a category.
+
+Or if categories are in a specific order, configure as:
+```ruby
+class Content::Post < Perron::Resource
+  adjacent_by :position, within: { category: %w[getting_started content metadata] }
+end
+```
+
+
 ## Validations
 
 Validate values from resource classes, the frontmatter for example:
@@ -210,12 +242,26 @@ end
 ```
 
 > [!important]
-> Various features from Perron rely on @resource being explicitly set.
+> Various features from Perron rely on @resource instance variable being available.
+
+
+## Inline rendering
+
+Use `@resource.inline` to render content without a view template. This is useful when your controller only needs to render the resource's content:
+```ruby
+class Content::PostsController < ApplicationController
+  def show
+    @resource = Content::Post.find(params[:id])
+
+    render inline: @resource.content
+  end
+end
+```
 
 
 ## Setting a root page
 
-To set a root page, create a `root.{md,erb,*}` file in the pages content directory (`app/content/pages/root.erb`) and add a `root` action in `Content::PagesController`:
+To set a root page, create a `root.{md,erb}` file in the pages content directory (`app/content/pages/root.erb`) and add a `root` action in `Content::PagesController`:
 ```ruby
 # app/controllers/content/pages_controller.rb
 class Content::PagesController < ApplicationController
@@ -236,3 +282,22 @@ This is automatically generated when generating a `Page` collection using the [c
 ```bash
 rails generate content Page --no-include-root
 ```
+
+
+## Custom collection name
+
+When your route resource name doesn't match your collection name, define a custom collection name:
+
+```ruby
+# app/controllers/content/saas_posts_controller.rb
+class Content::SaasPostsController < ApplicationController
+  # Route is `resources :saas_posts` but collection is "posts"
+  def self.collection_name = "posts"
+
+  def index
+    @resources = Content::Post.all
+  end
+end
+```
+
+Perron checks for this method first before falling back to deriving the collection name from the controller name.

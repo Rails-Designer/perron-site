@@ -1,6 +1,6 @@
 ---
 section: content
-position: 7
+position: 2
 title: Data sources
 description: Perron can consume data files like yaml, json and CSV.
 ---
@@ -23,7 +23,7 @@ Look up a single entry with `Content::Data::Features.find("advanced-search")`, w
 
 ## File location and formats
 
-By default, Perron looks up `app/content/data/` for files with a `.yml`, `.json` or `.csv` extension. For a `features` call, it would find `features.yml`, `features.json` or `features.csv`. Provide a path to any data resource in `/app/content/data/`, via `Content::Data.new("path/to/data-resource")`.
+By default, Perron looks up `app/content/data/` for files with a `.yml`, `.json` or `.csv` extension. For `Features`, it would find `features.yml`, `features.json` or `features.csv`. Provide a path to any data resource in `/app/content/data/`, via `Content::Data.new("path/to/data-resource")`.
 
 
 ## Accessing data
@@ -69,6 +69,11 @@ Data resources must contain an array of objects. Each record should include an `
 
 ## Enumerable methods
 
-[!label v0.17.0+]
-
 All data objects support enumerable methods like `select`, `sort_by`, `first` and `count`. See [Enumerable methods](/docs/rendering/#enumerable-methods) for the full list of available methods.
+
+
+## Caching
+
+Data sources can be cached if you are dealing with large files (mutliple thousands of rows). This is especially useful where you dynamically uses data sources instead of creating resources.
+
+Enable by adding `config.cache_data_sources = false` to your Perron initializer.

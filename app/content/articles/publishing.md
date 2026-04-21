@@ -1,6 +1,6 @@
 ---
-section: content
-position: 3.7
+section: render
+position: 2
 title: Publishing
 description: Control the visibility of content by marking it as published, scheduled or draft.
 erb: true
@@ -64,8 +64,6 @@ published: false
 
 
 ## Preview
-
-[!label v0.15.0+]
 
 Set `preview: true` frontmatter to allow draft or scheduled content to be built in production with a secret token appended to the slug.
 

@@ -1,6 +1,6 @@
 ---
 section: content
-position: 2
+position: 3
 title: Generator
 description: Use Perron's generator to easily create new collections and content files.
 ---
@@ -8,7 +8,7 @@ description: Use Perron's generator to easily create new collections and content
 Create a new collection using the built-in generator.
 ```bash
 bin/rails generate content Post
-# or only include the needed action
+# or only include the only needed action
 bin/rails generate content Post show
 ```
 
@@ -26,9 +26,21 @@ And adds a route: `resources :posts, module: :content, only: %w[index show]`
 > View all available commands with `bin/rails generate content --help`
 
 
-## Creating new content files
+## Inline content
 
-[!label v0.15.0+]
+Use `--inline` to generate a show action that does not need a `show.html.erb` template. It will create a show action like this:
+```erb
+def show
+  @resource = Content::Page.find!(params[:id]) # where `Page` is the collection name
+
+  render @resource.inline
+end
+```
+
+This is useful for resources that do not need shared HTML as a `show.html.erb` provides.
+
+
+## Creating new content files
 
 Once a collection is created, quickly generate new content files:
 ```bash
@@ -43,10 +55,6 @@ This creates a new file in `app/content/posts/` based on a template (if one exis
 
 Drop a template file in the content directory to define the structure for new files:
 
-* `template.md.tt` generates respectively `untitled.md` and `my-first-post.md`
-* `YYYY-MM-DD-template.md.tt` generates respectively `2025-12-18-untitled.md` and `2025-12-18-my-first-post.md`
-
-Templates support ERB:
 ```erb
 ---
 title: <%= @title %>
@@ -59,3 +67,8 @@ Start writing here…
 ```
 
 If no template exists, an empty file with frontmatter dashes is created.
+
+Template filenames support `strftime` parameters for dynamic naming, when respectively a title (eg. `My First Post`) and no title is passed:
+
+- `template.md.tt` generates `my-first-post.md` and `untitled.md`
+- `%Y-%m-%d-template.md.tt` generates `2026-01-01-my-first-post.md` and `2026-01-01-untitled.md`

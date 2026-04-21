@@ -1,6 +1,6 @@
 ---
-section: content
-position: 5
+section: render
+position: 4
 title: Embed Ruby
 description: Perron has flexible support for rendering Ruby.
 erb: true
@@ -16,7 +16,7 @@ Any content file with a `.erb` extension (e.g., `about.erb`) will automatically 
 
 ## Frontmatter
 
-Enable ERB processing on a per-file basis, even for standard `.md` files, by adding `erb: true` to the file's frontmatter (like [this article's markdown file](<%= view_on_github_url("app/content/articles/embed-ruby.md") %>)).
+Enable ERB processing on a per-file basis, even for `.md` files, by adding `erb: true` to the file's frontmatter (like [this article's markdown file](<%= view_on_github_url("app/content/articles/embed-ruby.md") %>)).
 ```markdown
 ---
 title: Embed Ruby

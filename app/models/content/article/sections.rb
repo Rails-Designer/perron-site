@@ -4,7 +4,8 @@ module Content::Article::Sections
   SECTIONS = {
     getting_started: "Getting started",
     content: "Content",
-    metadata: "Metadata"
+    render: "Render",
+    meta: "Meta"
   }.with_indifferent_access
 
   class_methods do

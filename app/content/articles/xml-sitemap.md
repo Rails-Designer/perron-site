@@ -1,12 +1,12 @@
 ---
-section: metadata
+section: meta
 position: 11
 title: XML sitemap
 description: For bigger sites, a XML sitemap can help to get quicker indexed.
 ---
 
 
-A sitemap is a XML file that lists all the pages of a website to help search engines discover and index content more efficiently, typically containing URLs, last modification dates, change frequency and priority values.
+A sitemap is a XML file that lists all the pages of a website to help search engines discover and index content more efficiently, containing URLs, last modification dates, change frequency and priority values.
 
 Enable it with the following line in the Perron configuration:
 ```ruby
@@ -33,12 +33,25 @@ end
 
 …or on a resource basis:
 ```ruby
-# app/content/posts/my-first-post.md
 ---
+sitemap: false
 sitemap_priority: 0.25
 sitemap_change_frequency: :daily
 ---
 ```
+
+
+## Last modification date
+
+The sitemap includes a `<lastmod>` element based on the resource's `updated_at` frontmatter value:
+```markdown
+---
+title: My Post
+updated_at: 2025-04-20
+---
+```
+
+If `updated_at` is not set, the file's modification time is used as a fallback.
 
 
 ## Explanation of priority
@@ -50,4 +63,4 @@ sitemap_change_frequency: :daily
 
 ## Do you need a XML sitemap?
 
-If your site is “small”, you no do not need one. Small, meaning ~500 pages (that needs to be in search results) or less on your site.
+If your site is "small", you do not need one. Small, meaning ~500 pages (that needs to be in search results) or less on your site.

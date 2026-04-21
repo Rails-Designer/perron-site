@@ -1,6 +1,6 @@
 ---
-section: content
-position: 4.5
+section: render
+position: 1
 title: Markdown
 description: Perron can render markdown with a flexible helper that has support for multiple markdown gems.
 ---
@@ -86,8 +86,6 @@ end
 
 ## Custom markdown parser
 
-[!label v0.14.0+]
-
 ```ruby
 class MyParser < Perron::Markdown::Parser
   def parse(text)
@@ -109,9 +107,9 @@ end
 ```
 
 
-## HTML transformations
+## Processors
 
-Perron can post-process the markdownified content.
+Perron can post-process the markdownified content using processors.
 
 
 ### Usage
@@ -122,15 +120,26 @@ Apply transformations by passing an array of processor names or classes to the `
 ```
 
 
-### Available processors
+### Built-in processors
 
 The following processors are built-in and can be activated by passing their string name:
 
-- `target_blank`: Adds `target="_blank"` to all external links;
-- `lazy_load_images`: Adds `loading="lazy"` to all `<img>` tags;
+- `absolute_image_urls` converts relative image URLs to absolute using configured `default_url_options`;
+- `lazy_load_images` adds `loading="lazy"` to all `<img>` tags;
+- `target_blank: adds `target="_blank"` to all external links.
 
 > [!note]
 > Processors are included as _first-party_ options only when they require no setup or configuration. Otherwise, they are added to the [library](/library/).
+
+
+### Accessing `@resource` in processors
+
+Processors have access to the the `@resource` instance variable assuming it is defined as such (e.g. `@resource = Content::Resource.find!(params[:id])`).
+
+If the resource object is named differently, e.g. `@post`, pass it along:
+```erb
+<%= markdownify @resource.content, process: %w[target_blank], resource: @post %>
+```
 
 
 ### Create your own processor

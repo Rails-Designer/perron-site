@@ -1,6 +1,6 @@
 ---
 section: content
-position: 3
+position: 5
 title: Routes
 description: Perron uses Rails' routing mechanism, keeping things simple and easy.
 ---
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 end
 ```
 
-## Route configuraton
+## Route configuration
 
 Change the site's route configuration in `config/initializers/perron.rb`:
 ```ruby
@@ -28,9 +28,43 @@ Perron.configure do |config|
 end
 ```
 
-For a typical “clean slug”, the filename without extension serves as the `id` parameter.
+For a typical "clean slug", the filename without extension serves as the `id` parameter.
 ```ruby
 <%# For app/content/posts/announcement.md %>
 <%= link_to "Announcement", post_path("announcement") %>
 ```
 This would render `<a href="/posts/announcement/">Announcement</a>`.
+
+
+## Additional routes
+
+Include additional routes in the build beyond collections:
+```ruby
+Perron.configure do |config|
+  config.additional_routes = %w[search_path]
+end
+```
+
+
+## URLs configuration
+
+When using `_url` helpers, configure `default_url_options` in the Perron initializer:
+```ruby
+Perron.configure do |config|
+  # …
+  config.default_url_options = {host: "perron.railsdesigner.com", protocol: "https", trailing_slash: true}
+end
+```
+
+You can also set (or override) these values with environment variables: `PERRON_HOST`, `PERRON_PROTOCOL` and `PERRON_TRAILING_SLASH`.
+
+
+## Path building
+
+Perron builds paths from your defined routes rather than collections. This ensures URLs match exactly what gets built, including any nested route structures.
+
+For route-based path building, the collection is derived from:
+1. The controller's `collection_name` method (if defined)
+2. The route resource name (singularized)
+
+For example, `resources :posts` maps to the `posts` collection and builds paths like `/posts/my-post`.

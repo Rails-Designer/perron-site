@@ -1,6 +1,6 @@
 ---
 section: content
-position: 3.5
+position: 4
 title: Frontmatter
 description: Frontmatter is supported for markdown files.
 toc: false
@@ -21,4 +21,29 @@ And it is typically used for data that is not directly visible, like for [metata
 
 ## Usage
 
-All defined frontmatter on a resource is available at the `metadata` method. Given above example, `@resource.metadata.title` and `@resource.metadata.description` would work.
+All defined frontmatter on a resource is available at the `metadata` method. Given above example, `@resource.metadata.title` and `@resource.metadata.description` would output their values.
+
+
+## Custom slugs
+
+Override the default slug (derived from filename) by setting `slug` in the frontmatter:
+
+```markdown
+---
+title: About Us
+slug: about-us
+---
+```
+
+This changes the lookup from filename to the custom slug. For example, a file named `about.md` with `slug: about-us` would be accessed via `Content::Page.find("about-us")` instead of `Content::Page.find("about")`.
+
+
+## Additional metadata
+
+Several frontmatter keys are used in various features in Perron:
+
+- `updated_at` - Last modification date (used in sitemaps and feeds)
+- `sitemap_priority` - Override sitemap priority for this resource
+- `sitemap_change_frequency` - Override change frequency for this resource
+- `exclude_from_sitemap` - Exclude this resource from the sitemap
+- `exclude_from_feed` - Exclude this resource from feeds

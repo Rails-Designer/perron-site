@@ -5,7 +5,7 @@ title: Contributing
 description: For bigger sites, a XML sitemap can help to get quicker indexed.
 ---
 
-Bugfixes, improvements and new features are much appreciated. For bigger new features, do reach out by [creating an issue in the GitHub repo first](https://github.com/rails-designer/perron/issues/new).
+Bugfixes, improvements and new features are much appreciated. For bigger new features, [create an issue in the GitHub repo first](https://github.com/rails-designer/perron/issues/new).
 
 This project uses [Standard](https://github.com/testdouble/standard) for formatting Ruby code. Please run `bundle exec standardrb` before submitting pull requests. Run tests with `rails test`.
 
