@@ -2,9 +2,9 @@
   .content {
     @apply [&_*:not(h1,h2,h3,h4,h5,h6)+*:not(pre,code,li,blockquote>p,svg,div[data-slot='code']),blockquote+pre]:mt-5;
 
-    @apply [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:text-gray-800;
-    @apply [&_h3]:font-semibold [&_h3]:text-xl [&_h3]:text-gray-800;
-    @apply [&_h4]:font-semibold [&_h4]:text-lg [&_h4]:text-gray-800;
+    @apply [&_h2]:font-semibold [&_h2]:text-2xl [&_h2]:text-gray-800;
+    @apply [&_h3]:font-medium [&_h3]:text-xl [&_h3]:text-gray-800;
+    @apply [&_h4]:font-medium [&_h4]:text-lg [&_h4]:text-gray-800;
 
     @apply [&>p,&_li]:text-lg [&>p]:text-gray-800;
     @apply [&_ul,&_ol]:mt-2 [&_ul]:list-disc [&_ul,&_ol]:list-outside [&_ul]:ml-4.5 [&_ol]:ml-5;
