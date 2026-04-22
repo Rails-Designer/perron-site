@@ -1,6 +1,6 @@
 ---
 section: render
-position: 3
+position: 2
 title: Rendering & filtering
 description: Perron's resources are just Ruby objects so it is straight-forward to select, filter and order resources.
 ---

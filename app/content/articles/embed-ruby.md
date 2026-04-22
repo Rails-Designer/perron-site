@@ -1,6 +1,6 @@
 ---
 section: render
-position: 4
+position: 3
 title: Embed Ruby
 description: Perron has flexible support for rendering Ruby.
 erb: true
