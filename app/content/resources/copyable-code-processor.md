@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Add copy button to your code blocks
 description: This snippet adds a processor to add a copy-button to your code-blocks. Powered by Attractive.js.
 category: processor

@@ -1,6 +1,6 @@
 ---
 type: template
-author: railsdesigner
+author: rails-designer
 title: Clean documentation template built with Tailwind CSS
 description: With this template for Perron you create a documentation site for your product, OSS project or anything else that needs grouped documentation.
 ---

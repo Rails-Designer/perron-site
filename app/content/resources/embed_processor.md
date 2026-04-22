@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Auto-embed URLs from YouTube, Vimeo, Gists and more
 description: This snippet adds a processor that transforms links to platforms, like YouTube, GitHub Gist and Loom to embeddable iframes.
 category: processor

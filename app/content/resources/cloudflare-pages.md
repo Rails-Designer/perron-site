@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Cloudflare Pages
 description: Add a wrangler.toml file with custom build configuration and environment settings for Cloudflare Pages deployments.
 about: "Cloudflare Pages is a platform to deploy static sites with automatic builds from Git and global CDN delivery."

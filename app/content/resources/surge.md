@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Surge
 description: Add a complete deployment script for surge.sh static site hosting with perron.
 about: "Surge is a simple, single-command static web publishing platform for front-end developers. Deploy sites instantly from the command line with custom domains, free ssl and no configuration required."

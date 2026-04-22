@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: App icon setup
 description: Generate all necessary icon files from a single SVG source.
 category: setup

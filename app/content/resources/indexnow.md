@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Add IndexNow Key
 description: Adds a unique IndexNow key file to the public folder.
 category: setup

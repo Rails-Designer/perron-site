@@ -1,5 +1,6 @@
 ---
 type: component
+author: rails-designer
 title: Visitor greeting custom element
 description: Display personalized greetings based on referrer or ref parameter.
 ---

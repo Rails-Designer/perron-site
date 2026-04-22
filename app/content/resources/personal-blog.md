@@ -1,6 +1,6 @@
 ---
 type: template
-author: railsdesigner
+author: rails-designer
 title: Personal, minimal blog template
 description: Template for a stylish personal blog. Apply it and get writing right away.
 ---

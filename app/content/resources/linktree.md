@@ -1,6 +1,6 @@
 ---
 type: template
-author: railsdesigner
+author: rails-designer
 title: Linktree template
 description: A minimal linktree template built for Perron, the Rails-based static site generator. Displays avatar, bio and customizable links.
 ---

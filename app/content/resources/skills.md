@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Perron skill for LLM agents
 description: This skill for Perron helps LLM agents find their way around Perron's features.
 category: development

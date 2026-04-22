@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Inline SVG helper
 description: A Ruby on Rails helper to inline your SVG files for Perron.
 category: styling

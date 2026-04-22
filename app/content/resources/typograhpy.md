@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Typography styles with Tailwind CSS
 description: This snippet adds a CSS file with selectors (using Tailwind CSS) for HTML you not control like markdown content.
 category: styling

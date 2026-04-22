@@ -1,6 +1,6 @@
 ---
 type: component
-author: railsdesigner
+author: rails-designer
 title: Table of Content (using custom element)
 description: A custom element for a Table of Contents component.
 ---

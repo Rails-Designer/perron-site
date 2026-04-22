@@ -1,5 +1,6 @@
 ---
 type: component
+author: rails-designer
 title: Countdown (using custom element)
 description: A custom element for countdown timers.
 ---

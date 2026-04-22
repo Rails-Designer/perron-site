@@ -1,5 +1,6 @@
 ---
 type: snippet
+author: rails-designer
 title: Render.com
 description: Add a render.yaml file with build configuration for your Perron static site generator on Render.com.
 about: "Render is a unified cloud platform for hosting static sites, web services and databases. Automatic Git deployments, free SSL, global CDN and zero-DevOps infrastructure with native Docker support."

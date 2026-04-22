@@ -1,5 +1,6 @@
 ---
 type: component
+author: rails-designer
 title: FAQ (accordion) component using Tailwind CSS
 description: A FAQ (accordion) component designed with Tailwind CSS.
 ---

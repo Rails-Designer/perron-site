@@ -1,5 +1,6 @@
 ---
 type: component
+author: rails-designer
 title: Search Form
 description: A full-text search component using MiniSearch with keyboard navigation.
 ---

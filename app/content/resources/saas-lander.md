@@ -1,6 +1,6 @@
 ---
 type: template
-author: railsdesigner
+author: rails-designer
 title: Modern SaaS landing page
 description: Template for a clean SaaS landing page with hero, features and email capture.
 ---

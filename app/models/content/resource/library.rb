@@ -13,34 +13,32 @@ class Content::Resource::Library < ActiveResource::Base
       .reject { it.name == ".keep" }
       .map do |item|
         item.tap do |resource|
-          resource.content = fetch(resource.path, "template.md")
-          resource.template = fetch(resource.path, "template.rb")
+          resource.content = fetch(resource.path, filename: "template.md")
+          resource.template = fetch(resource.path, filename: "template.rb")
 
-          directory_uri = URI("https://api.github.com/repos/Rails-Designer/perron-library/contents/#{resource.path}/images")
+          images_uri = URI("https://api.github.com/repos/Rails-Designer/perron-library/contents/#{resource.path}/images")
+          images = Net::HTTP::Get.new(images_uri)
+          images["Authorization"] = headers["Authorization"]
+          response = Net::HTTP.start(images_uri.hostname, images_uri.port, use_ssl: true) { it.request images }
 
-          directory = Net::HTTP::Get.new(directory_uri)
-          directory["Authorization"] = headers["Authorization"]
-          directory_response = Net::HTTP.start(directory_uri.hostname, directory_uri.port, use_ssl: true) { it.request directory }
-
-          resource.images = if directory_response.code == "200"
-            files = JSON.parse directory_response.body
-
-            files.select { it["type"] == "file" }.map { |file| { name: file["name"], content: fetch(file["path"], "") } }
+          resource.images = if response.code == "200"
+            JSON.parse(response.body)
+              .select { it["type"] == "file" }.map { |file| { name: file["name"], content: fetch(file["path"]) } }
           else
             []
           end
 
-          save(resource.path, resource.template, resource.images)
+          save resource.path, resource.template, resource.images
         end
       end
   end
 
-  def self.fetch(path, filename = "template.md")
-    suffix = filename ? "/#{filename}" : ""
-
-    uri = URI("https://api.github.com/repos/Rails-Designer/perron-library/contents/#{path}#{suffix}")
-
+  def self.fetch(path, filename: nil)
+    uri = URI(
+      ["https://api.github.com/repos/Rails-Designer/perron-library/contents/", path, filename ].compact_blank.join("/")
+    )
     file = Net::HTTP::Get.new(uri)
+
     file["Authorization"] = headers["Authorization"]
 
     response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { it.request file }

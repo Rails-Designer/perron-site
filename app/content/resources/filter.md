@@ -1,5 +1,6 @@
 ---
 type: component
+author: rails-designer
 title: Filter Items
 description: A web component for filtering lists of items based on checkbox or radio inputs.
 ---

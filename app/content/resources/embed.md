@@ -1,5 +1,6 @@
 ---
 type: component
+author: rails-designer
 title: Embed Content
 description: A web component for embedding dynamic JSON content with toggle, caching and read state tracking.
 ---
@@ -99,7 +100,7 @@ The `src` endpoint should return an array of items:
   {
     "id": 1,
     "title": "Hello World",
-    "body": "Post content…",
+    "body": "Post content...",
     "url": "/posts/hello-world",
     "published_at": "2026-03-28T09:00:00Z"
   }

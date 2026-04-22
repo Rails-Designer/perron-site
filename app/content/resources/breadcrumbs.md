@@ -1,5 +1,6 @@
 ---
 type: component
+author: rails-designer
 title: Breadcrumbs
 description: A breadcrumb navigation system using a concern and partial.
 ---
