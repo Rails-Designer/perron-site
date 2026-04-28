@@ -19,7 +19,7 @@ end
 
 ## Route configuration
 
-Change the site's route configuration in `config/initializers/perron.rb`:
+When using `_url` route helpers, configure `default_url_options` in the Perron initializer:
 ```ruby
 Perron.configure do |config|
   # …
@@ -27,6 +27,9 @@ Perron.configure do |config|
   # …
 end
 ```
+
+> [!tip]
+> You can also set (or override) these values with environment variables: `PERRON_HOST`, `PERRON_PROTOCOL` and `PERRON_TRAILING_SLASH`
 
 For a typical "clean slug", the filename without extension serves as the `id` parameter.
 ```ruby
@@ -44,19 +47,6 @@ Perron.configure do |config|
   config.additional_routes = %w[search_path]
 end
 ```
-
-
-## URLs configuration
-
-When using `_url` helpers, configure `default_url_options` in the Perron initializer:
-```ruby
-Perron.configure do |config|
-  # …
-  config.default_url_options = {host: "perron.railsdesigner.com", protocol: "https", trailing_slash: true}
-end
-```
-
-You can also set (or override) these values with environment variables: `PERRON_HOST`, `PERRON_PROTOCOL` and `PERRON_TRAILING_SLASH`.
 
 
 ## Path building

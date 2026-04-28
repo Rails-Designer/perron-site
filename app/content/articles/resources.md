@@ -178,6 +178,8 @@ By default, adjacency uses the collection's default order (id). Configure your p
 # app/models/content/post.rb
 class Content::Post < Perron::Resource
   adjacent_by :position
+
+  delegate :position, to: :metadata
 end
 ```
 
@@ -185,6 +187,8 @@ You can also traverse cross-group by passing `within`:
 ```ruby
 class Content::Post < Perron::Resource
   adjacent_by :position, within: :category
+
+  delegate :position, to: :metadata, :category
 end
 ```
 
@@ -194,6 +198,8 @@ Or if categories are in a specific order, configure as:
 ```ruby
 class Content::Post < Perron::Resource
   adjacent_by :position, within: { category: %w[getting_started content metadata] }
+
+  delegate :position, to: :metadata, :category
 end
 ```
 
@@ -236,7 +242,7 @@ In a `show` action, a resource instance variable is expected to be set.
 ```ruby
 class Content::PostsController < ApplicationController
   def show
-    @resource = Content::Post.find(params[:id])
+    @resource = Content::Post.find!(params[:id])
   end
 end
 ```

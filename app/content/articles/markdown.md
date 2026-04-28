@@ -18,12 +18,12 @@ There are no markdown gems bundled by default, so add one of these to the `Gemfi
 bundle add {commonmarker,kramdown,redcarpet}
 ```
 
-This set up allows to change markdown renderers and update it separately from Perron.
+This set up allows to choose your favorite markdown renderer and update it separately from Perron.
 
 
 ## Markdownify helper
 
-Once a markdown gem is installed, use the `markdownify` helper in any view and it will parse the content using the installed markdown parser, e.g.
+Once a markdown gem is installed, use the `markdownify` helper in any view and it will parse the content using the installed markdown parser, for example:
 ```erb
 <article class="content">
   <h1>

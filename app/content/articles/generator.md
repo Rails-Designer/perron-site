@@ -5,11 +5,9 @@ title: Generator
 description: Use Perron's generator to easily create new collections and content files.
 ---
 
-Create a new collection using the built-in generator.
+Create a new collection using the built-in generator:
 ```bash
 bin/rails generate content Post
-# or only include the only needed action
-bin/rails generate content Post show
 ```
 
 This will create the following files:
@@ -25,10 +23,15 @@ And adds a route: `resources :posts, module: :content, only: %w[index show]`
 > [!note]
 > View all available commands with `bin/rails generate content --help`
 
+Create the only needed action with:
+```bash
+bin/rails generate content Post show
+```
+
 
 ## Inline content
 
-Use `--inline` to generate a show action that does not need a `show.html.erb` template. It will create a show action like this:
+Use `--inline` to generate a show action that does not need a `show.html.erb` template because the resource has all the needed HTML. It will create a show action like this:
 ```erb
 def show
   @resource = Content::Page.find!(params[:id]) # where `Page` is the collection name

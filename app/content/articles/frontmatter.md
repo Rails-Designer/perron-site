@@ -2,7 +2,7 @@
 section: content
 position: 4
 title: Frontmatter
-description: Frontmatter is supported for markdown files.
+description: Frontmatter is supported in resources.
 toc: false
 ---
 
@@ -12,7 +12,7 @@ It is added at the beginning of the markdown file and set between three dashes (
 ```yaml
 ---
 title: Frontmatter
-description: Frontmatter is supported for markdown files.
+description: Frontmatter is supported in resources.
 ---
 ```
 

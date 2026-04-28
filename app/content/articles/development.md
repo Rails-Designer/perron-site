@@ -28,14 +28,14 @@ This uses the [Mata](https://github.com/Rails-Designer/mata) gem to inject a scr
 
 Preview the built static site locally using:
 ```bash
-rails perron:build && bin/dev
+RAILS_ENV=production rails perron:build && bin/dev
 ```
 
-Requests are served from the `output/` directory when files exist. By default, the Output Server falls back to Rails rendering for any missing static HTML. Disable this behavior by setting `config.output_server_strict = true`. The Output Server will now raise a 404.
+Requests are served from the `output/` directory when files exist. By default, the Output Server falls back to Rails rendering for any missing static HTML. Disable this behavior by setting `config.output_server_strict = true`. The Output Server will now raise a 404 for missing pages.
 
 
 > [!note]
-> When serving from the output directory in development the title is prefixed with `[PREVIEW]`.
+> When serving from the output directory in development the browser's tab title is prefixed with `[PREVIEW]`.
 
 
 ### Remove local build

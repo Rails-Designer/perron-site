@@ -14,6 +14,7 @@ Access data sources using the `Content::Data` namespace with the class name matc
 ```erb
 <% Content::Data::Features.all.each do |feature| %>
   <h4><%= feature.name %></h4>
+
   <p><%= feature.description %></p>
 <% end %>
 ```
@@ -47,6 +48,7 @@ This expects a partial at `app/views/content/features/_feature.html.erb` that wi
 <!-- app/views/content/features/_feature.html.erb -->
 <div class="feature">
   <h4><%= feature.name %></h4>
+
   <p><%= feature.description %></p>
 </div>
 ```
@@ -64,6 +66,13 @@ Data resources must contain an array of objects. Each record should include an `
 - id: cam
   name: Cam
   bio: Contributing author
+```
+
+A flat array is accepted as well:
+```yaml
+- Custom design based on our templates
+- Copywriting services
+- Dedicated project manager
 ```
 
 

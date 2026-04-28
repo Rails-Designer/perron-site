@@ -121,7 +121,10 @@ Prefer to manage authors in a [data resource](/docs/data/) instead of individual
   myspace: kendall-rd
 ```
 
-For feeds to work, data must include at least `name` and `email` keys (or just `name` for JSON feeds). Then add the `class_name` option to the `belongs_to` association:
+> [!note]
+> For feeds to work, data must include at least `name` and `email` keys (or just `name` for JSON feeds).
+
+Then add the `class_name` option to the `belongs_to` association:
 
 ```ruby
 class Content::Post < Perron::Resource
@@ -140,9 +143,9 @@ Override the default feed templates by creating custom views. Place them in `app
 
 The builder provides access to:
 
-- `collection`; resource items for the feed
-- `resources`; the resource class configuration
-- `configuration`; configured default URL options
+- `collection`; the collection object
+- `resources`; the actual resource items (to iterate over)
+- `config`; the feed configuration
 
 Example `app/views/content/posts/json.erb`:
 ```erb

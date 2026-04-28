@@ -73,7 +73,7 @@ preview: true # → "my-post-a1b2c3d4e5f6"
 preview: custom-token # → "my-post-custom-token"
 ```
 
-The generated token is built off the content's file path. So file path changes, the generated token will change too.
+The generated token is built off the content's file path. So if the file path changes, the generated token will change too.
 
 Note that anyone with the “secret link” can view the content, including (search) bots. To skip indexing, by decent bots, of “previewable resources” add this to the `<head>`:
 ```erb

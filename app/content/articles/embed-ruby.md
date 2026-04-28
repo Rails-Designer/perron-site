@@ -28,10 +28,12 @@ The current date (upon building this site) is: <%= Time.current.strftime("%d %B 
 ↳ uses `<%%= Time.current.strftime("%d %B %Y") %>`
 ```
 
+Alternatively, set `erb: false` to disable ERB processing.
+
 
 ## `erbify` helper
 
-For the most granular control, the `erbify` helper allows to process specific sections of a file as ERB. This is ideal for generating dynamic content like lists or tables from the resource's frontmatter, without needing to enable ERB for the entire file.
+For granular control, the `erbify` helper allows to process specific sections of a file as ERB. This is ideal for generating dynamic content like lists or tables from the resource's frontmatter, without needing to enable ERB for the entire file.
 
 **Example:** generating a list from frontmatter data in a standard `.md` file.
 ```markdown
@@ -58,6 +60,9 @@ Check out our amazing features:
 ```
 
 This would iterate over the `features` array and display its value within the `li`-element.
+
+> [!note]
+> The `erbify` method only supports passing a block
 
 
 ## Rendering erb-tags

@@ -5,7 +5,7 @@ title: Programmatic content
 description: Generate hundreds of pages from data sources for programmatic SEO and scalable content creation.
 ---
 
-Generate content programmatically from [data sources](/docs/data/) instead of creating files manually. Define a template once and Perron creates resources for every combination of the data. Perfect for programmatic SEO where similar pages with different data are needed.
+Generate content programmatically from [data sources](/docs/data/) instead of creating files manually. Define a template once and Perron creates resources for every combination of the data. Perfect for to pull data from an API or for programmatic SEO where similar pages with different data are needed.
 
 
 ## Basic Usage
@@ -138,16 +138,11 @@ bin/rails perron:sync_sources
 
 Sync a specific resource:
 ```bash
-bin/rails "perron:sync_sources[products]"
+bin/rails perron:sync_sources[products]
 ```
 
 > [!tip]
 > In zsh, quote the task name: `bin/rails "perron:sync_sources[products]"`
-
-Integrate with in the build process:
-```bash
-bin/rails perron:sync_sources && bin/rails perron:build
-```
 
 Run the sync task whenever data changes to regenerate affected resources.
 
