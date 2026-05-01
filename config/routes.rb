@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   end
   resources :categories, module: :content, path: "library/category", constraints: { id: /#{Content::Resource::TYPES.keys.join("|")}/ }, only: %w[show]
 
-
   resources :articles, path: "docs", module: :content, only: %w[index show] do
     get ":id.md", to: "articles/markdown#show", as: :markdown, on: :collection
   end
+  resources :llms, module: :content, path: "llms.txt", only: %w[index]
 
   resources :pages, module: :content, path: "/", only: %w[show]
 
