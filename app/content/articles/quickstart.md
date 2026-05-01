@@ -5,7 +5,7 @@ title: Quick-start guide
 description: Learn how to get started quickly with Perron.
 ---
 
-Perron is a gem that generates static sites from your Rails application. It transforms your content, views and routes into HTML files ready for deployment.
+Perron is a gem that generates static sites from your Rails app.
 
 ## Requirements
 
@@ -13,7 +13,15 @@ Perron is a gem that generates static sites from your Rails application. It tran
 - Rails 7.0+
 
 
-## Installation
+## Quickstart
+
+Run
+```bash
+rails new my-new-site --minimal -T -O -m https://perron.railsdesigner.com/library/new/template.rb
+```
+
+
+## Manual installation
 
 Start by adding Perron to your Rails app:
 ```bash
@@ -84,7 +92,7 @@ Generate static files for deployment:
 RAILS_ENV=production bin/rails perron:build
 ```
 
-This creates HTML files in the `output/` directory, ready to deploy to any static hosting platform.
+This creates HTML files in the `/output/` directory, ready to deploy to any static hosting platform.
 
 > [!tip]
 > Browse the [Library](/library/category/snippet/) for deployment templates to platforms like Netlify, S3 and statichost.eu.
