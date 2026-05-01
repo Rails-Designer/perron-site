@@ -52,7 +52,7 @@ class Content::Resource::Library < ActiveResource::Base
     base_path = Rails.root.join("app", "content", "resources", folder_name)
 
     FileUtils.mkdir_p(base_path)
-    File.write(base_path.join("template.rb"), template.gsub("%", "%%"))
+    File.write(base_path.join("template.rb"), template.gsub("<%", "<%%"))
 
     return if images.empty?
 
