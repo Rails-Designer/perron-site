@@ -20,6 +20,10 @@ module Content::Article::Sections
     end
   end
 
+  included do
+    scope :by_section, -> { sort_by { [Content::Article::SECTIONS.keys.index(it.section), it.position] } }
+  end
+
   def article_section
     Section.new(
       key: metadata.section,

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :articles, path: "docs", module: :content, only: %w[index show] do
     get ":id.md", to: "articles/markdown#show", as: :markdown, on: :collection
   end
-  resources :llms, module: :content, path: "llms.txt", only: %w[index]
+  resources :llms, module: :content, path: "/", only: %w[show], constraints: { id: /llms\.txt|llms-full\.txt/ }
 
   resources :pages, module: :content, path: "/", only: %w[show]
 
