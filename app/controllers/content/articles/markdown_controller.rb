@@ -4,6 +4,6 @@ class Content::Articles::MarkdownController < ApplicationController
   def show
     @article = Content::Article.find!(params[:id])
 
-    render plain: @article.content
+    render plain: "# #{@article.title}\n\n#{@article.content}"
   end
 end

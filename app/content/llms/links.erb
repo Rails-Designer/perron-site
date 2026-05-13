@@ -8,5 +8,5 @@ slug: llms.txt
 
 - [Root](<%= root_url %>)
 <% Content::Article.all.by_section.each do |resource| %>
-- [<%= resource.title %>](<%= article_url(resource) %>)\n\n
+- [<%= resource.title %>](<%= markdown_articles_url resource, trailing_slash: false %>)
 <% end %>
