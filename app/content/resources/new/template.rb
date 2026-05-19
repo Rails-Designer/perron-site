@@ -77,7 +77,7 @@ MARKDOWN
 
   markdown_gem = ask("Which markdown parser would you like to use? (commonmarker/kramdown/redcarpet or leave blank to skip):")
 
-  VALID_MARKDOWN_GEMS = %%w[commonmarker kramdown redcarpet]
+  VALID_MARKDOWN_GEMS = %w[commonmarker kramdown redcarpet]
 
   gem_name = markdown_gem.strip.downcase
   if VALID_MARKDOWN_GEMS.include?(gem_name)
