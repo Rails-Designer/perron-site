@@ -1,8 +1,9 @@
 GIT
   remote: https://github.com/Rails-Designer/perron
-  revision: c780869da13cf6b2c7bd94d318a92029f4109872
+  revision: 78180a6c4cc01e06da9d48bcca5c08f429deecbb
   specs:
     perron (1.0.0)
+      beam_up
       csv
       json
       mata (~> 0.8.0)
@@ -103,16 +104,39 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
     ast (2.4.3)
+    aws-eventstream (1.4.0)
+    aws-partitions (1.1251.0)
+    aws-sdk-core (3.247.0)
+      aws-eventstream (~> 1, >= 1.3.0)
+      aws-partitions (~> 1, >= 1.992.0)
+      aws-sigv4 (~> 1.9)
+      base64
+      bigdecimal
+      jmespath (~> 1, >= 1.6.1)
+      logger
+    aws-sdk-kms (1.126.0)
+      aws-sdk-core (~> 3, >= 3.247.0)
+      aws-sigv4 (~> 1.5)
+    aws-sdk-s3 (1.223.0)
+      aws-sdk-core (~> 3, >= 3.247.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.5)
+    aws-sigv4 (1.12.1)
+      aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.3.0)
+    beam_up (0.6.0)
+      aws-sdk-s3 (~> 1.0)
+      rexml (~> 3.0)
+      rubyzip (~> 3.0)
     bigdecimal (4.1.2)
     builder (3.3.0)
-    commonmarker (2.7.0-aarch64-linux)
-    commonmarker (2.7.0-aarch64-linux-musl)
-    commonmarker (2.7.0-arm-linux)
-    commonmarker (2.7.0-arm64-darwin)
-    commonmarker (2.7.0-x86_64-darwin)
-    commonmarker (2.7.0-x86_64-linux)
-    commonmarker (2.7.0-x86_64-linux-musl)
+    commonmarker (2.8.2-aarch64-linux)
+    commonmarker (2.8.2-aarch64-linux-musl)
+    commonmarker (2.8.2-arm-linux)
+    commonmarker (2.8.2-arm64-darwin)
+    commonmarker (2.8.2-x86_64-darwin)
+    commonmarker (2.8.2-x86_64-linux)
+    commonmarker (2.8.2-x86_64-linux-musl)
     concurrent-ruby (1.3.6)
     connection_pool (3.0.2)
     crass (1.0.6)
@@ -148,6 +172,7 @@ GEM
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    jmespath (1.6.2)
     json (2.19.5)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
@@ -165,7 +190,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.1.0)
+    marcel (1.2.1)
     mata (0.8.0)
       listen (~> 3.0)
       rack (>= 3.0)
@@ -214,7 +239,7 @@ GEM
     psych (5.3.1)
       date
       stringio
-    puma (7.2.0)
+    puma (8.0.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.6)
@@ -267,6 +292,7 @@ GEM
     regexp_parser (2.12.0)
     reline (0.6.3)
       io-console (~> 0.5)
+    rexml (3.4.4)
     rubocop (1.86.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -296,6 +322,7 @@ GEM
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
+    rubyzip (3.3.0)
     securerandom (0.4.1)
     stringio (3.2.0)
     tailwindcss-rails (4.4.0)
@@ -322,7 +349,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.7.5)
+    zeitwerk (2.8.1)
 
 PLATFORMS
   aarch64-linux
@@ -338,12 +365,12 @@ PLATFORMS
 
 DEPENDENCIES
   activeresource (~> 6.2)
-  commonmarker (~> 2.7.0)
+  commonmarker (~> 2.8.2)
   debug
   importmap-rails (~> 2.2.3)
   perron!
   propshaft (~> 1.3.1)
-  puma (~> 7.2.0)
+  puma (~> 8.0.1)
   rails (~> 8.1.2)
   rails_icons!
   rubocop-rails-omakase
