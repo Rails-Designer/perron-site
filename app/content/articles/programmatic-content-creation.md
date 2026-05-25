@@ -5,7 +5,7 @@ title: Programmatic content
 description: Generate hundreds of pages from data sources for programmatic SEO and scalable content creation.
 ---
 
-Generate content programmatically from [data sources](/docs/data/) instead of creating files manually. Define a template once and Perron creates resources for every combination of the data. Perfect for to pull data from an API or for programmatic SEO where similar pages with different data are needed.
+Generate content programmatically from [data sources](/docs/data/) instead of creating files manually. Define a template once and Perron creates resources for every combination of the data. Perfect to pull data from an API or for programmatic SEO where similar pages with different data are needed.
 
 
 ## Basic Usage

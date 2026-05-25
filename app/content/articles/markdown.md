@@ -132,9 +132,9 @@ The following processors are built-in and can be activated by passing their stri
 > Processors are included as _first-party_ options only when they require no setup or configuration. Otherwise, they are added to the [library](/library/).
 
 
-### Accessing `@resource` in processors
+### Accessing @resource in processors
 
-Processors have access to the the `@resource` instance variable assuming it is defined as such (e.g. `@resource = Content::Resource.find!(params[:id])`).
+Processors have access to the the `@resource` instance variable assuming it is defined as such (e.g. `@resource = Content::Post.find!(params[:id])`).
 
 If the resource object is named differently, e.g. `@post`, pass it along:
 ```erb

@@ -259,7 +259,7 @@ class Content::PostsController < ApplicationController
   def show
     @resource = Content::Post.find(params[:id])
 
-    render inline: @resource.content
+    render @resource.inline
   end
 end
 ```

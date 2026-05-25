@@ -19,8 +19,6 @@ Access data sources using the `Content::Data` namespace with the class name matc
 <% end %>
 ```
 
-Look up a single entry with `Content::Data::Features.find("advanced-search")`, where `"advanced-search"` matches the value of the entry's `id` field.
-
 
 ## File location and formats
 
@@ -67,6 +65,8 @@ Data resources must contain an array of objects. Each record should include an `
   name: Cam
   bio: Contributing author
 ```
+
+Look up a single entry with `Content::Data::Features.find("advanced-search")`, where `"advanced-search"` matches the value of the entry's `id` field.
 
 A flat array is accepted as well:
 ```yaml

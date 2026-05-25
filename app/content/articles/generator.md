@@ -34,7 +34,7 @@ bin/rails generate content Post show
 Use `--inline` to generate a show action that does not need a `show.html.erb` template because the resource has all the needed HTML. It will create a show action like this:
 ```erb
 def show
-  @resource = Content::Page.find!(params[:id]) # where `Page` is the collection name
+  @resource = Content::Post.find!(params[:id])
 
   render @resource.inline
 end
