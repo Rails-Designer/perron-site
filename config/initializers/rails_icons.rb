@@ -4,6 +4,15 @@ RailsIcons.configure do |config|
 
   config.libraries.phosphor.exclude_variants = %w[bold fill light thin]
 
+  common_phosphor_icons = %w[arrow-left arrow-right book-open caret-right clipboard-text clipboard cube info lightbulb list-dashes list magnifying-glass markdown-logo shield-warning star warning-circle warning]
+
+  config.sprite = {
+    phosphor: {
+      regular: common_phosphor_icons,
+      duotone: common_phosphor_icons + %w[browser code-simple puzzle-piece]
+    }
+  }
+
   # config.libraries.phosphor.duotone.default.css = "size-6"
   # config.libraries.phosphor.duotone.default.data = {}
 

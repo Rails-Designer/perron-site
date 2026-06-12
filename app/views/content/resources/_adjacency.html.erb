@@ -6,7 +6,7 @@
         <%= tag.span "Previous", class: label_css %>
 
         <%= tag.strong class: text_css do %>
-          <%= icon "arrow-left", class: "size-4 transition ease-in-out group-hover/link:-translate-x-0.5", aria: { hidden: true } %>
+          <%= sprite_icon "arrow-left", class: "size-4 transition ease-in-out group-hover/link:-translate-x-0.5", aria: { hidden: true } %>
 
           <%= @resource.previous.title %>
         <% end %>
@@ -20,7 +20,7 @@
         <%= tag.strong class: text_css do %>
           <%= @resource.next.title %>
 
-          <%= icon "arrow-right", class: "size-4 transition ease-in-out group-hover/link:translate-x-0.5", aria: { hidden: true } %>
+          <%= sprite_icon "arrow-right", class: "size-4 transition ease-in-out group-hover/link:translate-x-0.5", aria: { hidden: true } %>
         <% end %>
       <% end %>
     <% end if @resource.next %>

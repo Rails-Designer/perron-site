@@ -22,7 +22,7 @@ buttons:
 
     <div class="flex items-center justify-center gap-x-8 mt-8 md:mt-12">
       <% @resource.metadata.buttons.each do |button| %>
-        <%= link_to safe_join([icon(button.icon, variant: :regular, class: "size-3.5"), button.label]), button.href, class: "flex items-center gap-x-1.5 px-4 py-0.5 text-sm tracking-tight font-normal rounded-lg transition hover:scale-103 md:text-base md:px-5 md:py-1.5 odd:bg-orange-500 odd:text-white even:bg-gray-200 even:text-gray-800" %>
+        <%= link_to safe_join([sprite_icon(button.icon, variant: :regular, class: "size-3.5"), button.label]), button.href, class: "flex items-center gap-x-1.5 px-4 py-0.5 text-sm tracking-tight font-normal rounded-lg transition hover:scale-103 md:text-base md:px-5 md:py-1.5 odd:bg-orange-500 odd:text-white even:bg-gray-200 even:text-gray-800" %>
       <% end %>
     </div>
   </section>

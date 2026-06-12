@@ -1,5 +1,5 @@
 class CopyableCodeProcessor < Perron::HtmlProcessor::Base
-  include RailsIcons::Helpers::IconHelper
+  include RailsIcons::Helpers::SpriteHelper
 
   def process
     @html.css("pre").each do |pre|
@@ -32,7 +32,7 @@ class CopyableCodeProcessor < Perron::HtmlProcessor::Base
     [ "shell-session", "console" ].include? pre["lang"]
   end
 
-  def copy_icon = icon("clipboard", class: "size-3 sm:size-4 block group-has-[[data-copy-success=true]]/code:hidden group-hover/code:scale-105 group-active/code:scale-95")
+  def copy_icon = sprite_icon("clipboard", class: "size-3 sm:size-4 block group-has-[[data-copy-success=true]]/code:hidden group-hover/code:scale-105 group-active/code:scale-95")
 
-  def success_icon = icon("clipboard-text", class: "size-3 sm:size-4 hidden group-has-[[data-copy-success=true]]/code:block group-hover/code:scale-105 group-active/code:scale-95")
+  def success_icon = sprite_icon("clipboard-text", class: "size-3 sm:size-4 hidden group-has-[[data-copy-success=true]]/code:block group-hover/code:scale-105 group-active/code:scale-95")
 end

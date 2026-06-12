@@ -53,6 +53,6 @@ class StyledBlockquoteProcessor < Perron::HtmlProcessor::Base
     paragraph.inner_html = paragraph.inner_html.sub(/^\[!#{type}\]\s*/i, "").sub(/^(<br>\s*)+/, "")
     blockquote["class"] = style[:class]
 
-    blockquote.prepend_child(icon(style[:icon], class: "translate-y-0.5 size-4 shrink-0 opacity-75")) if style[:icon] && respond_to?(:icon)
+    blockquote.prepend_child(sprite_icon(style[:icon], class: "translate-y-0.5 size-4 shrink-0 opacity-75")) if style[:icon] && respond_to?(:sprite_icon)
   end
 end

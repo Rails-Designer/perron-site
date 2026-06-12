@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/Rails-Designer/icons
+  revision: 9c8912d54d6d6c782d54ad6f6004f6004acf5dbd
+  specs:
+    icons (0.8.1)
+      nokogiri (~> 1.16, >= 1.16.4)
+
+GIT
   remote: https://github.com/Rails-Designer/perron
   revision: 78180a6c4cc01e06da9d48bcca5c08f429deecbb
   specs:
@@ -12,7 +19,7 @@ GIT
 
 GIT
   remote: https://github.com/Rails-Designer/rails_icons
-  revision: 0984f1a2952fcdae9d93128cb04033f04bb58d0b
+  revision: 41e5ffd39a76080e6c5cc273bd6fceae3180d27f
   specs:
     rails_icons (1.8.0)
       icons (~> 0.8.1)
@@ -160,8 +167,6 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
-    icons (0.8.1)
-      nokogiri (~> 1.16, >= 1.16.4)
     importmap-rails (2.2.3)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -367,6 +372,7 @@ DEPENDENCIES
   activeresource (~> 6.2)
   commonmarker (~> 2.8.2)
   debug
+  icons!
   importmap-rails (~> 2.2.3)
   perron!
   propshaft (~> 1.3.1)
