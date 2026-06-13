@@ -11,7 +11,7 @@ def tool_installed?(tool)
   system("which #{tool} > /dev/null 2>&1")
 end
 
-{"magick" => "ImageMagick", "inkscape" => "Inkscape", "svgo" => "SVGO"}.each do |command, name|
+{ "magick" => "ImageMagick", "inkscape" => "Inkscape", "svgo" => "SVGO" }.each do |command, name|
   abort "#{name} is required to continue." unless tool_installed?(command)
 end
 

@@ -15,6 +15,4 @@ create_file "wrangler.toml", <<~TOML
     PERRON_HOST = "yourdomain.com"
     PERRON_PROTOCOL = "https"
 TOML
-
 end
-

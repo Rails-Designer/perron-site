@@ -35,7 +35,7 @@ class Content::Resource::Library < ActiveResource::Base
 
   def self.fetch(path, filename: nil)
     uri = URI(
-      ["https://api.github.com/repos/Rails-Designer/perron-library/contents/", path, filename ].compact_blank.join("/")
+      [ "https://api.github.com/repos/Rails-Designer/perron-library/contents/", path, filename ].compact_blank.join("/")
     )
     file = Net::HTTP::Get.new(uri)
 
