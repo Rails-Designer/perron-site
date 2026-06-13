@@ -10,8 +10,15 @@ bin/dev
 ```
 
 
-## Deploy/publish
+## Build
 
 ```bash
-RAILS_ENV=production rails perron:build
+rails perron:build
+```
+
+
+## Deploy
+
+```bash
+rails perron:deploy
 ```
