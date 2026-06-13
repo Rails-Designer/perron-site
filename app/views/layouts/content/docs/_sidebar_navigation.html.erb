@@ -3,7 +3,7 @@
   <ul class="mt-4 px-2 grid gap-y-2 text-base overflow-y-auto md:px-4 lg:px-8 md:text-sm lg:mt-6 [--nav-vertical-spacing:1.25rem]">
     <% top_level_items.each do |item| %>
       <li>
-        <%= link_to safe_join([sprite_icon(item[:icon], variant: :duotone, class: "size-5 p-px text-gray-600 fill-gray-600 bg-white border border-gray-200 shadow-sm rounded-md transition group-hover/link:border-gray-300 group-hover/link:shadow-md"), item[:label]]), item[:href], class: class_names("flex items-center gap-x-2 px-(--nav-vertical-spacing) py-2 font-bold text-gray-800 rounded-md group/link", {"bg-gray-100 [&_svg]:shadow-md": item[:current_page?]}) %>
+        <%= link_to safe_join([sprite_icon(item[:icon], variant: :duotone, aria: {hidden: true}, class: "size-5 p-px text-gray-600 fill-gray-600 bg-white border border-gray-200 shadow-sm rounded-md transition group-hover/link:border-gray-300 group-hover/link:shadow-md"), item[:label]]), item[:href], class: class_names("flex items-center gap-x-2 px-(--nav-vertical-spacing) py-2 font-bold text-gray-800 rounded-md group/link", {"bg-gray-100 [&_svg]:shadow-md": item[:current_page?]}) %>
       </li>
     <% end %>
 
@@ -13,7 +13,7 @@
   <div class="relative block mt-12 py-12 border-t border-gray-100 overflow-clip isolate">
     <%= link_to "by Rails Designer", "https://railsdesigner.com", rel: :nofollow, class: "relative block text-xs text-center font-normal text-gray-500 z-1 transition hover:text-gray-800" %>
 
-    <%= svg "icon", class: "size-48 text-gray-100/60 absolute -top-12 z-0 -rotate-12" %>
+    <%= svg "icon", aria: {hidden: true}, class: "size-48 text-gray-100/60 absolute -top-12 z-0 -rotate-12" %>
   </div>
 </nav>
 

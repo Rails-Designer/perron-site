@@ -6,6 +6,8 @@ RailsIcons.configure do |config|
 
   common_phosphor_icons = %w[arrow-left arrow-right book-open caret-right clipboard-text clipboard cube info lightbulb list-dashes list magnifying-glass markdown-logo shield-warning star warning-circle warning]
 
+  config.default_sprite_location = nil
+
   config.sprite = {
     phosphor: {
       regular: common_phosphor_icons,

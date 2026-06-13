@@ -1,6 +1,6 @@
 <nav class="sticky top-0 grid grid-cols-[min-content_1fr_min-content] gap-3 place-content-between items-center w-full h-10 px-2 py-1 bg-white border-b border-gray-100 z-5 isolate lg:grid-cols-[var(--nav-width)_1fr_auto] lg:px-4">
   <%= link_to root_path, class: "group/icon flex items-center gap-x-2 lg:ml-9.5" do %>
-    <%= svg "icon", class: "size-4.5 shrink-0 text-orange-500 transition duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] group-hover/icon:scale-80 group-hover/icon:rotate-359" %>
+    <%= svg "icon", aria: {label: "perron logo"}, class: "size-4.5 shrink-0 text-orange-500 transition duration-500 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] group-hover/icon:scale-80 group-hover/icon:rotate-359" %>
 
     <%= tag.span "Perron", class: "hidden text-sm font-bold tracking-tight text-gray-950 lg:block" %>
   <% end %>
@@ -14,7 +14,7 @@
     class="group/form block relative w-full text-gray-400 focus-within:text-gray-800 sm:max-w-md"
   >
     <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2">
-      <%= sprite_icon "magnifying-glass", class: "size-3.5 transition" %>
+      <%= sprite_icon "magnifying-glass", aria: {hidden: true}, class: "size-3.5 transition" %>
     </div>
 
     <kbd class="hidden absolute right-1 top-[0.3em] items-center gap-x-0.25 px-1 py-0.5 text-[0.625rem] text-gray-500 bg-white ring ring-gray-200/80 shadow-xs/10 rounded-md group-hover/form:inline-flex">
@@ -36,7 +36,7 @@
     </li>
 
     <li>
-      <%= link_to svg("github_logo", class: "size-full"), "https://github.com/rails-designer/perron", target: "_blank", class: "block size-5 rounded-full text-gray-500 transition hover:text-gray-800" %>
+      <%= link_to svg("github_logo", aria: {label: "GitHub logo"}, class: "size-full"), "https://github.com/rails-designer/perron", target: "_blank", class: "block size-5 rounded-full text-gray-500 transition hover:text-gray-800" %>
     </li>
   </ul>
 </nav>
