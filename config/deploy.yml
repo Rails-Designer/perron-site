@@ -4,6 +4,6 @@ seal_static:
   api_key: <%= Rails.application.credentials.seal_static.api_key %>
 
 before_actions:
-  - RAILS_ENV=production bundle exec rake perron:build
+  - PERRON_HOST=perron.railsdesigner.com PERRON_PROTOCOL=https RAILS_ENV=production bundle exec rake perron:build
 after_actions:
   - bundle exec rake perron:clobber
