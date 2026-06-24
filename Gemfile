@@ -10,7 +10,6 @@ gem "puma", "~> 8.0.2"
 gem "rails", "~> 8.1.2"
 
 gem "importmap-rails", "~> 2.2.3"
-gem "icons", rd: "icons"  # TODO; can be removed from rails_icons 1.9.0
 gem "rails_icons", rd: "rails_icons"
 gem "tailwindcss-rails", "~> 4.6.0"
 
