@@ -35,7 +35,22 @@ Or exclude certain tags:
 Values are determined with the following precedence, from highest to lowest:
 
 
-### 1. Controller action
+### 1. Resource frontmatter
+
+Add values to the YAML frontmatter in content files:
+```yaml
+---
+title: My Awesome Post
+description: A deep dive into how meta tags work.
+image: /assets/images/my-awesome-post.png
+author: Kendall
+---
+
+Your content here…
+```
+
+
+### 2. Controller action
 
 Define a `@metadata` instance variable in the controller:
 ```ruby
@@ -48,21 +63,6 @@ class Content::PostsController < ApplicationController
     @resources = Content::Post.all
   end
 end
-```
-
-
-### 2. Page frontmatter
-
-Add values to the YAML frontmatter in content files:
-```yaml
----
-title: My Awesome Post
-description: A deep dive into how meta tags work.
-image: /assets/images/my-awesome-post.png
-author: Kendall
----
-
-Your content here…
 ```
 
 

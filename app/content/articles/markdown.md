@@ -161,3 +161,20 @@ Then, pass the class constant directly in the `process` array.
 ```erb
 <%= markdownify @resource.content, process: ["target_blank", AddNofollowProcessor] %>
 ```
+
+
+### Default processors
+
+Configure processors to run on every `markdownify` call:
+
+```ruby
+Perron.configure do |config|
+  config.default_processors = [MyProcessor, "target_blank"]
+end
+```
+
+Passing an explicit `process:` argument to `markdownify` overrides the defaults. To combine defaults with additional per-call processors in a specific view:
+
+```erb
+<%= markdownify @resource.content, process: Perron.configuration.default_processors + [MyExtraProcessor] %>
+```

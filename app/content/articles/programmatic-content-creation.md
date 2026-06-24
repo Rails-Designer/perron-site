@@ -129,6 +129,20 @@ end
 ```
 
 
+### Mode option
+
+Control how data sources are combined using the `mode` option:
+```ruby
+# Default: Cartesian product of all data sources
+source tools: { mode: :combinations }
+```
+
+With columns specified via `as:`:
+```ruby
+source tools: { mode: :combinations, as: [:left, :right] }
+```
+
+
 ## Syncing
 
 Sync all source-backed resources:

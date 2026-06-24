@@ -71,6 +71,18 @@ Content::Post.offset(2).limit(5)
 ```
 
 
+### in_order_of
+
+Preserve a custom sort order by specifying field values:
+
+```ruby
+Content::Post.in_order_of(:category, %w[featured popular recent])
+Content::Post.in_order_of(:category, %w[featured popular], filter: false)
+```
+
+By default, resources not matching the given values are excluded. Pass `filter: false` to keep them (appended after the ordered set).
+
+
 ### Scopes
 
 Define reusable query scopes:

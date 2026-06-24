@@ -290,6 +290,15 @@ rails generate content Page --no-include-root
 ```
 
 
+## Destroy
+
+Delete resource content files programmatically:
+```ruby
+Content::Post.find("slug").destroy  # deletes app/content/posts/slug.md
+Content::Post.destroy_all  # deletes app/content/posts/*.{ext}
+```
+
+
 ## Custom collection name
 
 When your route resource name doesn't match your collection name, define a custom collection name:

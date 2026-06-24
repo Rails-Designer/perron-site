@@ -37,6 +37,9 @@ Below are available settings:
 - **exclude_from_public**; exclude directories with compiled files should be excluded from `public`, defaults to `%w[assets storage]`
 - **excluded_assets**; exclude which assets shoud be excluded when compiling, defaults to `%w[action_cable actioncable actiontext activestorage rails-ujs trix turbo]`
 - **view_unpublished**; option to show [unpublished content](/docs/publishing/) content, defaults to `Rails.env.development?`. Can be overridden with `VIEW_UNPUBLISHED` environment variable
+- **default_processors**; array of processors to run on every markdownify call (see [Markdown](/docs/markdown/#default-processors))
+- **before_build**; lambda called before the build process (see [Deploy](/docs/deploy/#build-hooks))
+- **after_build**; lambda called after a successful build (see [Deploy](/docs/deploy/#build-hooks))
 - **cache_data_sources**; cache data sources
 - **markdown_parser**; specifiy custom markdown parser
 - **markdown_options**; pass options to the installed markdown gem
