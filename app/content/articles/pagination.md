@@ -10,7 +10,6 @@ Pagination splits large collections across multiple pages, each limited to a con
 ## Configuration
 
 Set the number of items per page in the resource class:
-
 ```ruby
 # app/models/content/post.rb
 class Content::Post < Perron::Resource
@@ -20,17 +19,17 @@ class Content::Post < Perron::Resource
 end
 ```
 
+
 ## Controller
 
 Include `Perron::PaginateHelper` and call `paginate` with the resource class and a collection:
-
 ```ruby
 # app/controllers/content/posts_controller.rb
 class Content::PostsController < ApplicationController
   include Perron::PaginateHelper
 
   def index
-    @paginate, @resources = paginate(Content::Post, Content::Post.all)
+    @paginate, @resources = paginate(Content::Post.all)
   end
 end
 ```
@@ -39,10 +38,10 @@ end
 
 The paginate object is available as `@paginate` in your views.
 
+
 ## Views
 
 Link to previous and next pages:
-
 ```erb
 <%# app/views/content/posts/index.html.erb %>
 <%= link_to "Previous", @paginate.previous if @paginate.previous? %>
