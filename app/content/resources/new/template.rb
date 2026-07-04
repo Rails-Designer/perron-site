@@ -35,22 +35,22 @@ create_file "app/views/layouts/application.html.erb", <<~ERB
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%%= meta_tags %%>
+    <%%= meta_tags %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <%%= yield :head %%>
+    <%%= yield :head %>
 
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%%= stylesheet_link_tag :app %%>
+    <%%= stylesheet_link_tag :app %>
     <!-- Learn more on https://attractivejs.railsdesigner.com/ -->
     <script defer src="https://cdn.jsdelivr.net/npm/attractivejs@latest"></script>
   </head>
   <body>
-    <%%= yield %%>
+    <%%= yield %>
   </body>
 </html>
 ERB
