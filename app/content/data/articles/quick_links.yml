@@ -10,3 +10,7 @@
   description: Put your new site for the world to see
   href: <%= article_path("deploy") %>
   icon: "book-open"
+- title: CMS
+  description: Create, update and schedule your content
+  href: "https://spinalcms.com/"
+  icon: "pencil-circle"

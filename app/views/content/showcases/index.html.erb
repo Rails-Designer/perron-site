@@ -6,7 +6,7 @@
   </p>
 
   <ul class="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8 lg:gap-10">
-    <% Content::Showcase.all.each do |resource| %>
+    <% @resources.each do |resource| %>
       <li>
         <%= link_to resource.url, class: "grid gap-y-3 p-2 transition rounded-xl hover:bg-gray-50" do %>
           <scrollable-screenshot class="block w-full max-w-[64rem] aspect-video rounded-lg ring ring-gray-100 overflow-hidden" style="--scroll-duration:7s;">

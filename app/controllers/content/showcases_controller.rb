@@ -5,6 +5,6 @@ class Content::ShowcasesController < ApplicationController
       description: "SaaS pages that convert. Business sites with character. Engaging documentation. All of these are built with Perron."
     }
 
-    @resources = Content::Showcase.all
+    @resources = Content::Showcase.all.recently_published
   end
 end

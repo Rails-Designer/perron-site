@@ -4,7 +4,7 @@ RailsIcons.configure do |config|
 
   config.libraries.phosphor.exclude_variants = %w[bold fill light thin]
 
-  common_phosphor_icons = %w[arrow-left arrow-right book-open caret-right clipboard-text clipboard cube info lightbulb list-dashes list magnifying-glass markdown-logo shield-warning star warning-circle warning]
+  common_phosphor_icons = %w[arrow-left arrow-right book-open caret-right clipboard-text clipboard cube info lightbulb list-dashes list magnifying-glass markdown-logo shield-warning star warning-circle warning pencil-circle]
 
   config.default_sprite_location = nil
 

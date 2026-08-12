@@ -4,4 +4,5 @@ description: Rails UI consultancy, SaaS expertise & development and Rails UI com
 url: https://railsdesigner.com
 image: /images/showcase/railsdesigner.jpg
 mode: standalone
+published_at: 2026-04-28
 ---
