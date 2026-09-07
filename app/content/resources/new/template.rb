@@ -37,7 +37,7 @@ create_file "app/views/layouts/application.html.erb", <<~ERB
   <head>
     <%%= meta_tags %>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <%%= yield :head %>
 
